@@ -107,6 +107,16 @@
     <!-- 底部操作栏 -->
     <view class="bottom-bar" :style="{ paddingBottom: safeAreaBottom + 'px' }">
       <view class="bar-content">
+        <view class="price-info">
+          <view class="price-row">
+            <text class="price-points">{{ selectedSku.pointsRequired || minPoints }}</text>
+            <text class="price-unit">积分</text>
+          </view>
+          <view v-if="selectedSku.cashRequired && selectedSku.cashRequired > 0" class="price-cash">
+            <text class="cash-label">+</text>
+            <text class="cash-amount">￥{{ selectedSku.cashRequired }}</text>
+          </view>
+        </view>
         <button class="exchange-btn" @click="handleExchange">
           <text class="btn-text">立即兑换</text>
         </button>
@@ -630,10 +640,55 @@ export default {
 
 .bar-content {
   padding: 16rpx 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 4rpx;
+}
+
+.price-points {
+  font-size: 48rpx;
+  color: #FF7043;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.price-unit {
+  font-size: 24rpx;
+  color: #FF7043;
+  margin-left: 8rpx;
+}
+
+.price-cash {
+  display: flex;
+  align-items: baseline;
+}
+
+.cash-label {
+  font-size: 20rpx;
+  color: #999999;
+  margin-right: 4rpx;
+}
+
+.cash-amount {
+  font-size: 24rpx;
+  color: #999999;
 }
 
 .exchange-btn {
-  width: 100%;
+  width: 280rpx;
   height: 88rpx;
   background: linear-gradient(135deg, #FF7043 0%, #FF5722 100%);
   border-radius: 44rpx;
