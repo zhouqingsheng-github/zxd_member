@@ -135,9 +135,15 @@
         <view class="popup-product">
           <image :src="productInfo.mainImage" class="popup-image" mode="aspectFill" />
           <view class="popup-info">
-            <view class="popup-price">
-              <text class="popup-points">{{ selectedSku.pointsRequired || minPoints }}</text>
-              <text class="popup-unit">积分</text>
+            <view class="popup-price-section">
+              <view class="popup-price">
+                <text class="popup-points">{{ selectedSku.pointsRequired || minPoints }}</text>
+                <text class="popup-unit">积分</text>
+              </view>
+              <view v-if="selectedSku.cashRequired && selectedSku.cashRequired > 0" class="popup-cash">
+                <text class="popup-cash-label">+</text>
+                <text class="popup-cash-amount">￥{{ selectedSku.cashRequired }}</text>
+              </view>
             </view>
             <view class="popup-name">{{ productInfo.spuName }}</view>
             <view v-if="selectedSku.skuName" class="popup-spec">已选：{{ selectedSku.skuName }}</view>
@@ -771,10 +777,16 @@ export default {
   justify-content: center;
 }
 
+.popup-price-section {
+  display: flex;
+  align-items: baseline;
+  gap: 8rpx;
+  margin-bottom: 12rpx;
+}
+
 .popup-price {
   display: flex;
   align-items: baseline;
-  margin-bottom: 12rpx;
 }
 
 .popup-points {
@@ -788,6 +800,23 @@ export default {
   font-size: 24rpx;
   color: #FF7043;
   margin-left: 8rpx;
+}
+
+.popup-cash {
+  display: flex;
+  align-items: baseline;
+}
+
+.popup-cash-label {
+  font-size: 20rpx;
+  color: #FF7043;
+  margin-right: 4rpx;
+}
+
+.popup-cash-amount {
+  font-size: 28rpx;
+  color: #FF7043;
+  font-weight: 600;
 }
 
 .popup-name {
@@ -829,19 +858,22 @@ export default {
 .sku-item {
   position: relative;
   min-width: 200rpx;
-  padding: 20rpx 24rpx;
+  padding: 24rpx 28rpx;
   background: #F7F8FA;
   border: 2rpx solid #F7F8FA;
-  border-radius: 12rpx;
+  border-radius: 16rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: all 0.3s ease;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.02);
 }
 
 .sku-item.active {
-  background: #FFF4F0;
+  background: linear-gradient(135deg, #FFF8F5 0%, #FFF4F0 100%);
   border-color: #FF7043;
+  box-shadow: 0 4rpx 16rpx rgba(255, 112, 67, 0.15);
+  transform: translateY(-2rpx);
 }
 
 .sku-item.disabled {
@@ -849,9 +881,10 @@ export default {
 }
 
 .sku-name {
-  font-size: 26rpx;
+  font-size: 28rpx;
   color: #1A1A1A;
-  margin-bottom: 8rpx;
+  font-weight: 600;
+  margin-bottom: 12rpx;
 }
 
 .sku-price-row {
@@ -861,13 +894,15 @@ export default {
 }
 
 .sku-points {
-  font-size: 22rpx;
+  font-size: 24rpx;
   color: #FF7043;
+  font-weight: 600;
 }
 
 .sku-cash {
-  font-size: 20rpx;
-  color: #999999;
+  font-size: 22rpx;
+  color: #FF7043;
+  opacity: 0.7;
 }
 
 .sku-sold-out {
