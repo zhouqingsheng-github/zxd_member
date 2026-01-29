@@ -434,7 +434,9 @@
           "style": {
             "navigationBarTitleText": "我的兑换",
             "navigationStyle": "custom",
-            "backgroundColor": "#F3F4F6"
+            "navigationBarTextStyle": "black",
+            "backgroundColor": "#F5F7FA",
+            "backgroundTextStyle": "dark"
           }
         },
         {

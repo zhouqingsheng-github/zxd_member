@@ -354,11 +354,13 @@ export default {
 /* 空状态 */
 .empty-state {
   width: 100%;
-  min-height: 600rpx;
+  height: 100%;
+  min-height: 800rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 120rpx 32rpx;
+  box-sizing: border-box;
 }
 
 .empty-content {
