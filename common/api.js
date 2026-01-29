@@ -178,32 +178,3 @@ export const getCutoffTime = (orderNo, config = {}) => http.get('/hotel-stores/h
 
 // 提交问卷
 export const submitQuestionnaire = (params, config = {}) => http.post('/hotel-system/questionnaire/submit', { ...params, ...config });
-
-// ==================== 积分商城相关接口 ====================
-
-// 查询商品列表
-export const getProductList = (params, config = {}) => http.get('/hotel-points/app/products/list', { params, ...config });
-
-// 查询商品详情
-export const getProductDetail = (id, config = {}) => http.get(`/hotel-points/app/products/${id}`, { ...config });
-
-// 查询分类树
-export const getCategoryTree = (config = {}) => http.get('/hotel-points/app/products/categories/tree', { ...config });
-
-// 查询SKU在各门店的库存情况
-export const getStoreStockBySkuId = (skuId, config = {}) => http.get(`/hotel-points/app/stock/stores/${skuId}`, { ...config });
-
-// 创建兑换订单
-export const createPointsOrder = (params, config = {}) => http.post('/hotel-points/app/orders/create', { ...params, ...config });
-
-// 支付订单
-export const payPointsOrder = (id, config = {}) => http.post(`/hotel-points/app/orders/${id}/pay`, {}, { ...config });
-
-// 取消订单
-export const cancelPointsOrder = (id, config = {}) => http.post(`/hotel-points/app/orders/${id}/cancel`, {}, { ...config });
-
-// 查询订单列表
-export const getPointsOrderList = (params, config = {}) => http.get('/hotel-points/app/orders/list', { params, ...config });
-
-// 查询订单详情
-export const getPointsOrderDetail = (id, config = {}) => http.get(`/hotel-points/app/orders/${id}`, { ...config });

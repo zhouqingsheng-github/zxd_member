@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import { getStoreStockBySkuId } from '@/common/api';
+import { getStoreStockBySkuId } from '../api/index.js';
 
 export default {
   data() {

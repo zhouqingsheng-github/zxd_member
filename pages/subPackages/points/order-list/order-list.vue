@@ -89,7 +89,7 @@
 
 <script>
 import OrderCard from '../components/OrderCard.vue';
-import { getPointsOrderList, cancelPointsOrder, payPointsOrder } from '@/common/api';
+import { getPointsOrderList, cancelPointsOrder, payPointsOrder } from '../api/index.js';
 
 export default {
   components: {

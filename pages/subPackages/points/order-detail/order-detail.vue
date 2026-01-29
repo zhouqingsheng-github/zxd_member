@@ -137,7 +137,7 @@
 </template>
 
 <script>
-import { getPointsOrderDetail, cancelPointsOrder } from '@/common/api';
+import { getPointsOrderDetail, cancelPointsOrder } from '../api/index.js';
 
 export default {
   data() {

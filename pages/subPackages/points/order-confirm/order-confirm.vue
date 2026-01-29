@@ -152,7 +152,7 @@
 </template>
 
 <script>
-import { getProductDetail, createPointsOrder } from '@/common/api';
+import { getProductDetail, createPointsOrder } from '../api/index.js';
 import { getUserInfo } from '@/store/index';
 
 export default {

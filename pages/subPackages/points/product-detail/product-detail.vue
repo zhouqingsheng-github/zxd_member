@@ -193,7 +193,7 @@
 </template>
 
 <script>
-import { getProductDetail } from '@/common/api'
+import { getProductDetail } from '../api/index.js'
 
 export default {
   data() {

@@ -149,7 +149,7 @@
 
 <script>
 import ProductCard from '../components/ProductCard.vue';
-import { getProductList, getCategoryTree } from '@/common/api';
+import { getProductList, getCategoryTree } from '../api/index.js';
 import { getUserInfo } from '@/store/index';
 
 export default {
