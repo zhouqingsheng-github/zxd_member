@@ -57,7 +57,7 @@
 
       <!-- 加载状态 -->
       <view v-if="loading && productList.length === 0" class="loading-state">
-        <u-loading mode="circle" />
+        <u-loading-icon mode="circle" />
         <text class="loading-text">加载中...</text>
       </view>
 
