@@ -93,3 +93,19 @@ export const getPointsOrderList = (params, config = {}) => {
 export const getPointsOrderDetail = (id, config = {}) => {
   return http.get(`/hotel-points/app/orders/${id}`, { ...config })
 }
+
+// ==================== 会员积分相关 ====================
+
+/**
+ * 查询会员积分余额
+ */
+export const getMemberPoints = (config = {}) => {
+  return http.get('/hotel-member/member/points', { ...config })
+}
+
+/**
+ * 查询会员信息
+ */
+export const getMemberInfo = (config = {}) => {
+  return http.get('/hotel-member/member/getInfo', { ...config })
+}

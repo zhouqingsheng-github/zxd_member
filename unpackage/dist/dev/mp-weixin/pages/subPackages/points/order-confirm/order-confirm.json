@@ -5,6 +5,6 @@
   "usingComponents": {
     "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
     "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
-    "u-loading-page": "/node-modules/uview-ui/components/u-loading-page/u-loading-page"
+    "u-loading-icon": "/node-modules/uview-ui/components/u-loading-icon/u-loading-icon"
   }
 }

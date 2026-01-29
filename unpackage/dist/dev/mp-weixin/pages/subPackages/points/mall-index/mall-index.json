@@ -5,10 +5,8 @@
   "enablePullDownRefresh": true,
   "backgroundTextStyle": "dark",
   "usingComponents": {
-    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
-    "u-search": "/node-modules/uview-ui/components/u-search/u-search",
-    "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
-    "u-empty": "/node-modules/uview-ui/components/u-empty/u-empty",
-    "u-loading-page": "/node-modules/uview-ui/components/u-loading-page/u-loading-page"
+    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
+    "u-loading-icon": "/node-modules/uview-ui/components/u-loading-icon/u-loading-icon",
+    "product-card": "/pages/subPackages/points/components/ProductCard"
   }
 }
