@@ -303,7 +303,9 @@ export default {
 <style scoped>
 .mall-page {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: #F5F7FA;
 }
 
@@ -313,6 +315,7 @@ export default {
   background: linear-gradient(135deg, #FF7043 0%, #FF5722 50%, #F4511E 100%);
   padding-bottom: 40rpx;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .status-bar {
@@ -510,6 +513,7 @@ export default {
   background: #FFFFFF;
   padding: 32rpx 0 24rpx;
   margin-top: 20rpx;
+  flex-shrink: 0;
 }
 
 .category-scroll {
