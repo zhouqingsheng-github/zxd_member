@@ -3,7 +3,7 @@
     <!-- 订单头部 -->
     <view class="order-header">
       <view class="order-no">订单号：{{ order.orderNo }}</view>
-      <view class="order-status" :class="`status-${order.status.toLowerCase()}`">
+      <view class="order-status" :class="getStatusClass(order.status)">
         {{ getStatusText(order.status) }}
       </view>
     </view>
@@ -81,6 +81,9 @@ export default {
         'CANCELLED': '已取消'
       };
       return statusMap[status] || '未知';
+    },
+    getStatusClass(status) {
+      return 'status-' + status.toLowerCase();
     },
     formatTime(time) {
       if (!time) return '';
