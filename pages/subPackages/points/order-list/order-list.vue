@@ -4,9 +4,7 @@
     <view class="nav-bar" :style="{ paddingTop: statusBarHeight + 'px' }">
       <view class="nav-content">
         <view class="nav-left" @click="goBack">
-          <view class="back-btn">
-            <u-icon name="arrow-left" color="#1A1A1A" size="40" />
-          </view>
+          <u-icon name="arrow-left" color="#1A1A1A" size="40" />
         </view>
         <text class="nav-title">我的订单</text>
         <view class="nav-right"></view>
@@ -270,16 +268,8 @@ export default {
 .nav-left,
 .nav-right {
   width: 80rpx;
-}
-
-.back-btn {
-  width: 64rpx;
-  height: 64rpx;
-  background: #F7F8FA;
-  border-radius: 32rpx;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .nav-title {
