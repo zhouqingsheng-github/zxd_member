@@ -1,0 +1,1510 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.data-v-18d565d6 .empty-state {
+  margin-top: 50rpx !important;
+}
+.loading-container.data-v-18d565d6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+.loading-container .loading-content.data-v-18d565d6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loading-container .loading-content .loading-spinner.data-v-18d565d6 {
+  width: 40rpx;
+  height: 40rpx;
+  border: 3rpx solid #f3f4f6;
+  border-top: 3rpx solid #EE781F;
+  border-radius: 50%;
+  -webkit-animation: spin-data-v-18d565d6 1s linear infinite;
+          animation: spin-data-v-18d565d6 1s linear infinite;
+  margin-bottom: 20rpx;
+}
+@-webkit-keyframes spin-data-v-18d565d6 {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+@keyframes spin-data-v-18d565d6 {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+.loading-container .loading-content .loading-text.data-v-18d565d6 {
+  font-size: 28rpx;
+  color: #6D7278;
+}
+.room-list-wrapper.data-v-18d565d6 {
+  position: relative;
+  min-height: 200rpx;
+}
+.loading-overlay.data-v-18d565d6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 10;
+  min-height: 400rpx;
+}
+.loading-overlay .loading-content2.data-v-18d565d6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loading-overlay .loading-content2 .loading-spinner2.data-v-18d565d6 {
+  width: 40rpx;
+  height: 40rpx;
+  border: 3rpx solid #f3f4f6;
+  border-top: 3rpx solid #EE781F;
+  border-radius: 50%;
+  -webkit-animation: spin-data-v-18d565d6 1s linear infinite;
+          animation: spin-data-v-18d565d6 1s linear infinite;
+  margin-bottom: 20rpx;
+}
+@keyframes spin-data-v-18d565d6 {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+.loading-overlay .loading-content2 .loading-text2.data-v-18d565d6 {
+  font-size: 28rpx;
+  color: #6D7278;
+}
+.booking-information.data-v-18d565d6 {
+  margin: 28rpx;
+}
+.booking-information .tabs-base.data-v-18d565d6 {
+  position: relative;
+  height: 128rpx;
+  /* 顶部切换标签 */
+}
+.booking-information .tabs-base .tabs.data-v-18d565d6 {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  overflow: hidden;
+  background-image: url("https://www.zxd-hotel.xin/zxdhotel/icon/tapl.png");
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 128rpx;
+  transition: background-image 0.3s ease-in-out;
+}
+.booking-information .tabs-base .tabs .tab.data-v-18d565d6 {
+  flex: 1;
+}
+.booking-information .tabs-base .tabs .tab .tab-info.data-v-18d565d6 {
+  text-align: center;
+  padding: 25rpx 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  font-style: normal;
+}
+.booking-information .tabs-base .tabs .tab .tab-info.active.data-v-18d565d6 {
+  color: #19191A;
+}
+.booking-information .tabs-base .tabs .tab .tab-info-bj.data-v-18d565d6 {
+  background: transparent;
+}
+.booking-information .tabs-base .tabs .tab .tab-info-bj.active.data-v-18d565d6 {
+  width: 148rpx;
+  height: 30rpx;
+  background: linear-gradient(270deg, #FFF4EC 0%, #FFD5B0 100%);
+  border-radius: 16rpx;
+  margin: auto;
+  margin-top: -40rpx;
+}
+.booking-information .tabs-base .tabs.active.data-v-18d565d6 {
+  background-image: url("https://www.zxd-hotel.xin/zxdhotel/icon/tapr@2x.png");
+}
+.booking-information .tabs-base .tabs-bj.data-v-18d565d6 {
+  position: absolute;
+  top: 10rpx;
+  display: flex;
+  width: 100%;
+  height: 118rpx;
+  background: linear-gradient(90deg, #FFB47B 0%, #FF9960 25%, #FA854E 50%, #FF9960 75%, #FFB47B 100%), linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.04) 100%);
+  border-radius: 28rpx 28rpx 0 0;
+}
+.booking-information .search-info.data-v-18d565d6 {
+  background: #fff;
+  border-radius: 0 0 24rpx 24rpx;
+  padding: 0 0 30rpx 0;
+  position: relative;
+  z-index: 2;
+}
+.booking-information .search-info .search-info-t.data-v-18d565d6 {
+  display: flex;
+  align-items: center;
+}
+.booking-information .search-info .search-info-t .date-picker-area.data-v-18d565d6 {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 28rpx;
+  -webkit-tap-highlight-color: transparent;
+}
+.booking-information .search-info .search-info-t .date-picker-area.data-v-18d565d6:active {
+  background-color: transparent !important;
+  /* 或者你想要的任何颜色 */
+}
+.booking-information .search-info .search-info-t .search-info-item.data-v-18d565d6 {
+  flex: none;
+  text-align: left;
+  min-width: 140rpx;
+  margin: 0 8rpx;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.booking-information .search-info .search-info-t .search-info-item.data-v-18d565d6:active {
+  background-color: transparent !important;
+  /* 或者你想要的任何颜色 */
+}
+.booking-information .search-info .search-info-t .search-info-item2.data-v-18d565d6 {
+  min-width: 0 !important;
+}
+.booking-information .search-info .search-info-t .search-info-item3.data-v-18d565d6 {
+  min-width: auto !important;
+}
+.booking-information .search-info .search-info-t .search-info-item .label.data-v-18d565d6 {
+  width: auto;
+  height: 24rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #19191A;
+  line-height: 24rpx;
+  text-align: left;
+  font-style: normal;
+  margin-bottom: 20rpx;
+}
+.booking-information .search-info .search-info-t .search-info-item .value.data-v-18d565d6 {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #19191A;
+}
+.booking-information .search-info .search-info-t .search-info-label.data-v-18d565d6 {
+  color: #FFF !important;
+}
+.booking-information .search-info .search-info-t .search-info-value.data-v-18d565d6 {
+  color: #FFF !important;
+}
+.booking-information .search-info .search-info-t .night-count-wrapper.data-v-18d565d6 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8rpx;
+}
+.booking-information .search-info .search-info-t .night-count.data-v-18d565d6 {
+  width: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20rpx;
+  color: #19191A;
+  line-height: 1;
+  text-align: right;
+  font-style: normal;
+  white-space: nowrap;
+}
+.booking-information .search-info .search-info-t .night-count-icon.data-v-18d565d6 {
+  width: 11rpx;
+  height: 18rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATCAYAAABGKffQAAAAAXNSR0IArs4c6QAAAb1JREFUOE99k09rE1EUxc/JC2b8g4XUhUiRIoi4cOHChQtFQVQqEf/xukjaMEXIRtq9q/oRxIWrUt50woyx4sJN1CIUKaJC8QvkE4g0FUxsmjdXnkOldZLe5X2/w72ccx+DID4L8Gm/z/LMjP6OfYrGxKskLgNYF9m6Xq1WfwzjGYbhmLX5jyTGAXy2tnDT9++2BwnomsY0TpKyBsiYCNaU6k9UKpWf/wv+wq4WF6NxpfgJwHFAVoHirenpG792C/7BrlmvL5+ydvsLwFEAK56Xu6217u4I9sDphPrpfF59FcEIIM12e+TO7OzElnvLwK65tNQ4kyTJOolDAN50u5v3a7Xa9kDYCVL/8Q3AAZKvWy39YCicTojLIgjTnfl4KGzMi2ukNAEoAM+mpibnhuz88oqIfZuugOet1uSj+XkmA9yILilFBx4EZMHzVE1rbTNuGNO4mMsl70RwhETQ6Ww+dC5kfA7D+III3qf+Iva8XFVr3cskaMzyebK/AqBI4tXGxtHyThB74DBsnEuS5AOAYy4Aa7va9/3fA68uCGIHXiXZLBR4b/ctZK4uiqITvR6fFIuH50qlUme/n/IHEdineZ/R+qQAAAAASUVORK5CYII=);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  margin-left: 12rpx;
+}
+.booking-information .search-info .search-info-t .w-night-count-icon.data-v-18d565d6 {
+  width: 11rpx;
+  height: 18rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATCAYAAABGKffQAAABS0lEQVR4AYTSTStEYRjG8ZkREiEvH8LCgkiSWFA2FrKwMAspCwtl5yvYyoIFC1YkEoZpvoikJFnYWNh4jfG7ZzGa5kym63+uc+77up95ztPJFIvFHhTQnfrnl9HfxiTyBjp5TUV4Xvce/cgZaOeJyqTT6UedMYQP8QsDrbxKsXLKwIPOKJ4wgjMDzbxCpXBUDMRWIvjsOf7p1ECT+7LK4agYuOPDeMEETgw08pIqwlExcMtj7698CkcG6nmqKhxFAzd8AJ+YxqGBTGJYM176mi8iNOOyVjNspdjznlBo02U9MSw4rplDHbawamvFqrBgnPelQAN2sSL4wytfUDCOLYJxvvsCy4LfvKTyyoKDKldowQGWBL94WaWwYJ9KHm04xoJgHJvbP8X33OuxgA6cIyv4wasUK2+odiFWnhN8d5+oCGd1djAr+MZr6hcAAP//MY2BjAAAAAZJREFUAwBXSGfdTO/TBAAAAABJRU5ErkJggg==);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  margin-left: 12rpx;
+}
+.booking-information .search-info .search-info-t .bed-count-wrapper.data-v-18d565d6 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8rpx;
+}
+.booking-information .search-info .search-info-t .bed-count-icon.data-v-18d565d6 {
+  width: 11rpx;
+  height: 18rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATCAYAAABGKffQAAAAAXNSR0IArs4c6QAAAb1JREFUOE99k09rE1EUxc/JC2b8g4XUhUiRIoi4cOHChQtFQVQqEf/xukjaMEXIRtq9q/oRxIWrUt50woyx4sJN1CIUKaJC8QvkE4g0FUxsmjdXnkOldZLe5X2/w72ccx+DID4L8Gm/z/LMjP6OfYrGxKskLgNYF9m6Xq1WfwzjGYbhmLX5jyTGAXy2tnDT9++2BwnomsY0TpKyBsiYCNaU6k9UKpWf/wv+wq4WF6NxpfgJwHFAVoHirenpG792C/7BrlmvL5+ydvsLwFEAK56Xu6217u4I9sDphPrpfF59FcEIIM12e+TO7OzElnvLwK65tNQ4kyTJOolDAN50u5v3a7Xa9kDYCVL/8Q3AAZKvWy39YCicTojLIgjTnfl4KGzMi2ukNAEoAM+mpibnhuz88oqIfZuugOet1uSj+XkmA9yILilFBx4EZMHzVE1rbTNuGNO4mMsl70RwhETQ6Ww+dC5kfA7D+III3qf+Iva8XFVr3cskaMzyebK/AqBI4tXGxtHyThB74DBsnEuS5AOAYy4Aa7va9/3fA68uCGIHXiXZLBR4b/ctZK4uiqITvR6fFIuH50qlUme/n/IHEdineZ/R+qQAAAAASUVORK5CYII=);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  margin-left: 90rpx;
+}
+.booking-information .search-info .search-info-t .w-bed-count-icon.data-v-18d565d6 {
+  width: 11rpx;
+  height: 18rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATCAYAAABGKffQAAABS0lEQVR4AYTSTStEYRjG8ZkREiEvH8LCgkiSWFA2FrKwMAspCwtl5yvYyoIFC1YkEoZpvoikJFnYWNh4jfG7ZzGa5kym63+uc+77up95ztPJFIvFHhTQnfrnl9HfxiTyBjp5TUV4Xvce/cgZaOeJyqTT6UedMYQP8QsDrbxKsXLKwIPOKJ4wgjMDzbxCpXBUDMRWIvjsOf7p1ECT+7LK4agYuOPDeMEETgw08pIqwlExcMtj7698CkcG6nmqKhxFAzd8AJ+YxqGBTGJYM176mi8iNOOyVjNspdjznlBo02U9MSw4rplDHbawamvFqrBgnPelQAN2sSL4wytfUDCOLYJxvvsCy4LfvKTyyoKDKldowQGWBL94WaWwYJ9KHm04xoJgHJvbP8X33OuxgA6cIyv4wasUK2+odiFWnhN8d5+oCGd1djAr+MZr6hcAAP//MY2BjAAAAAZJREFUAwBXSGfdTO/TBAAAAABJRU5ErkJggg==);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  margin-left: 90rpx;
+}
+.booking-information .search-info .search-info-t .divider.data-v-18d565d6 {
+  width: 2rpx;
+  height: 32rpx;
+  background: #E8E9EB;
+  margin-left: 12rpx;
+  margin-right: 12rpx;
+}
+.booking-information .search-info .search-info-tags-wrapper.data-v-18d565d6 {
+  position: relative;
+  margin-top: 30rpx;
+  overflow: hidden;
+}
+.booking-information .search-info .search-info-tags-scroll.data-v-18d565d6 {
+  white-space: nowrap;
+  padding-left: 28rpx;
+}
+.booking-information .search-info .search-info-tags.data-v-18d565d6 {
+  display: inline-flex;
+  gap: 20rpx;
+  padding-right: 56rpx;
+}
+.booking-information .search-info .search-info-tags .tag-info.data-v-18d565d6 {
+  background: #F3F7FA;
+  border-radius: 8rpx;
+  padding: 16rpx 38rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.booking-information .search-info .search-info-tags .tag-info .check-icon.data-v-18d565d6 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 24rpx;
+  height: 24rpx;
+}
+.booking-information .search-info .search-info-tags .tag-info .tag-info-text.data-v-18d565d6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #19191A;
+  line-height: 24rpx;
+  text-align: center;
+  font-style: normal;
+}
+.booking-information .search-info .search-info-tags .select-tag.data-v-18d565d6 {
+  background: #FDF1E8;
+}
+.booking-information .search-info .search-info-tags .select-tag-text.data-v-18d565d6 {
+  font-weight: 500 !important;
+  color: #EE781F !important;
+}
+.booking-information .search-info .search-info-tags-mask.data-v-18d565d6 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 56rpx;
+  height: 100%;
+  background: linear-gradient(to left, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+.booking-information .search-info-active.data-v-18d565d6 {
+  background: #EE781F;
+  border-radius: 24rpx;
+  padding: 30rpx 0;
+}
+.booking-information .early-morning-tip.data-v-18d565d6 {
+  margin-top: -20rpx;
+  padding: 42rpx 18rpx 16rpx 20rpx;
+  border-radius: 0 0 28rpx 28rpx;
+  border: 1rpx solid #F7DFC1;
+  background: linear-gradient(180deg, #FFEBD7 0%, #FDF6ED 100%);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.booking-information .early-morning-tip .early-morning-tip-icon.data-v-18d565d6 {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+  position: relative;
+  top: 6rpx;
+}
+.booking-information .early-morning-tip .early-morning-tip-text.data-v-18d565d6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #B7560C;
+  line-height: 34rpx;
+  text-align: left;
+  font-style: normal;
+}
+.hotel-detail.data-v-18d565d6 {
+  background: #F3F4F6;
+}
+.hotel-detail.no-scroll.data-v-18d565d6 {
+  overflow: hidden;
+  height: 100vh;
+}
+.swiper-wrap.data-v-18d565d6 {
+  background: #FFF;
+  position: relative;
+  width: 100%;
+  height: 600rpx;
+}
+.hotel-swiper.data-v-18d565d6 {
+  width: 100%;
+  height: 100%;
+  background: #FFF;
+  border-radius: 0 0 60rpx 60rpx;
+  overflow: hidden;
+}
+.hotel-img.data-v-18d565d6 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hotel-info.data-v-18d565d6 {
+  background: #FFF;
+  padding: 40rpx 28rpx 62rpx 28rpx;
+}
+.hotel-title-row.data-v-18d565d6 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28rpx;
+}
+.hotel-title.data-v-18d565d6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 36rpx;
+  line-height: 45rpx;
+  color: #19191A;
+  text-align: left;
+  font-style: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+.hotel-score.data-v-18d565d6 {
+  display: flex;
+  align-items: center;
+  margin-left: 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.rate-icon.data-v-18d565d6 {
+  width: 24rpx;
+  height: 24rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAASNJREFUKFONkLFKw2AUhc/5WwcXsT8uWkzQwVpwEXwLO/gC1kFwsLg26dbNpKNSF13UF3CobyG4CG0dlASqiyTg4tCaK0lFbIziHc89373nXiKjAss4j2Xt+jvpNtPCS32+rNTUXaxH0XBtrvXc/e75AYS2cSHgdmwi5LLg+NUJQAAG9WJRkCspJVsQ1kCOB4kIKO0o4hXx3tetwYChbfYFWMm6JSP/PQPLOAJ58B8AIsdMIlmLp6Ta/Qsi5GzW8feSrNKECt/MGxDrmZDgtjDtbbCJ6OtLgW22Aez/suVEO15t/LnPCiyjA3Ize4Nca9evpIEHkEuAjCDsJCClAjAPkUft+suTgG12Kejl1LAxc/jUi5uvjYXVUZR3QJa045Vj7QOGqGSBQlOoBgAAAABJRU5ErkJggg==) no-repeat;
+  background-size: 100% 100%;
+  margin-right: 10rpx;
+  flex-shrink: 0;
+}
+.rate-num.data-v-18d565d6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #36363B;
+  line-height: 24rpx;
+  letter-spacing: 1px;
+  text-align: left;
+  font-style: normal;
+}
+.hotel-tags-row.data-v-18d565d6 {
+  display: flex;
+  align-items: center;
+  height: auto;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+}
+.hotel-tags.data-v-18d565d6 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10rpx;
+}
+.hotel-tag.data-v-18d565d6 {
+  display: flex;
+  width: auto;
+  height: 28rpx;
+  background: #FFFFFF;
+  border-radius: 4rpx;
+  align-items: center;
+  padding-right: 10rpx;
+  padding-left: 12rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20rpx;
+  color: #EE781F;
+  line-height: 20rpx;
+  text-align: left;
+  font-style: normal;
+  position: relative;
+  /* 关键：用阴影模拟四边框 */
+  border: 1rpx solid #F9D6BB;
+  border-bottom: none;
+}
+.hotel-tag-bj.data-v-18d565d6 {
+  display: flex;
+  width: auto;
+  height: 28rpx;
+  background: #FFFFFF;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20rpx;
+  color: #EE781F;
+  line-height: 20rpx;
+  text-align: left;
+  font-style: normal;
+  position: relative;
+  border-bottom: none;
+  border-radius: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+}
+.pack.data-v-18d565d6 {
+  background: #FFEEE1;
+}
+.pack .pack_1.data-v-18d565d6 {
+  background: #EE781F;
+  border-radius: 4rpx 0 0 4rpx;
+  width: 65rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20rpx;
+  color: #FFFFFF;
+  font-style: normal;
+}
+.pack .pack_2.data-v-18d565d6 {
+  background: #FFEEE1;
+  border-radius: 0 4rpx 4rpx 0;
+  width: 100rpx;
+  height: 28rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20rpx;
+  color: #EE781F;
+  line-height: 28rpx;
+  text-align: center;
+  font-style: normal;
+}
+.hotel-tag-icon-bj.data-v-18d565d6 {
+  width: 162rpx;
+  height: 28rpx;
+}
+.hotel-tag.data-v-18d565d6::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 1rpx solid #F9D6BB;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  /* 整体缩放 */
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  pointer-events: none;
+}
+.hotel-tag-icon.data-v-18d565d6 {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 8rpx;
+  vertical-align: middle;
+}
+.hotel-desc-row.data-v-18d565d6 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.hotel-desc-left.data-v-18d565d6 {
+  display: flex;
+  align-items: center;
+  color: #222;
+  font-size: 26rpx;
+  flex: 1;
+  margin-right: 44rpx;
+  background-image: url("https://www.zxd-hotel.xin/zxdhotel/icon/@2x.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 26rpx 0 26rpx 20rpx;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+.map-icon.data-v-18d565d6 {
+  width: 36rpx;
+  height: 36rpx;
+  background: url(data:image/png;base64,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) no-repeat center;
+  background-size: 100% 100%;
+  margin-right: 12rpx;
+  flex-shrink: 0;
+}
+.hotel-desc.data-v-18d565d6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #19191A;
+  line-height: 34rpx;
+  text-align: left;
+  font-style: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  padding-right: 40rpx;
+}
+.hotel-desc-right.data-v-18d565d6 {
+  display: flex;
+  align-items: center;
+  height: 64rpx;
+}
+.navigation-icon.data-v-18d565d6 {
+  width: 100%;
+  height: 100%;
+  background: url(data:image/png;base64,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) no-repeat center;
+  background-size: 64rpx 64rpx;
+}
+.phone-icon.data-v-18d565d6 {
+  width: 100%;
+  height: 100%;
+  background: url(data:image/png;base64,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) no-repeat center;
+  background-size: 64rpx 64rpx;
+}
+.icon-btn.data-v-18d565d6 {
+  background: #f8f8f8;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 16rpx;
+  padding: 0;
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 64rpx;
+  overflow: hidden;
+}
+.hotel-icons-bar.data-v-18d565d6 {
+  position: relative;
+  width: 100%;
+  height: 156rpx;
+  display: flex;
+  align-items: center;
+}
+.hotel-icons-scroll.data-v-18d565d6 {
+  height: 156rpx;
+  flex: 1;
+  margin-right: 0;
+  padding-right: 240rpx;
+  white-space: nowrap;
+}
+.hotel-policy-float.data-v-18d565d6 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 190rpx;
+  height: 156rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF8AAABOCAYAAABGxsrLAAAAAXNSR0IArs4c6QAAA6VJREFUeF7tnAlr3DAQhTdp/v9f7EVLS0NpKS09eUVmZcYT2X6SZRR2XiD42JHG+uZ5JF+6u+hvGIG7YZ7l+CL4A0Ug+II/kMBA11K+4A8kMNC1lH+j8GsDi4EchriuBbR3kL3qCxGIXrCYerwNA5ix2RPEs/2dgbZ18Fvla+veAn2TQagFZANRKsvus/WUwLL7nq2qmQNrhe/LLbYB/GOcR7dpgb8FfvoNwN/oYJn218JfA2/33wH4wziPbnMEfi77ZAngd3SwTPtr4C/Ufa3cgp/XAfxinEe36QE/1WH/U87/GR0s034W/prqPfhpG8APxnl0m1b4Pt3cW/UD+B4dLNN+Bj6r+hSAKQgAvjHOo9u0wM+pJrHLirfLewBfo4Nl2l8D36eatL2Afk09Cf4Xxnl0mxb4CbhXfU450xLA5+hgmfbvwff53o5uvOrT9osr/EfGeXQbFv5aylko3sD/FB0s0/4W+CXFz6pPAQDwkXEe3aYG/lrKmVLNVfU57XyIDpZp/xH4OeV4+En57xnn0W224K91tjbtJPAl+O+ig2Xaz8C3na0Hn9X/YFLPA4C3jPPoNi3wcwCeKD7nfcHnZMXC952tz/dJ+TkFpZz/hnMf2+oo/EW6Mcp/HRsr1/re8KczAMArzn1sq1r4pZHOnG4ul4vgV+ipJ/yc99No52XFMYQ1XYNfM8ZPyrcdruCTchJ8EtQZZko7Z1Al6+wJf04/Gu1w9Gvh50eHxdsKGu1w0LNVb/jTsBOALrKIOByFn+/v6PYCAdubsPBTOZty0rpurDUAt0Va4OcgZPgp/+uWckMgGPhZ9fnOph6mNIAuFdFjxE4gW6o5At+nn/mRIgA9QCeiUQPfdrp+vK9XRwjYNaOdDNsvbe7XS1MN0JmLLAvdd7pZ+f4M0OuCFcHYSzsl9etF2QrAW6Yt8P3DdH/xpVfEyeDUwPepJ23r4wgSdMs4v5T3S/l/oX59FsRFhFH+Wsdrg6AP4jjeC6tW+Gvqn/oDfQrKRYKFX5N+9BE0x75qRlkbqLxul/O6Pv/n6Ncof0v9i+sBTXxxPvzSBdi0T1O+nAPfq794Nmiyo/Pg7wUgdbia5ovgX5vzbZWlsuw+Ww87md3NzTB4BH7pDNgLzpYeNLUjcbb0uE2R6mCUzNg0HvL4YkeV71vQq76bhp6h9YLVejbs5f7x8jzxCM6Ef+Jh30bVgj8wjoIv+AMJDHQt5Qv+QAIDXUv5gj+QwEDX/wFgwOF/yTekbAAAAABJRU5ErkJggg==) no-repeat center;
+  background-size: cover;
+  z-index: 10;
+}
+.more-row.data-v-18d565d6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.more-text.data-v-18d565d6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #222;
+  font-size: 26rpx;
+  height: 48rpx;
+  line-height: 24rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  text-align: center;
+  -webkit-user-select: none;
+          user-select: none;
+  margin-right: 26rpx;
+}
+.more-icon.data-v-18d565d6 {
+  width: 12rpx;
+  height: 20rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATCAYAAABGKffQAAAAAXNSR0IArs4c6QAAAb1JREFUOE99k09rE1EUxc/JC2b8g4XUhUiRIoi4cOHChQtFQVQqEf/xukjaMEXIRtq9q/oRxIWrUt50woyx4sJN1CIUKaJC8QvkE4g0FUxsmjdXnkOldZLe5X2/w72ccx+DID4L8Gm/z/LMjP6OfYrGxKskLgNYF9m6Xq1WfwzjGYbhmLX5jyTGAXy2tnDT9++2BwnomsY0TpKyBsiYCNaU6k9UKpWf/wv+wq4WF6NxpfgJwHFAVoHirenpG792C/7BrlmvL5+ydvsLwFEAK56Xu6217u4I9sDphPrpfF59FcEIIM12e+TO7OzElnvLwK65tNQ4kyTJOolDAN50u5v3a7Xa9kDYCVL/8Q3AAZKvWy39YCicTojLIgjTnfl4KGzMi2ukNAEoAM+mpibnhuz88oqIfZuugOet1uSj+XkmA9yILilFBx4EZMHzVE1rbTNuGNO4mMsl70RwhETQ6Ww+dC5kfA7D+III3qf+Iva8XFVr3cskaMzyebK/AqBI4tXGxtHyThB74DBsnEuS5AOAYy4Aa7va9/3fA68uCGIHXiXZLBR4b/ctZK4uiqITvR6fFIuH50qlUme/n/IHEdineZ/R+qQAAAAASUVORK5CYII=);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 0;
+}
+.hotel-icons.data-v-18d565d6 {
+  display: flex;
+  align-items: center;
+  gap: 52rpx;
+  height: 100%;
+  padding: 0 28rpx;
+}
+.hotel-icon.data-v-18d565d6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 72rpx;
+  max-width: 96rpx;
+  width: auto;
+}
+.icon-img.data-v-18d565d6 {
+  width: 72rpx;
+  height: 72rpx;
+  margin-bottom: 14rpx;
+}
+.hotel-text.data-v-18d565d6 {
+  width: auto;
+  height: 24rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #19191A;
+  line-height: 24rpx;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.booking-info.data-v-18d565d6 {
+  margin: auto;
+  margin-top: 28rpx;
+  width: 694rpx;
+  height: 140rpx;
+  background: #EE781F;
+  border-radius: 28rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28rpx;
+  position: relative;
+  /* 添加相对定位 */
+}
+.booking-row-labels.data-v-18d565d6 {
+  display: flex;
+  justify-content: space-between;
+  height: 24rpx;
+  margin: 28rpx 112rpx 0 28rpx;
+}
+.booking-label.data-v-18d565d6 {
+  height: 24rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  line-height: 24rpx;
+  text-align: left;
+  font-style: normal;
+}
+.booking-row-values.data-v-18d565d6 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20rpx 142rpx 0 28rpx;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.booking-date.data-v-18d565d6 {
+  width: auto;
+  height: 32rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  line-height: 32rpx;
+  text-align: left;
+  font-style: normal;
+}
+.booking-nights.data-v-18d565d6 {
+  width: 72rpx;
+  height: 32rpx;
+  border-radius: 16rpx;
+  line-height: 36rpx;
+  padding: 6rpx 10rpx;
+  color: #fff;
+  font-size: 22rpx;
+  font-weight: 400;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.booking-nights.data-v-18d565d6::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16rpx;
+  border: 1rpx solid #fff;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+.booking-nights.data-v-18d565d6::after {
+    border-width: 0.5px;
+}
+}
+.booking-divider.data-v-18d565d6 {
+  width: 2rpx;
+  height: 36rpx;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0 24rpx;
+  border-radius: 1rpx;
+}
+.booking-people.data-v-18d565d6 {
+  min-width: 40rpx;
+  justify-content: flex-end;
+}
+.room-list.data-v-18d565d6 {
+  margin-left: 28rpx;
+  margin-right: 28rpx;
+  margin-bottom: 200rpx;
+}
+.room-item.data-v-18d565d6 {
+  background: #fff;
+  border-radius: 24rpx;
+  margin-bottom: 24rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 24rpx 0 rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+.room-img-wrap.data-v-18d565d6 {
+  position: relative;
+  width: 100%;
+  height: 400rpx;
+  background: #E6DED9;
+}
+.room-img.data-v-18d565d6 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 24rpx;
+}
+.room-photo-album.data-v-18d565d6 {
+  position: absolute;
+  left: 28rpx;
+  bottom: 28rpx;
+  z-index: 12;
+  width: 96rpx;
+  height: 40rpx;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.room-info.data-v-18d565d6 {
+  padding: 0 28rpx 0 28rpx;
+  display: flex;
+  flex-direction: column;
+}
+.room-title.data-v-18d565d6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #19191A;
+  line-height: 40rpx;
+  text-align: left;
+  font-style: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  margin-top: 24rpx;
+}
+.room-desc.data-v-18d565d6 {
+  margin-top: 16rpx;
+  height: 24rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #6D7278;
+  line-height: 24rpx;
+  text-align: left;
+  font-style: normal;
+}
+.room-sales.data-v-18d565d6 {
+  margin-top: 16rpx;
+  height: 24rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #EE781F;
+  line-height: 24rpx;
+  text-align: left;
+  font-style: normal;
+}
+.room-tips.data-v-18d565d6 {
+  color: #EE781F;
+  font-size: 22rpx;
+  margin-bottom: 8rpx;
+}
+.room-bottom.data-v-18d565d6 {
+  margin-top: 4rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 28rpx;
+}
+.room-bottom .room-bottom-l.data-v-18d565d6 {
+  width: 160rpx;
+  height: 48rpx;
+  border-radius: 8rpx;
+  border: 1rpx solid rgba(238, 120, 31, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+}
+.room-bottom .room-bottom-l .room-bottom-l-icon.data-v-18d565d6 {
+  width: 16rpx;
+  height: 16rpx;
+}
+.room-bottom .room-bottom-l .room-bottom-l-text.data-v-18d565d6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #EE781F;
+  line-height: 24rpx;
+  text-align: center;
+  font-style: normal;
+}
+.room-bottom .room-bottom-l-else.data-v-18d565d6 {
+  width: 190rpx;
+  height: 48rpx;
+  background: #FFEFE3;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12rpx;
+}
+.room-bottom .room-bottom-l-else .room-bottom-l-icon-else.data-v-18d565d6 {
+  width: 20rpx;
+  height: 20rpx;
+}
+.room-bottom .room-bottom-l-else .room-bottom-l-text-else.data-v-18d565d6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #EE781F;
+  line-height: 24rpx;
+  text-align: center;
+  font-style: normal;
+}
+.room-bottom-r.data-v-18d565d6 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.room-price-block.data-v-18d565d6 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 1;
+}
+.room-price-wrap.data-v-18d565d6 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.room-origin-price.data-v-18d565d6 {
+  width: auto;
+  height: 24rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #6D7278;
+  line-height: 24rpx;
+  text-align: left;
+  font-style: normal;
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+  margin-right: 2rpx;
+}
+.room-price-y.data-v-18d565d6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #EE781F;
+  line-height: 24rpx;
+  text-align: left;
+  font-style: normal;
+}
+.room-price.data-v-18d565d6 {
+  height: 40rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 40rpx;
+  color: #EE781F;
+  line-height: 40rpx;
+  text-align: right;
+  font-style: normal;
+}
+.room-coupon.data-v-18d565d6 {
+  margin-top: 4rpx;
+  width: auto;
+  height: 32rpx;
+  background: #FFF0E5;
+  border-radius: 200rpx 0 200rpx 200rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20rpx;
+  color: #B7560C;
+  line-height: 32rpx;
+  text-align: center;
+  font-style: normal;
+  padding: 6rpx 6rpx 6rpx 14rpx;
+}
+.book-btn.data-v-18d565d6 {
+  min-width: 120rpx;
+  height: 72rpx;
+  border-radius: 36rpx;
+  background: linear-gradient(270deg, #F8B042 0%, #EE781F 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  line-height: 72rpx;
+  text-align: center;
+  font-style: normal;
+  border: none;
+  margin-left: 24rpx;
+}
+.full-btn.data-v-18d565d6 {
+  width: 120rpx;
+  height: 72rpx;
+  background: #CBCBD5;
+  border-radius: 36rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  line-height: 72rpx;
+  text-align: center;
+  font-style: normal;
+  border: none;
+  margin-left: 24rpx;
+}
+.hotel-review.data-v-18d565d6 {
+  background: #FFFFFF;
+  border-radius: 28rpx;
+  margin: 0 28rpx 50rpx 28rpx;
+  padding: 38rpx 20rpx 38rpx 36rpx;
+}
+.review-header-row.data-v-18d565d6 {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+.review-score-main.data-v-18d565d6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20rpx;
+  width: 90rpx;
+  height: 40rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 60rpx;
+  color: #EE781F;
+  line-height: 40rpx;
+  text-align: left;
+  font-style: normal;
+}
+.review-score-label.data-v-18d565d6 {
+  margin-top: 50rpx;
+  margin-bottom: 28rpx;
+  width: auto;
+  height: 32rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #19191A;
+  line-height: 32rpx;
+  text-align: left;
+  font-style: normal;
+  margin-left: 28rpx;
+}
+.review-score-detail.data-v-18d565d6 {
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+.score-detail-row.data-v-18d565d6 {
+  display: flex;
+  justify-content: space-between;
+  gap: 18rpx;
+}
+.score-detail-item.data-v-18d565d6 {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+.score-label.data-v-18d565d6 {
+  width: auto;
+  height: 20rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20rpx;
+  color: #19191A;
+  line-height: 20rpx;
+  text-align: left;
+  font-style: normal;
+}
+.score-bar.data-v-18d565d6 {
+  width: 60rpx;
+  height: 8rpx;
+  background: #E9EBFF;
+  border-radius: 4rpx;
+  position: relative;
+}
+.score-bar-inner.data-v-18d565d6 {
+  height: 100%;
+  background: #ff9900;
+  border-radius: 8rpx 0 0 8rpx;
+  transition: width 0.3s;
+}
+.score-bar-inner.full.data-v-18d565d6 {
+  border-radius: 8rpx;
+}
+.review-more.data-v-18d565d6 {
+  width: 96rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 24rpx;
+  color: #EE781F;
+  line-height: 24rpx;
+  text-align: right;
+  font-style: normal;
+  position: absolute;
+  right: 21rpx;
+  top: 8rpx;
+}
+.review-more-icon.data-v-18d565d6 {
+  position: absolute;
+  right: 0;
+  top: 8rpx;
+  width: 11rpx;
+  height: 18rpx;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATCAYAAABGKffQAAAAAXNSR0IArs4c6QAAAb1JREFUOE99k09rE1EUxc/JC2b8g4XUhUiRIoi4cOHChQtFQVQqEf/xukjaMEXIRtq9q/oRxIWrUt50woyx4sJN1CIUKaJC8QvkE4g0FUxsmjdXnkOldZLe5X2/w72ccx+DID4L8Gm/z/LMjP6OfYrGxKskLgNYF9m6Xq1WfwzjGYbhmLX5jyTGAXy2tnDT9++2BwnomsY0TpKyBsiYCNaU6k9UKpWf/wv+wq4WF6NxpfgJwHFAVoHirenpG792C/7BrlmvL5+ydvsLwFEAK56Xu6217u4I9sDphPrpfF59FcEIIM12e+TO7OzElnvLwK65tNQ4kyTJOolDAN50u5v3a7Xa9kDYCVL/8Q3AAZKvWy39YCicTojLIgjTnfl4KGzMi2ukNAEoAM+mpibnhuz88oqIfZuugOet1uSj+XkmA9yILilFBx4EZMHzVE1rbTNuGNO4mMsl70RwhETQ6Ww+dC5kfA7D+III3qf+Iva8XFVr3cskaMzyebK/AqBI4tXGxtHyThB74DBsnEuS5AOAYy4Aa7va9/3fA68uCGIHXiXZLBR4b/ctZK4uiqITvR6fFIuH50qlUme/n/IHEdineZ/R+qQAAAAASUVORK5CYII=);
+  background-size: cover;
+  background-position: center;
+}
+.line.data-v-18d565d6 {
+  height: 1rpx;
+  background: #E8E9EB;
+  margin: 26rpx 0 26rpx 0;
+}
+.line2.data-v-18d565d6 {
+  height: 1rpx;
+  background: #E8E9EB;
+  margin: 38rpx 0 28rpx 0;
+}
+.review-item.data-v-18d565d6 {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+.review-avatar.data-v-18d565d6 {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  margin-right: 16rpx;
+  background: #f3f3f3;
+}
+.review-content-wrap.data-v-18d565d6 {
+  flex: 1;
+}
+.review-user-row.data-v-18d565d6 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.review-user.data-v-18d565d6 {
+  color: #222;
+  font-size: 26rpx;
+  font-weight: 500;
+}
+.review-date.data-v-18d565d6 {
+  color: #aaa;
+  font-size: 20rpx;
+  margin-bottom: 10rpx;
+}
+.review-tags.data-v-18d565d6 {
+  display: flex;
+  gap: 8rpx;
+  margin-bottom: 6rpx;
+}
+.review-tag.data-v-18d565d6 {
+  background: #fff0e5;
+  color: #ee781f;
+  font-size: 20rpx;
+  border-radius: 6rpx;
+  padding: 2rpx 10rpx;
+}
+.review-content.data-v-18d565d6 {
+  width: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #19191A;
+  line-height: 34rpx;
+  text-align: left;
+  font-style: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.review-more-bottom.data-v-18d565d6 {
+  height: 24rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #6D7278;
+  line-height: 24rpx;
+  text-align: center;
+  font-style: normal;
+}
+.hotel-facilities-box.data-v-18d565d6 {
+  background: #fff;
+  border-radius: 28rpx;
+  margin: 0 28rpx 0 28rpx;
+  padding: 38rpx 20rpx 0 36rpx;
+}
+.hotel-facilities-list.data-v-18d565d6 {
+  display: flex;
+  flex-direction: column;
+  gap: 38rpx;
+}
+.facility-item2.data-v-18d565d6 {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+.facility-icon-bg.data-v-18d565d6 {
+  width: 72rpx;
+  height: 72rpx;
+  background: #F5F6FA;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 28rpx;
+  flex-shrink: 0;
+}
+.facility-img2.data-v-18d565d6 {
+  width: 44rpx;
+  height: 44rpx;
+}
+.facility-info.data-v-18d565d6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.facility-title.data-v-18d565d6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 32rpx;
+  color: #19191A;
+  line-height: 40rpx;
+}
+.facility-desc.data-v-18d565d6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 26rpx;
+  color: #AEB2B8;
+  line-height: 36rpx;
+  margin-top: 2rpx;
+}
+.facility-divider.data-v-18d565d6 {
+  height: 2rpx;
+  background: #F0F1F3;
+  margin: 38rpx 0 0 0;
+}
+.facility-more.data-v-18d565d6 {
+  height: 60rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #6D7278;
+  line-height: 60rpx;
+  text-align: center;
+  font-style: normal;
+}
+.hotel-location.data-v-18d565d6 {
+  background: #FFFFFF;
+  border-radius: 28rpx;
+  margin: 0 28rpx 0 28rpx;
+}
+.hotel-map.data-v-18d565d6 {
+  width: 100%;
+  height: 200rpx;
+  border-radius: 8rpx;
+}
+.location-address.data-v-18d565d6 {
+  margin-top: 10rpx;
+  color: #888;
+  font-size: 24rpx;
+}
+.location-route-btn.data-v-18d565d6 {
+  margin: 32rpx 0 0 0;
+  background: #fff;
+  border-radius: 0 0 28rpx 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100rpx;
+  box-shadow: 0 -2rpx 8rpx 0 rgba(0, 0, 0, 0.02);
+  cursor: pointer;
+}
+.location-route-icon.data-v-18d565d6 {
+  width: 36rpx;
+  height: 36rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAARxJREFUKFONkDFLw3AQxd/7FylWHZpUitUkCK7iojgr+AFcRMEuKgWFioIkIk7iYNxEcHFz8kP4CXR0dGp0q2kFqSiY/0kKaqBp9ca797t394h/1MueMx5lsEbKHLvppYpsM2ctklwXYB6gEsFxB9DwxiZJFYtWAZq/C0WrT060gbpbGOpjbjkCNkjOAOhYRMhN/iRYYMNzLkApAxzs+Y7oFcN/vGbrwBl513oTUBUCxXRIwnwrGOU5Pn6sH6rIFvrtJU1sk5xOgiJyZvrBTtxLTSn07LsEJJBoyvCf7rsCTdcui+JVLBCRW9MPZr8dUx3a5w04NQGKIlIx/eCyJxAPw33riOBupN9Kw6fPr38CddcqZagODb+2lQzgC0hoWv9KxchRAAAAAElFTkSuQmCC) no-repeat center;
+  background-size: contain;
+  margin-right: 16rpx;
+}
+.location-route-text.data-v-18d565d6 {
+  color: #EE781F;
+  font-size: 32rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+}
+.nav-bar-float.data-v-18d565d6 {
+  position: absolute;
+  left: 0;
+  top: -12rpx;
+  width: 100%;
+  min-height: 88rpx;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding-left: 16rpx;
+  box-sizing: border-box;
+}
+.custom-back-btn.data-v-18d565d6 {
+  width: 72rpx;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+.custom-back-right.data-v-18d565d6 {
+  width: 72rpx;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  margin-left: 378rpx;
+  padding: 0;
+  border: none;
+  line-height: 1;
+}
+.custom-back-right.data-v-18d565d6::after {
+  border: none;
+}
+.share-icon.data-v-18d565d6 {
+  width: 72rpx;
+  height: 72rpx;
+  display: block;
+}
+.back-icon.data-v-18d565d6 {
+  width: 72rpx;
+  height: 72rpx;
+}
+.custom-indicator.data-v-18d565d6 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 32rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+}
+.photoAlbum.data-v-18d565d6 {
+  position: absolute;
+  left: 28rpx;
+  bottom: 32rpx;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 12;
+  width: 96rpx;
+  height: 40rpx;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.indicator-capsule.data-v-18d565d6 {
+  display: flex;
+  align-items: center;
+  padding: 0 10rpx;
+  height: 32rpx;
+  background: #000;
+  border-radius: 16rpx;
+  opacity: 0.3;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.indicator-dot.data-v-18d565d6 {
+  border-radius: 50%;
+  width: 10rpx;
+  height: 10rpx;
+  background: #FFFFFF;
+  opacity: 0.5;
+  margin: 0 8rpx;
+  transition: opacity 0.2s, background 0.2s;
+}
+.indicator-dot.active.data-v-18d565d6 {
+  opacity: 1;
+  background: #fff;
+}
+.album-icon.data-v-18d565d6 {
+  width: 22rpx;
+  height: 20rpx;
+  background-image: url("https://zxd-hotel.xin/zxdhotel/2025/06/03/photoAlbum_20250603225504A005.png");
+  background-position: center;
+  background-size: cover;
+  margin-right: 9rpx;
+}
+.album-text.data-v-18d565d6 {
+  width: 40rpx;
+  height: 20rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20rpx;
+  color: #FFFFFF;
+  line-height: 20rpx;
+  text-align: center;
+  font-style: normal;
+}
+/* 添加遮挡层样式 */
+.booking-mask.data-v-18d565d6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 1;
+}
+.mask-left.data-v-18d565d6 {
+  flex: 1;
+  height: 100%;
+  cursor: pointer;
+}
+.mask-right.data-v-18d565d6 {
+  flex: 1;
+  height: 100%;
+  cursor: pointer;
+}
+.mask-bed.data-v-18d565d6 {
+  width: 240rpx;
+  height: 100%;
+  cursor: pointer;
+}
+page.data-v-18d565d6,
+page.data-v-18d565d6,
+.hotel-detail.data-v-18d565d6 {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+/* 添加日历组件样式 */
+.calendar-page.data-v-18d565d6 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background: #fff;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.calendar-page.show.data-v-18d565d6 {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}

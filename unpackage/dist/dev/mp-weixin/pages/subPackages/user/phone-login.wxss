@@ -1,0 +1,140 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.phone-login-content.data-v-38600381 {
+  min-height: 100vh;
+  background: #fff;
+}
+.login-body.data-v-38600381 {
+  background: #fff;
+  border-top: 1rpx solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80rpx 0 0 0;
+}
+.login-title.data-v-38600381 {
+  height: 56rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 40rpx;
+  color: #19191A;
+  line-height: 56rpx;
+  text-align: left;
+  font-style: normal;
+  align-self: flex-start;
+  margin-left: 86rpx;
+  margin-top: 80rpx;
+}
+.login-desc.data-v-38600381 {
+  height: 34rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #19191A;
+  line-height: 34rpx;
+  text-align: left;
+  font-style: normal;
+  align-self: flex-start;
+  margin-left: 86rpx;
+  margin-top: 4rpx;
+}
+.input-wrapper.data-v-38600381 {
+  width: 580rpx;
+  height: 80rpx;
+  margin-top: 54rpx;
+  position: relative;
+}
+.input-wrapper + .input-wrapper.data-v-38600381 {
+  margin-top: 0;
+}
+.custom-input.data-v-38600381 {
+  width: 100%;
+  height: 40rpx;
+  font-size: 28rpx;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  margin-top: 30rpx;
+}
+.custom-input.data-v-38600381::-webkit-input-placeholder {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #97989B;
+  text-align: left;
+  font-style: normal;
+}
+.custom-input.data-v-38600381::placeholder,
+.custom-input.data-v-38600381::-webkit-input-placeholder,
+.custom-input.data-v-38600381:-moz-placeholder,
+.custom-input.data-v-38600381::-moz-placeholder,
+.custom-input.data-v-38600381:-ms-input-placeholder {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #97989B;
+  text-align: left;
+  font-style: normal;
+}
+.input-underline.data-v-38600381 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1rpx;
+  background: #E8E9EB;
+}
+.code-input-wrapper.data-v-38600381 {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.code-input-wrapper .custom-input.data-v-38600381 {
+  flex: 1;
+  padding-right: 200rpx;
+}
+.code-btn.data-v-38600381 {
+  position: absolute;
+  right: 0;
+  top: 30rpx;
+  width: auto;
+  height: 40rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #97989B;
+  line-height: 40rpx;
+  text-align: right;
+  font-style: normal;
+  min-width: 180rpx;
+  z-index: 10;
+  padding: 0 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.login-btn.data-v-38600381 {
+  width: 640rpx;
+  height: 92rpx;
+  background: #EE781F;
+  border-radius: 46rpx;
+  opacity: 0.3;
+  margin-top: 80rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 92rpx;
+  font-style: normal;
+  transition: opacity 0.2s;
+}
+.login-btn.active.data-v-38600381 {
+  opacity: 1;
+}

@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "积分商城",
+  "navigationStyle": "custom",
+  "backgroundColor": "#F3F4F6",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
+    "u-search": "/node-modules/uview-ui/components/u-search/u-search",
+    "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
+    "u-empty": "/node-modules/uview-ui/components/u-empty/u-empty",
+    "u-loading-page": "/node-modules/uview-ui/components/u-loading-page/u-loading-page"
+  }
+}

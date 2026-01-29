@@ -1,0 +1,36 @@
+
+.empty-container.data-v-53738e42 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400rpx;
+}
+.empty-state.data-v-53738e42 {
+  width: 370rpx;
+  height: 200rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200rpx;
+  margin-bottom: 40rpx;
+}
+.empty-icon.data-v-53738e42 {
+  width: 100%;
+  height: 100%;
+}
+.empty-text.data-v-53738e42 {
+  margin: auto;
+  width: auto;
+  height: 24rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #A2A2A8;
+  line-height: 24rpx;
+  text-align: center;
+  font-style: normal;
+}
+

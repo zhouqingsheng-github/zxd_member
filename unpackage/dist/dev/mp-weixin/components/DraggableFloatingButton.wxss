@@ -1,0 +1,15 @@
+
+.floating-button.data-v-1a6421ba {
+  position: fixed;
+  width: 132rpx;
+  height: 132rpx;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 9999;
+  /* 添加硬件加速优化性能 */
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: right, bottom, transform;
+}
+

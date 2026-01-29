@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "试睡官招募",
+  "navigationStyle": "custom",
+  "backgroundColor": "#F3F4F6",
+  "disableScroll": true,
+  "usingComponents": {
+    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar"
+  }
+}

@@ -1,0 +1,24 @@
+
+.nav-title.data-v-631fc862 {
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #19191A;
+  text-align: center;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photo-album.data-v-631fc862 {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  overflow: hidden;
+}
+.photo-grid.data-v-631fc862 {
+  width: 100%;
+  box-sizing: border-box;
+}
+

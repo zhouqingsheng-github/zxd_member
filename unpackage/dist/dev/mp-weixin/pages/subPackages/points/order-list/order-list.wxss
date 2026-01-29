@@ -1,0 +1,223 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.order-list-page.data-v-b05bd0c4 {
+  min-height: 100vh;
+  background-color: #F3F4F6;
+}
+.tabs-container.data-v-b05bd0c4 {
+  background: #FFFFFF;
+  padding: 0 20rpx;
+}
+.order-list-container.data-v-b05bd0c4 {
+  padding: 20rpx;
+}
+.loading-container.data-v-b05bd0c4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 200rpx;
+}
+.loading-spinner.data-v-b05bd0c4 {
+  width: 60rpx;
+  height: 60rpx;
+  border: 4rpx solid #f3f3f3;
+  border-top: 4rpx solid #EE781F;
+  border-radius: 50%;
+  -webkit-animation: spin-data-v-b05bd0c4 1s linear infinite;
+          animation: spin-data-v-b05bd0c4 1s linear infinite;
+}
+@-webkit-keyframes spin-data-v-b05bd0c4 {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+@keyframes spin-data-v-b05bd0c4 {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+.loading-text.data-v-b05bd0c4 {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.order-list.data-v-b05bd0c4 {
+  padding-bottom: 20rpx;
+}
+.order-item.data-v-b05bd0c4 {
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+.order-header.data-v-b05bd0c4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #F0F0F0;
+}
+.order-no.data-v-b05bd0c4 {
+  font-size: 26rpx;
+  color: #999;
+}
+.order-status.data-v-b05bd0c4 {
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.order-status.status-pending.data-v-b05bd0c4 {
+  color: #FF9800;
+}
+.order-status.status-paid.data-v-b05bd0c4 {
+  color: #EE781F;
+}
+.order-status.status-completed.data-v-b05bd0c4 {
+  color: #4CAF50;
+}
+.order-status.status-cancelled.data-v-b05bd0c4 {
+  color: #999;
+}
+.order-content.data-v-b05bd0c4 {
+  display: flex;
+  padding: 20rpx 0;
+}
+.product-image.data-v-b05bd0c4 {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 12rpx;
+  margin-right: 20rpx;
+}
+.product-info.data-v-b05bd0c4 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product-name.data-v-b05bd0c4 {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #19191A;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.product-spec.data-v-b05bd0c4 {
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 8rpx;
+}
+.product-quantity.data-v-b05bd0c4 {
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 8rpx;
+}
+.store-info.data-v-b05bd0c4 {
+  display: flex;
+  align-items: center;
+  padding: 16rpx 0;
+  border-top: 1rpx solid #F0F0F0;
+}
+.store-icon.data-v-b05bd0c4 {
+  font-size: 28rpx;
+  margin-right: 8rpx;
+}
+.store-name.data-v-b05bd0c4 {
+  margin-left: 8rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+.order-footer.data-v-b05bd0c4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16rpx;
+  border-top: 1rpx solid #F0F0F0;
+}
+.order-amount.data-v-b05bd0c4 {
+  display: flex;
+  align-items: baseline;
+}
+.points-label.data-v-b05bd0c4 {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #EE781F;
+}
+.cash-label.data-v-b05bd0c4 {
+  font-size: 28rpx;
+  color: #EE781F;
+  margin-left: 8rpx;
+}
+.order-actions.data-v-b05bd0c4 {
+  display: flex;
+  gap: 16rpx;
+}
+.action-btn.data-v-b05bd0c4 {
+  padding: 12rpx 32rpx;
+  border-radius: 40rpx;
+  font-size: 26rpx;
+  border: 1rpx solid #E0E0E0;
+  color: #666;
+}
+.cancel-btn.data-v-b05bd0c4 {
+  border-color: #EE781F;
+  color: #EE781F;
+}
+.order-time.data-v-b05bd0c4 {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 16rpx;
+  text-align: right;
+}
+.load-more.data-v-b05bd0c4,
+.no-more.data-v-b05bd0c4 {
+  text-align: center;
+  padding: 40rpx 0;
+  font-size: 28rpx;
+  color: #999;
+}
+.loading-spinner-small.data-v-b05bd0c4 {
+  width: 40rpx;
+  height: 40rpx;
+  border: 3rpx solid #f3f3f3;
+  border-top: 3rpx solid #EE781F;
+  border-radius: 50%;
+  -webkit-animation: spin-data-v-b05bd0c4 1s linear infinite;
+          animation: spin-data-v-b05bd0c4 1s linear infinite;
+  margin: 0 auto;
+}
+.empty-container.data-v-b05bd0c4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 200rpx;
+}
+.empty-image.data-v-b05bd0c4 {
+  width: 300rpx;
+  height: 300rpx;
+  margin-bottom: 40rpx;
+}
+.empty-text.data-v-b05bd0c4 {
+  font-size: 32rpx;
+  color: #666;
+}

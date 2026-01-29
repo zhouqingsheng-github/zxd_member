@@ -1,0 +1,173 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.confirm-container.data-v-3de81c02 {
+  min-height: 100vh;
+  background-color: #F3F4F6;
+  padding-bottom: 160rpx;
+}
+.store-section.data-v-3de81c02,
+.product-section.data-v-3de81c02,
+.user-section.data-v-3de81c02,
+.cost-section.data-v-3de81c02 {
+  margin: 20rpx 24rpx;
+  padding: 32rpx;
+  background-color: #FFFFFF;
+  border-radius: 16rpx;
+}
+.section-title.data-v-3de81c02 {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #19191A;
+  margin-bottom: 24rpx;
+}
+.store-section.data-v-3de81c02 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.store-section .store-info.data-v-3de81c02 {
+  flex: 1;
+  margin-right: 16rpx;
+}
+.store-section .store-info .store-name.data-v-3de81c02 {
+  font-size: 28rpx;
+  color: #19191A;
+  margin-bottom: 8rpx;
+}
+.store-section .store-info .store-address.data-v-3de81c02 {
+  font-size: 24rpx;
+  color: #666666;
+  margin-bottom: 8rpx;
+}
+.store-section .store-info .store-phone.data-v-3de81c02 {
+  font-size: 24rpx;
+  color: #666666;
+}
+.store-section .store-placeholder.data-v-3de81c02 {
+  flex: 1;
+  font-size: 28rpx;
+  color: #999999;
+  margin-right: 16rpx;
+}
+.product-item.data-v-3de81c02 {
+  display: flex;
+}
+.product-item .product-image.data-v-3de81c02 {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 12rpx;
+  margin-right: 24rpx;
+}
+.product-item .product-info.data-v-3de81c02 {
+  flex: 1;
+}
+.product-item .product-info .product-name.data-v-3de81c02 {
+  font-size: 28rpx;
+  color: #19191A;
+  margin-bottom: 12rpx;
+}
+.product-item .product-info .product-spec.data-v-3de81c02 {
+  font-size: 24rpx;
+  color: #666666;
+  margin-bottom: 12rpx;
+}
+.product-item .product-info .product-quantity.data-v-3de81c02 {
+  font-size: 24rpx;
+  color: #999999;
+}
+.form-item.data-v-3de81c02 {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #F3F4F6;
+}
+.form-item.data-v-3de81c02:last-child {
+  border-bottom: none;
+}
+.form-item .form-label.data-v-3de81c02 {
+  width: 140rpx;
+  font-size: 28rpx;
+  color: #19191A;
+}
+.form-item .form-input.data-v-3de81c02 {
+  flex: 1;
+  font-size: 28rpx;
+  color: #19191A;
+}
+.cost-item.data-v-3de81c02 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.cost-item .cost-label.data-v-3de81c02 {
+  font-size: 28rpx;
+  color: #666666;
+}
+.cost-item .cost-value.data-v-3de81c02 {
+  font-size: 28rpx;
+  color: #19191A;
+}
+.cost-item .cost-value.points.data-v-3de81c02 {
+  color: #EE781F;
+  font-weight: bold;
+}
+.cost-item .cost-value.cash.data-v-3de81c02 {
+  color: #EE781F;
+  font-weight: bold;
+}
+.bottom-bar.data-v-3de81c02 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 24rpx;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+  background-color: #FFFFFF;
+  box-shadow: 0 -4rpx 12rpx rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bottom-bar .total-info.data-v-3de81c02 {
+  flex: 1;
+}
+.bottom-bar .total-info .total-label.data-v-3de81c02 {
+  font-size: 28rpx;
+  color: #666666;
+}
+.bottom-bar .total-info .total-points.data-v-3de81c02 {
+  font-size: 40rpx;
+  color: #EE781F;
+  font-weight: bold;
+  margin-left: 8rpx;
+}
+.bottom-bar .total-info .total-unit.data-v-3de81c02 {
+  font-size: 24rpx;
+  color: #EE781F;
+  margin-left: 4rpx;
+}
+.bottom-bar .total-info .total-cash.data-v-3de81c02 {
+  font-size: 28rpx;
+  color: #666666;
+  margin-left: 12rpx;
+}
+.bottom-bar .submit-btn.data-v-3de81c02 {
+  width: 240rpx;
+  height: 72rpx;
+  background: linear-gradient(135deg, #FF9A56 0%, #EE781F 100%);
+  border-radius: 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.bottom-bar .submit-btn.disabled.data-v-3de81c02 {
+  opacity: 0.5;
+}

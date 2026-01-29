@@ -1,0 +1,155 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/order/index",
+    "pages/coupon/index",
+    "pages/user/index",
+    "pages/webview/webview"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/subPackages/home",
+      "pages": [
+        "detail",
+        "jointSalesDetail",
+        "search/index",
+        "search/jointSales",
+        "search-result/index",
+        "city-select/index",
+        "photoAlbum"
+      ]
+    },
+    {
+      "root": "pages/subPackages/order",
+      "pages": [
+        "index",
+        "detail",
+        "three_detail",
+        "paySuccess"
+      ]
+    },
+    {
+      "root": "pages/subPackages/coupon",
+      "pages": [
+        "detail",
+        "receive",
+        "receive-success",
+        "receiving-center"
+      ]
+    },
+    {
+      "root": "pages/subPackages/user",
+      "pages": [
+        "setting",
+        "login",
+        "phone-login",
+        "member-activate",
+        "member-success",
+        "member-right",
+        "share-receive"
+      ]
+    },
+    {
+      "root": "pages/subPackages/richText",
+      "pages": [
+        "richText"
+      ]
+    },
+    {
+      "root": "pages/subPackages/agreement",
+      "pages": [
+        "facilities",
+        "bookingNotice",
+        "paymentAgreement",
+        "userAgreement",
+        "privacyPolicy",
+        "intellectualProperty",
+        "aboutUs",
+        "memberAgreement",
+        "sleepTesterGuide"
+      ]
+    },
+    {
+      "root": "pages/subPackages/questionnaire",
+      "pages": [
+        "submit",
+        "detail"
+      ]
+    },
+    {
+      "root": "pages/subPackages/wifi",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "pages/subPackages/points",
+      "pages": [
+        "mall-index/mall-index",
+        "product-detail/product-detail",
+        "order-confirm/order-confirm",
+        "store-select/store-select",
+        "order-list/order-list",
+        "order-detail/order-detail"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "住小叮",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F3F4F6",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#19191A",
+    "selectedColor": "#EE781F",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home_selected.png"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "text": "订单",
+        "iconPath": "static/tabbar/order.png",
+        "selectedIconPath": "static/tabbar/order_selected.png"
+      },
+      {
+        "pagePath": "pages/coupon/index",
+        "text": "优惠券",
+        "iconPath": "static/tabbar/coupon.png",
+        "selectedIconPath": "static/tabbar/coupon_selected.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "static/tabbar/mine.png",
+        "selectedIconPath": "static/tabbar/mine_selected.png"
+      }
+    ]
+  },
+  "themeLocation": "theme.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于定位附近酒店"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
+  "plugins": {},
+  "lazyCodeLoading": "requiredComponents",
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "darkmode": false,
+  "resizable": true,
+  "shareTimeline": true,
+  "usingComponents": {}
+}

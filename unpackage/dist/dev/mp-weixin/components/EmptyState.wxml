@@ -1,0 +1,1 @@
+<view class="{{['empty-container','data-v-53738e42',virtualHostClass]}}" style="{{virtualHostStyle}}"><view class="empty-state data-v-53738e42"><image class="empty-icon data-v-53738e42" src="{{image}}" mode="aspectFit"></image></view><view class="empty-text data-v-53738e42">{{text}}</view></view>

@@ -1,0 +1,1121 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.nav-title.data-v-a06635b4 {
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  text-align: center;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.order-container.data-v-a06635b4 {
+  background: #f3f4f6;
+  min-height: 100vh;
+  padding-bottom: calc(240rpx + env(safe-area-inset-bottom));
+}
+.order-container .loading-container.data-v-a06635b4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+.order-container .loading-container .loading-content.data-v-a06635b4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.order-container .loading-container .loading-content .loading-spinner.data-v-a06635b4 {
+  width: 40rpx;
+  height: 40rpx;
+  border: 3rpx solid #f3f4f6;
+  border-top: 3rpx solid #EE781F;
+  border-radius: 50%;
+  -webkit-animation: spin-data-v-a06635b4 1s linear infinite;
+          animation: spin-data-v-a06635b4 1s linear infinite;
+  margin-bottom: 20rpx;
+}
+@-webkit-keyframes spin-data-v-a06635b4 {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+@keyframes spin-data-v-a06635b4 {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+.order-container .loading-container .loading-content .loading-text.data-v-a06635b4 {
+  font-size: 28rpx;
+  color: #6D7278;
+}
+.order-container .notice.data-v-a06635b4 {
+  margin-top: 66rpx;
+  padding: 0 24rpx 126rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #6D7278;
+  line-height: 34rpx;
+  text-align: left;
+  font-style: normal;
+}
+.order-container .order-hotel-box.data-v-a06635b4 {
+  background: #FFFFFF;
+  border-radius: 28rpx;
+  margin: 28rpx 28rpx 0;
+  padding-bottom: 42rpx;
+  position: relative;
+  z-index: 2;
+}
+.order-container .order-hotel-box .hotel-title.data-v-a06635b4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  line-height: 1.5;
+  /* 相对单位更安全，避免文字裁切 */
+  color: #19191A;
+  text-align: left;
+  font-style: normal;
+  padding: 34rpx 28rpx 22rpx 28rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* 限制两行 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  /* 避免中文字被硬拆 */
+  white-space: normal;
+  /* 保证多行换行生效 */
+}
+.order-container .order-hotel-box .hotel-desc.data-v-a06635b4 {
+  font-size: 24rpx;
+  color: #aeb2b8;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 28rpx;
+}
+.order-container .order-hotel-box .hotel-desc .map-icon.data-v-a06635b4 {
+  width: 36rpx;
+  height: 36rpx;
+  background: url(data:image/png;base64,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) no-repeat center;
+  background-size: 100% 100%;
+  margin-right: 10rpx;
+  flex-shrink: 0;
+}
+.order-container .order-hotel-box .hotel-desc .hotel-desc-text.data-v-a06635b4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #6D7278;
+  line-height: 28rpx;
+  text-align: left;
+  font-style: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  padding-right: 20rpx;
+}
+.order-container .order-hotel-box .line.data-v-a06635b4 {
+  height: 1rpx;
+  background: #E8E9EB;
+  margin: 38rpx 28rpx;
+}
+.order-container .order-hotel-box .order-date-row.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 28rpx;
+}
+.order-container .order-hotel-box .order-date-row .date-left.data-v-a06635b4, .order-container .order-hotel-box .order-date-row .date-right.data-v-a06635b4 {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.order-container .order-hotel-box .order-date-row .date-left .date-main.data-v-a06635b4, .order-container .order-hotel-box .order-date-row .date-right .date-main.data-v-a06635b4 {
+  font-size: 32rpx;
+  color: #19191A;
+  font-weight: 600;
+}
+.order-container .order-hotel-box .order-date-row .date-left .date-week.data-v-a06635b4, .order-container .order-hotel-box .order-date-row .date-right .date-week.data-v-a06635b4 {
+  font-size: 22rpx;
+  color: #6D7278;
+  margin-left: 8rpx;
+  font-weight: 400;
+}
+.order-container .order-hotel-box .order-date-row .nights-tag.data-v-a06635b4 {
+  position: relative;
+  border-radius: 28rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20rpx;
+  text-align: center;
+  font-style: normal;
+  color: #6D7278;
+  padding: 6rpx 10rpx;
+  margin: 0 40rpx;
+  box-sizing: border-box;
+}
+.order-container .order-hotel-box .order-date-row .nights-tag.data-v-a06635b4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 28rpx;
+  border: 1rpx solid #A2A2A8;
+  pointer-events: none;
+  box-sizing: border-box;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+.order-container .order-hotel-box .order-date-row .nights-tag.data-v-a06635b4::after {
+    border-width: 0.5px;
+}
+}
+.order-container .order-hotel-box .order-room-row.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+  margin-top: 24rpx;
+  padding: 0 28rpx;
+}
+.order-container .order-hotel-box .order-room-row .room-type.data-v-a06635b4 {
+  font-size: 28rpx;
+  color: #19191A;
+  font-weight: 500;
+}
+.order-container .order-hotel-box .order-room-row .room-divider.data-v-a06635b4 {
+  width: 2rpx;
+  height: 28rpx;
+  background: #E8E9EB;
+  margin: 0 18rpx;
+}
+.order-container .order-hotel-box .order-room-row .bed-count.data-v-a06635b4 {
+  font-size: 28rpx;
+  color: #19191A;
+  font-weight: 500;
+}
+.order-container .early-morning-tip.data-v-a06635b4 {
+  margin-top: -20rpx;
+  margin-left: 28rpx;
+  margin-right: 28rpx;
+  padding: 42rpx 18rpx 16rpx 20rpx;
+  border-radius: 0 0 28rpx 28rpx;
+  border: 1rpx solid #F7DFC1;
+  background: linear-gradient(180deg, #FFEBD7 0%, #FDF6ED 100%);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 1;
+}
+.order-container .early-morning-tip .early-morning-tip-icon.data-v-a06635b4 {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+  position: relative;
+  top: 6rpx;
+}
+.order-container .early-morning-tip .early-morning-tip-text.data-v-a06635b4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #B7560C;
+  line-height: 34rpx;
+  text-align: left;
+  font-style: normal;
+}
+.order-container .form-title.data-v-a06635b4 {
+  font-size: 32rpx;
+  color: #19191a;
+  font-weight: 600;
+  margin: 32rpx 24rpx 0 24rpx;
+  text-align: left;
+}
+.order-container .order-form-box.data-v-a06635b4 {
+  background: #fff;
+  border-radius: 24rpx;
+  margin: 24rpx 24rpx 0 24rpx;
+  padding: 32rpx 24rpx;
+}
+.order-container .order-form-box .form-row.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56rpx;
+  position: relative;
+}
+.order-container .order-form-box .line-group .form-row.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56rpx;
+  position: relative;
+}
+.order-container .order-form-box .line-group .order-row-line.data-v-a06635b4 {
+  height: 1rpx;
+  background: #E8E9EB;
+  margin: 36rpx 0 32rpx 0;
+}
+.order-container .order-form-box .order-row-line.data-v-a06635b4 {
+  height: 1rpx;
+  background: #E8E9EB;
+  margin: 36rpx 0 32rpx 0;
+}
+.order-container .order-form-box .form-label.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #19191A;
+  text-align: left;
+  font-style: normal;
+}
+.order-container .order-form-box .form-label .required.data-v-a06635b4 {
+  color: #ee781f;
+  margin-left: 4rpx;
+  font-size: 24rpx;
+}
+.order-container .order-form-box .form-label .info-text.data-v-a06635b4 {
+  font-size: 28rpx;
+  color: #19191A;
+  font-weight: 400;
+}
+.order-container .order-form-box .form-label .info-icon.data-v-a06635b4 {
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 8rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAANCAYAAACdKY9CAAAAAXNSR0IArs4c6QAAAUxJREFUKFONUrFKA0EQnbd7QbARbCyEYGtjdZIEERTSiYWVQgotBLXzC/wGOxUsFA1IGhG1CyhY3IVLbytBCwsDNoKcu0/22IMlWLjFsryZ997szED8IamTJGkqpVok5x0MILPWthuNRheAKTB39fv98TzPDwFsl1gpJCIkeVqpVPbjOP4CSfR6vSMR2QmSnv17NsBOarXaHrIsWzDGPIXKANZcIsnr0ElrvYgkSS4BtIKAFZEhSQVgMsCdQBtpmr6KyHQQuCB5EEXRnDHmJiSIyJsj5CISjSgt+y49jBB+XEkff1j/SSA5dA53IrLyT4d757AO4KokAPgm2fQldUmOBcPdQKfT0dVqtSsiSz6pba09c2+l1BbJsoOPg8GgWUw6TdMpALflSox8tFgRkqv1ev29IPj1mDDG7JLcFJEZD78AONdaH8dx/OmwXwvynCtCmTKMAAAAAElFTkSuQmCC) no-repeat center;
+  background-size: 100% 100%;
+  display: inline-block;
+  position: relative;
+  top: 4rpx;
+}
+.order-container .order-form-box .form-input.data-v-a06635b4 {
+  flex: 1;
+  text-align: right;
+  border: none;
+  background: transparent;
+  font-size: 28rpx;
+  color: #19191a;
+}
+.order-container .order-form-box .form-input.data-v-a06635b4::-webkit-input-placeholder {
+  color: #aeb2b8;
+  font-size: 28rpx;
+}
+.order-container .order-form-box .form-input.data-v-a06635b4::placeholder {
+  color: #aeb2b8;
+  font-size: 28rpx;
+}
+.order-container .order-form-box .bed-count-ctrl.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+}
+.order-container .order-form-box .bed-count-ctrl .bed-btn-img.data-v-a06635b4 {
+  width: 48rpx;
+  height: 48rpx;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAABACAYAAACunKHjAAAAAXNSR0IArs4c6QAABJdJREFUeF7tnD2MG0UUx/9vLe+M7/BxAiwKKBKQEkGAJqFD6YCCCgGKxIe4i4AOkCCQjgS6AIkEdCDlgiBIESAqCqCL0hEayIFyEiQFFMgBXc7ceWat3YfHrE/rPX/u2uc9dqa05+Ptb9/MvPfmzRK2odRqtYrrugeDINjnOM6eIAj2EtHNAMpEVDYiMHMNQI2Z/3Ic53IQBCuO4yx7nne+XC5XJy0mTWqA9fX1/YVC4UkADwK4B0DSsRjAJQDf+b7/2ezs7A+TkDmpcF1lqVar5XK5/AIRLTLzvokITLTMzEu1Wu3DSqVitGgsZSwgmHne87yXAbzEzDeNRbIBnRDR3wDed133PSJaTTtmKhDMTI1G41nf998mokpaYZK0Z+ZqoVB4vVgsfkxEZholKolBKKXuBHAGwAOJRh5/owsAFqSUvybpOhGIjY2NJxzH+QjAjUkGnWCb60T0nBDii1HHGAmEmQpa63cAvJJiFxhVxlHrm+lxSgjx2ihTZWgQzFz0PG+JmZ8aVbJp1Ceis67rLhJRY5jxhwJhIGitvwLwyDCdZqjO10KIR4eBMRCEmQ6e532yUzQh/hJCzXhm0DQZCEIp9W7T9H01Q285iSgnpZRH+jXsCyLcHc5leGEcFgoHQXBoZmbm814NeoII7QRj12dtixz24eP1rgPY38vO6Aoi3CbPZ8hYSvrw8XYXhBAHu60XXUHU63Wz7Zwe1+hZ6oeZD5dKpaUti2r8B+NAKaVWpuU7TBqa8U2klHvijtoWjdBaH2Pm45MWaJr9E9FxIcSbURk6QJh4wtzc3NXtcqWnBcO48Gtra7ui8YwOEEopYy8YuyEP5YiU8mT7QeMglgHcnQcKRLTc9FJNCLFVNkGEMcaLeYDQfkbf9w+0Y6CbIJRSRk2Me52nckpK2XIfoiB+BHBvnigA+ElKed8mCHPuUCwW//wf+BSjvkduNBq3mnOTlkZorR9j5pHDW6OOmsX6RPS4EOLLFoh6vf4GEXUYGFkUehIyMfOxUqn0VhvEWSIyp1K5KyZwI4R4ug3ieyI6kDsK/525XiyVSve3QCilrjTPKHblEUTzLOSqlHJ3G4Q5bb4lLYhg9Xc0vjkBXv0jbVd929P8bSg+fBTO/O3jGOealLLS3jUUM4u0vepzL8L/5du03QzVvnDXQxCHPhiqbr9KRKSFENKCiIJQStmpES6WvwHYnVrPdmYHV6SUd9jtM7p9aq0/3aknWWmVMG5QWRPbOl0Rp8u64aEbHu4cNjATgrChOgPCBm8j+4/W+tKkEkXTbnPjbt8znB9OD3vAY0DYI7/O6WEPgQ0PmxYQ0QrP8xaCINiSTDHuBWsa/TmOs+i6rkmd7ig2dSjEYZPJBoEw/9v0wsjssQmnIQybghzRCpuUHoOR+2sKbR724krM+MjyVaYgCJ7vl3zey4gbeE2hV0N7ua1z3SCl1AKAE9NKWTYpxc1cl6NSyjODLqf0M+kTa0S009xfgI0Tbl+JBnB4gomrPwM4nckr0d1ULteX5HvNwehnEwDsBWCuCZjElBtin034h5mvAVgBcHk7P5vwL1XLYl+c9ndeAAAAAElFTkSuQmCC);
+  background-size: cover;
+  background-position: center;
+  margin: 0 12rpx;
+}
+.order-container .order-form-box .bed-count-ctrl .bed-btn-img.plus.data-v-a06635b4 {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAABACAYAAACunKHjAAAAAXNSR0IArs4c6QAABNxJREFUeF7tnE1sG0UUx/9vLe+MExwiqIUQHFqQWkGAS8sN9QYcOPGlSnyIpOLjBEhQ6I0WbgWKBJwAqSmCIlV8nTgAt6o3ygUaUCOV9gBClQNKYxLPruV5eMw6Wm9sr72214syc7R35r39+c3Me/PemJBCq1QqJdd192ut5xzH2a213kNE1wMoElHRqMDMFQAVZv7LcZwLWutlx3GWfN8/UywWy+NWk8YlYH19fW8ul3sMwL0A7gCQVBYDOA/g+3q9/tn09PSP49A5qXIddSmXy8VisfgsES0w89xYFCZaYubFSqXyYalUMlY0kjYSEMw86/v+iwBeYObrRqJZzCBE9DeA91zXfZeIVoeVORQIZqZarfZUvV5/k4hKwyqTpD8zl3O53Kv5fP5jIjLTKFFLDEIpdSuAkwDuSSR59J3OApiXUl5MMnQiEBsbG486jvMRgGuTCB1jn6tE9LQQ4otBZQwEwkwFz/PeAvDSELvAoDoO+ryZHu8IIV4ZZKr0DYKZ877vLzLz44NqNonnieiU67oLRFTrR35fIAwEz/O+BvBAP4Nm6JlvhBAP9gMjFoSZDr7vf/J/sYTojxBYxpNx0yQWhFLq7Ybr+3KGfuUkqhyXUh7q1bEniGB3OJ3hhbFfKKy1PjA1NfV5tw5dQQR+gvHrs7ZF9vvy0eeuAtjbzc/oCCLYJs9kyFlK+vLRfmeFEPs7rRcdQVSrVbPtnBiV9CyNw8wHC4XC4pZFNfqBCaCUUsuTih3GDc3EJlLK3dFAbYtFeJ53hJmPjluhSY5PREeFEK+HdWgDYc4TZmZmLqcVSuvV31H79lhTn/z9h+HM3pwKHxPCr62t7QyfZ7SBUEoZf8H4Dak07/TzqP/6XVNW7rb7IA68n4rcQMghKeXxlsAoiCUAt6eljfrgIeg/jUjAuXEO8rmv0hINIlpqRKnmCLHZNkEEZ4znUtMEwCRBmPes1+v7WmegmyCUUsZMTHidWps0CBOuSymb4UMYxE8A7kyNQgYsAsDPUsq7NkGYvEM+n7+SdkyRAYvgWq12g8mbNC3C87yHmXng461hrScDIMyi+YgQ4ssmiGq1+hoRtTkYw75kP/2zAIKZjxQKhTdaIE4RkclKpdqyAMIc3AghnmiB+IGI9qVKIRuLpcm5nisUCnc3QSilLjVyFDu3I4hGLuSylHJXC4TJNu8YFkQrduDVP/oaSq9cBGrqv2fzEs4OkzOKbzR70yhjkxUpZam1ayhmFvEq9H4iHDsMO1Zc/1HFJkTkCSGkBREGoZSyUyNYLH8DsCvOHEf9fRa2TwCXpJS32O0zvH16nvfpJDJZWbCIqENlXWwbdIWCLhuGB2F4sHPYg5kAhD2qMyDs4W3IS/I87/y4CkU7OWOT3D67HucH08MmeAwIm/Jrnx42CWx42LKAkFX4vj+vtd5STDHq6HMS4zmOs+C6rimdbmu2dCjAYYvJ4kCY7215YWj22ILTAIYtQQ5ZhS1Kj8DY9tcUWjzsxZWI85Hlq0xa62d6FZ93c+Jiryl062gvt7WvG6SUmgdwbFIly6akuFHrclhKeTLuckovlz6xRYQH3fYXYKOEW1eiARwcY+HqLwBOZPJKdCeT29aX5LvNwfDfJgDYA8BcEzCFKddE/jbhH2ZeAbAM4EKaf5vwL6is/F/tXhBgAAAAAElFTkSuQmCC);
+}
+.order-container .order-form-box .bed-count-ctrl .bed-btn-img.disabled.data-v-a06635b4 {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAABACAYAAACunKHjAAAAAXNSR0IArs4c6QAABJFJREFUeF7tnE2IHEUUx/+vh+mq2bU3QR2CiJhESMBEL4k3yc2TJ1ER/MDdoB4VNNGbid78SECPCtmIRhAVT568hdyMF80KWTCJiEiYKMmOu1PVw/TL1Niz9PTO7Mx0T+/02lXH3a6q1795VfW+qglb0Or1etV13SNBEBxwHGdfEAT7ieguAB4ReUYEZq4DqDPz347jXA6CYNlxnCXf9897nlfLWkzKaoLV1dVDpVLpWQCPATgIIOlcDOASgB9ardaXs7OzP2Uhc1Lh+spSq9U8z/NeIaIFZj6QicBES8y8WK/XP6lWq0aLJtImAoKZd/q+/xqAV5n5zolINmQQIvoHwMeu635ERDfTzpkKBDNTs9l8sdVqvU9E1bTCJOnPzLVSqfRmuVz+jIjMMkrUEoNQSj0A4CyARxPNPPlOFwDMSyl/SzJ0IhBra2tPO47zKYAdSSbNsM8tInpJCPHNuHOMBcIsBa31BwBeT3EKjCvjuM+b5XFaCHF8nKUyMghmLvu+v8jMz40r2TSeJ6JzrusuEFFzlPlHAmEgaK2/A/D4KIPm6JnvhRBPjAJjKAizHHzf/3y7aEL8Rwg144Vhy2QoCKXUh23T940c/cpJRDklpTy2WcdNQYSnw1c53hhHhcJBEDwzMzPz9aAOA0GEdoKx6/N2RI768vHnbgE4NMjO6AsiPCbP58hYSvry8X4XhBBH+u0XfUE0Gg1z7JyZ1Ox5GoeZj1YqlcUNm2r8D8aBUkotT8t3yBqa8U2klPvijtoGjdBan2Dmk1kLNM3xieikEOKdqAw9IEw8YW5u7tpWudLTgmFc+JWVld3ReEYPCKWUsReM3VCEdkxKear7onEQSwAeLAIFIlpqe6kmhNhp6yDCGOPFIkDovmOr1TrcjYGug1BKGTUx7nWR2mkpZcd9iIL4GcBDRaIA4Bcp5cPrIEzeoVwuX/8f+BTj/o7cbDZ3mbxJRyO01k8y89jhrXFnzePzRPSUEOLbDohGo/E2EfUYGHkUOguZmPlEpVJ5twviHBGZrFThmgncCCGe74L4kYgOF47CfznXi5VK5ZEOCKXU1XaOYncRQbRzIdeklHu6IEy2+e60ILTv48/rf8Fv+mmH2rS/W3Zx7657IFx3EvPckFJWu6eGYmaRdtQrf/yOm3UTCMq+7fR2YO9996eeiIi0EEJaEFEQSim7NMLN8gqAPan1bHsOcFVKudcen9HjU2v9xXbNZKVVwrhBZU1s63RFnC7rhodueHhy2MBMCMKG6gwIG7yNnD9a60tZFYqmPeYm3X9gOD9cHjbBY0DYlF/v8rBJYMPDlgVEtML3/fkgCDYUU0x6w5rGeI7jLLiua0qne5otHQpx2GKyYSDM/215YWT12ILTEIYtQY5ohS1Kj8Eo/DWFLg97cSVmfOT5KlMQBC9vVnw+yIgbek1hUEd7ua133yCl1DyA96ZVsmxKitu1Lm9JKc8Ou5yymUmfWCOigxb+AmyccPdKNICjGRau/grgTC6vRPdTuUJfkh+0BqOfTQCwH4C5JmAKU+6IfTbhX2a+AWAZwOWt/GzCbZy6Yl8U8cUvAAAAAElFTkSuQmCC);
+  pointer-events: none;
+  opacity: 0.5;
+}
+.order-container .order-form-box .bed-count-ctrl .bed-btn-img.plus.disabled.data-v-a06635b4 {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABKFJREFUeF7tW02IHEUU/l4P0127a2+COgQRMUZMJFEvyVFy8+RJVARF3A3qUcEkejPx6E8EPSpkIxpBFDx58hZyM140K2bFTUREwkRJtt2d6hqmXvbt9iyzs/PT89fTUlOngal679XXr+r91HuEEY8oikq+7x+11h7yPG+/tfYAEd0FICSiUNgzcwQgYuZ/PM+7Yq1d8jxv0RhzIQzD8ihFpFEQX11dPVwoFJ4H8ASARwD0y4cBXAbwfa1W+3JmZubHYcvbr2A75CiXy2EYhq8S0TwzHxq2oEKPiBaZeSGKok9KpZJozcBjYACYebcx5nUArzHznQNLlIIAEf0L4GPf9z8iopsplrSd0jcAzEzVavWlWq32HhGVBhGi37XMXC4UCm8Wi8XPiEiOS8+jLwC01g8COAfg8Z45jmbBRQBzSqnfeyXfMwBra2vPep73KYBdvTIb8fxbRPRyEATf9MInNQCi8nEcvw/gjQFu9V5k62euHIMPgyA4mfZIpAKAmYvGmAVmfqEfqbJeQ0Tnfd+fJ6JqN95dAZDNx3H8LYAnuxHL2f/fBUHwVDcQOgIgam+M+fz/8uWbP0CiCS92Og4dAdBaf7Duoh7P2ZftVZwzSqkT7Ra1BSC57b/K8YWXFgi21j43PT39dasFLQFI7Lz43XkzdWk33TzvFoDDrfyEHQAk5u5CjpycfjfdvO5iEARHm++DHQBUKhUxH2eHxTVPdJj52NTU1EKjTNsAkMBGa700Lt9+1GBJ7KCU2t8YQG0DII7jU8x8etSCjJM+EZ0OguCdugxbAEg8Pzs7ey2rkDY2Bn9d/3tDjnv33IPA9zPBRULplZWVvfV8whYAWmux92L3MxnLf/6Bm5FczsDucBf23Xd/JnwTJieUUmfkdyMAiwAOZiXFr8u/YU1XNthNqyk8vO+hrFhvZJbWo0ZJ1W0CkOTwLmUmAYBxAiD7rNVqRyTHuAGA1lrUQcLczMa4AZCwWSl1vA7ATwAezWz3OdAAAD8rpR4jydsXi8XrWfv8OdAArlareyTL8zQz95RGGoam5AAAuQyfoUql8jYRbTkGw9hcGhp5AICZTwkA54lIXnEyHXkAQBImAsAPRHQk093n4xKUN8lLpLW+up7j3+siAOtvCdcEAHl9vXtQAOq+vamaVKR0rGF58zHHI4IKVKp1ftEfZuxwQ6yAZuYgFfcOkxp9+0FpdVs/rNiBiOIJAM4fAa31MoAHuqndsP/PgxkEcHViBuM4/mIcLz950IC6I+S2K+x8MOR8OJxkhNxNiExSYpOk6KaLE8fx5VEVOLZyosZpBnekxZNj4PbDiPNPY8kxcPdxVABw/nlcQDDGzFlrtxURDDsSHBc9z/Pmfd+XEt+tMSmRafU1nC6SqgPidJlcHQSnCyUTq+B2qWwCgrvF0vWj4HS5fAMI7jZMNJrKPLfMWGtfaVcU3c756tow0cFPcLNpqvFIaK3nALw7rtJaKX0F8JZS6lzaHqHmD9qXBjQScbZxshnJeussgGMjLLj8BcDZXLXOtrojnGyebnfLNrbPAzgAQMrVpSDjjqb2+f+Y+QaAJQBXsmqfvw04k/b0NXiWPwAAAABJRU5ErkJggg==);
+}
+.order-container .order-form-box .bed-count-ctrl .bed-num.data-v-a06635b4 {
+  font-size: 28rpx;
+  color: #19191a;
+  width: 48rpx;
+  text-align: center;
+}
+.order-container .order-form-box .arrive-time-group.data-v-a06635b4 {
+  display: flex;
+  flex-direction: column;
+  gap: 28rpx;
+  margin-left: 0;
+  margin-top: 40rpx;
+}
+.order-container .order-form-box .arrive-time-group .arrive-time-row.data-v-a06635b4 {
+  display: flex;
+  gap: 24rpx;
+  margin-bottom: 0;
+}
+.order-container .order-form-box .arrive-time-group .arrive-time-btn.data-v-a06635b4 {
+  border-radius: 8rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #19191A;
+  line-height: 24rpx;
+  text-align: left;
+  font-style: normal;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+  background: #F3F7FA;
+  padding: 16rpx 22rpx;
+}
+.order-container .order-form-box .arrive-time-group .arrive-time-btn.active.data-v-a06635b4 {
+  background: #EE781F;
+  color: #fff;
+}
+.order-container .order-form-box .form-row-vertical.data-v-a06635b4 {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.order-container .order-form-box .form-row-vertical .form-label-row.data-v-a06635b4 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.order-container .order-fee-box.data-v-a06635b4 {
+  background: #fff;
+  border-radius: 24rpx;
+  margin: 28rpx 24rpx 0;
+  padding: 34rpx 24rpx 38rpx;
+  /* 新增每日明细表格样式 */
+}
+.order-container .order-fee-box .fee-row.data-v-a06635b4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  margin-bottom: 40rpx;
+}
+.order-container .order-fee-box .fee-row .free-coupon.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+.order-container .order-fee-box .fee-row text.data-v-a06635b4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #19191A;
+  line-height: 28rpx;
+  text-align: left;
+  font-style: normal;
+}
+.order-container .order-fee-box .fee-row .price.data-v-a06635b4 {
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #19191A;
+  line-height: 28rpx;
+  text-align: right;
+  font-style: normal;
+}
+.order-container .order-fee-box .fee-row .fee-discount.data-v-a06635b4 {
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #EE781F;
+  line-height: 28rpx;
+  text-align: right;
+  font-style: normal;
+}
+.order-container .order-fee-box .fee-row .fee-disable.data-v-a06635b4 {
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #A2A2A8;
+  line-height: 28rpx;
+  text-align: right;
+  font-style: normal;
+}
+.order-container .order-fee-box .fee-row.fee-total.data-v-a06635b4 {
+  font-weight: 600;
+  font-size: 32rpx;
+}
+.order-container .order-fee-box .fee-row.fee-total text.data-v-a06635b4 {
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #19191A;
+  text-align: left;
+  font-style: normal;
+}
+.order-container .order-fee-box .fee-row.fee-total .currency.data-v-a06635b4 {
+  font-size: 24rpx;
+}
+.order-container .order-fee-box .fee-row.fee-total .fee-total-num.data-v-a06635b4 {
+  color: #19191A;
+  font-size: 40rpx;
+}
+.order-container .order-fee-box .fee-row.data-v-a06635b4:last-child {
+  margin-bottom: 0;
+}
+.order-container .order-fee-box .fee-detail-table.data-v-a06635b4 {
+  margin-bottom: 40rpx;
+  background: #F3F4F6;
+  border-radius: 24rpx;
+  padding: 24rpx 28rpx;
+}
+.order-container .order-fee-box .fee-detail-table .fee-detail-header.data-v-a06635b4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 20rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #19191A;
+  line-height: 28rpx;
+  text-align: left;
+  font-style: normal;
+  padding-bottom: 24rpx;
+  border-bottom: 1rpx solid #E8E9EB;
+}
+.order-container .order-fee-box .fee-detail-table .fee-detail-row.data-v-a06635b4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 20rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #19191A;
+  line-height: 28rpx;
+  text-align: left;
+  font-style: normal;
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid #E8E9EB;
+}
+.order-container .order-fee-box .fee-detail-table .fee-detail-row.data-v-a06635b4:last-child {
+  border-bottom: none;
+}
+.order-container .pay-title.data-v-a06635b4 {
+  width: 192rpx;
+  height: 32rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #19191A;
+  line-height: 32rpx;
+  text-align: left;
+  font-style: normal;
+  margin: 40rpx 28rpx 0 28rpx;
+}
+.order-container .pay-method-section.data-v-a06635b4 {
+  background: #FFFFFF;
+  border-radius: 28rpx;
+  margin: 28rpx 24rpx 0;
+  padding: 28rpx 28rpx 32rpx 28rpx;
+}
+.order-container .pay-method-section .pay-method.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+}
+.order-container .pay-method-section .pay-method.data-v-a06635b4:last-child {
+  border-bottom: none;
+}
+.order-container .pay-method-section .pay-method .icon.data-v-a06635b4 {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.order-container .pay-method-section .pay-method .text.data-v-a06635b4 {
+  flex: 1;
+  height: 28rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #19191A;
+  line-height: 28rpx;
+  text-align: left;
+  font-style: normal;
+}
+.order-container .pay-method-section .line.data-v-a06635b4 {
+  height: 1rpx;
+  background: #E8E9EB;
+  margin-top: 30rpx;
+  margin-bottom: 26rpx;
+}
+.order-container .order-bottom-fixed.data-v-a06635b4 {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 100vw;
+  padding-bottom: 66rpx;
+  background: #fff;
+}
+.order-container .order-bottom-fixed .order-agree-bar.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(266deg, #FFFFFF 0%, #FFFFFF 20%, #FBE9DD 100%);
+  padding: 20rpx 42rpx;
+}
+.order-container .order-bottom-fixed .order-agree-bar .agree-text.data-v-a06635b4 {
+  flex: 1;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #969799;
+  text-align: left;
+  font-style: normal;
+  line-height: 40rpx;
+  white-space: normal;
+  word-break: break-all;
+}
+.order-container .order-bottom-fixed .order-agree-bar .agree-text .agree-link.data-v-a06635b4 {
+  color: #EE781F;
+}
+.order-container .order-bottom-fixed .order-bottom-bar-new.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 0 0 16rpx 16rpx;
+  padding: 40rpx 32rpx 48rpx 32rpx;
+}
+.order-container .order-bottom-fixed .order-bottom-bar-new .order-bottom-left.data-v-a06635b4 {
+  display: flex;
+  flex-direction: column;
+}
+.order-container .order-bottom-fixed .order-bottom-bar-new .order-bottom-left .bottom-label.data-v-a06635b4 {
+  font-size: 26rpx;
+  color: #19191A;
+  margin-bottom: 8rpx;
+}
+.order-container .order-bottom-fixed .order-bottom-bar-new .order-bottom-left .bottom-amount.data-v-a06635b4 {
+  display: flex;
+  align-items: flex-end;
+}
+.order-container .order-bottom-fixed .order-bottom-bar-new .order-bottom-left .bottom-amount .bottom-currency.data-v-a06635b4 {
+  font-size: 24rpx;
+  color: #EE781F;
+  margin-right: 2rpx;
+}
+.order-container .order-bottom-fixed .order-bottom-bar-new .order-bottom-left .bottom-amount .bottom-num.data-v-a06635b4 {
+  font-size: 40rpx;
+  color: #EE781F;
+  font-weight: 600;
+  line-height: 1;
+}
+.order-container .order-bottom-fixed .order-bottom-bar-new .order-bottom-btn.data-v-a06635b4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  line-height: 32rpx;
+  text-align: center;
+  font-style: normal;
+  background: #EE781F;
+  border: none;
+  border-radius: 50rpx;
+  padding: 30rpx 46rpx;
+}
+.order-container .order-bottom-fixed .order-bottom-bar-new .order-bottom-btn.disabled.data-v-a06635b4 {
+  background: #EE781F;
+  opacity: 0.3;
+  color: #fff;
+}
+.late-arrive-row.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.late-arrive-radio.data-v-a06635b4 {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  border: 2rpx solid #ee781f;
+  margin-right: 12rpx;
+  background: #fff;
+  position: relative;
+}
+.late-arrive-radio.checked.data-v-a06635b4 {
+  background: #ee781f;
+  border-color: #ee781f;
+}
+.late-arrive-radio.checked.data-v-a06635b4:after {
+  content: "";
+  display: block;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.late-arrive-text.data-v-a06635b4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #19191A;
+  text-align: left;
+  font-style: normal;
+}
+.coupon-popup-mask.data-v-a06635b4 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(25, 25, 26, 0.6);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.coupon-popup.data-v-a06635b4 {
+  width: 100vw;
+  background: #F3F4F6;
+  border-radius: 28rpx 28rpx 0 0;
+}
+.bed-picker-header.data-v-a06635b4 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 42rpx 22rpx 40rpx;
+}
+.coupon-popup-title.data-v-a06635b4 {
+  flex: 1;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 40rpx;
+  color: #19191A;
+  line-height: 40rpx;
+  font-style: normal;
+}
+.close-icon.data-v-a06635b4 {
+  position: absolute;
+  right: 22rpx;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 34rpx;
+  height: 32rpx;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAgCAYAAAB3j6rJAAAAAXNSR0IArs4c6QAAA4hJREFUWEfN11tvE0cUB/D/2Y1NYpMESFEkqFKKXMcY5WIMDVBoKyV2wuUVeOKb8MAD36RPhVcI5FLEtU0KxgkIk7gWpVGLFNHQxKkvWXv3oLWxM7F3vbuYh/h1xjO/OXPOzCxhm/xomziwvSG+4ECIWL6SWaPLb9/Gsp8rar29ve0se68z6OofidisOG5dRPz+0ABk+gWELma+l36vnl9efp5pFuPz+TrI1X6HiE4wY40kLZJ8OfekMm49JHhkGsBwpQOD76db1HPLzz8dIyKqC2KeSr6KR80h/vAXaNGmARoQMA9WsXHuXSLxv9PIGCLAT5QsR9+8mVs1hegNgUCgS5PadMyggHm4io2zTjAfERNEdHxzAfUIvc20avYHAl0eqW2atmDwyIX8mYSNyJQQ7vYJgjWiIURv/DIY3NOG1mkCQsKWPCI1c3ZxcXHdbJt8vqEOciu2EZYQATNFwBEhvI9JzZ4xwpQRhQkCLLejYfkarbKnr2/3DtWlY8JC1v9KWnZMxBw8GO6UW1lHDFnlRO08tk/WEqbomiLaxDDzb1xYH0ulUulmELa2RpT39PTtbvW2TILoaLWamGc0uXBR0tw3xEgw+Hc1L0Vfv46t2Sl52xGpDHbgwOAut4cmATomhF8ByC2UuiOE44g0xpRbnUai4YFmJ5RfHwp95SJKAqhGAoBSYPb/+Sr+l50xHFdN7aDlxNQmCfRt/YTGJ6cVzHGOGCN4S46A+amS44h4l3xWyMdEnYAQCQZmNUm5IKmun/UrXjhnnuYzxejS0ov/rBCOktWoWnSEmqdRvUSNbllmxDZaCpGlF9YYW1tjhaisuPQCkzx3QHRys5TxLId85O9E4n2jyFhCzBCsuKKp1Gy6dvDyc9BzG6DvBEw8h/xII0xDiAlihhXXqBFiS2Rk7ziAU3YxphBjBM+wsj6q3y1WCbg3GNy5C63jBJwWTty5rJYb+WdhYaX2/4aQZhGVScqYHeMEqmIAnpe03PBCDaYOYohgnuGCvUjUrrS7v9/bUZR1zPdC2zyKNJJMxv41PeL9h0L67RqphlO46q22w6y9hCnIt4joB6HP3WTiWfVrof5z4vDgMdYk/d3RKb43PhVR+V93d7+3Y498k4h+BGMFKg8nk/H5hpfeN8HwEIGvakr6kp3EtIvcty/s8XbyT0zqtVRiPt70pWd3Yif9LA80J4M10/cD9K/lMPSh5CYAAAAASUVORK5CYII=);
+  background-size: cover;
+  background-position: center;
+  align-items: flex-end;
+  cursor: pointer;
+}
+.coupon-list.data-v-a06635b4 {
+  max-height: 750rpx;
+  overflow-y: auto;
+}
+.coupon-card.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+  /* 垂直居中 */
+  justify-content: space-between;
+  /* 两边分布 */
+  position: relative;
+  margin: 0 24rpx 20rpx 24rpx;
+}
+.coupon-item.data-v-a06635b4 {
+  flex: 1;
+  /* 占满剩余空间 */
+  display: flex;
+  align-items: center;
+  height: 200rpx;
+  margin: 0 12rpx 0 12rpx;
+  background-image: url("https://www.zxd-hotel.xin/zxdhotel/icon/select-pack@2x.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 28rpx;
+}
+.coupon-item .coupon-tag-expired.data-v-a06635b4 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 124rpx;
+  height: 124rpx;
+  background-image: url("https://www.zxd-hotel.xin/zxdhotel/icon/dq@2x.png");
+  background-size: cover;
+  background-position: center;
+}
+.coupon-item .coupon-tag-expired-text.data-v-a06635b4 {
+  position: absolute;
+  right: 5rpx;
+  top: 35rpx;
+  width: 124rpx;
+  height: 124rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #000000;
+  line-height: 17px;
+  text-align: left;
+  font-style: normal;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.coupon-radio.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.custom-radio.data-v-a06635b4 {
+  width: 36rpx;
+  height: 36rpx;
+}
+.custom-radio-min.data-v-a06635b4 {
+  width: 24rpx !important;
+  height: 24rpx !important;
+}
+.coupon-amount-box.data-v-a06635b4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 120rpx;
+  position: absolute;
+  left: 38rpx;
+}
+.coupon-amount.data-v-a06635b4 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 60rpx;
+  margin-bottom: 8rpx;
+}
+.rmb.data-v-a06635b4 {
+  font-size: 28rpx;
+  color: #F57C1F;
+  font-weight: 500;
+  margin-right: 2rpx;
+  line-height: 1;
+}
+.amount-num.data-v-a06635b4 {
+  font-size: 56rpx;
+  color: #F57C1F;
+  font-weight: 700;
+  line-height: 1;
+}
+.desc_b.data-v-a06635b4 {
+  margin-bottom: 18rpx;
+}
+.desc_l.data-v-a06635b4 {
+  margin-bottom: 16rpx;
+}
+.coupon-limit.data-v-a06635b4, .coupon-expire.data-v-a06635b4 {
+  height: 24rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #6D7278;
+  line-height: 24rpx;
+  text-align: left;
+  font-style: normal;
+}
+.coupon-info.data-v-a06635b4 {
+  width: 580rpx;
+  height: 180rpx;
+  margin: 10rpx 20rpx;
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+.coupon-info .coupon-info-l.data-v-a06635b4 {
+  width: 360rpx;
+  height: 100%;
+  position: relative;
+  left: 25rpx;
+}
+.coupon-info .coupon-info-l .coupon-info-l-title.data-v-a06635b4 {
+  position: absolute;
+  top: 30rpx;
+  height: 32rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #19191A;
+  line-height: 32rpx;
+  text-align: left;
+  font-style: normal;
+}
+.coupon-info .coupon-info-l .coupon-info-l-time.data-v-a06635b4 {
+  position: absolute;
+  top: 70rpx;
+  height: 24rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #19191A;
+  line-height: 24rpx;
+  text-align: left;
+  font-style: normal;
+}
+.coupon-info .coupon-info-l .coupon-info-l-tag.data-v-a06635b4 {
+  position: absolute;
+  top: 104rpx;
+}
+.coupon-info .coupon-info-l .coupon-info-l-tag .tag.data-v-a06635b4 {
+  position: relative;
+  height: 32rpx;
+  border-radius: 4rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20rpx;
+  color: #EE781F;
+  text-align: left;
+  font-style: normal;
+  padding: 0 8rpx;
+  margin-right: 16rpx;
+  box-sizing: border-box;
+}
+.coupon-info .coupon-info-l .coupon-info-l-tag .tag.data-v-a06635b4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid rgba(255, 183, 161, 0.5);
+  border-radius: 8rpx;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+.coupon-info .coupon-info-r.data-v-a06635b4 {
+  width: 168rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.coupon-info .coupon-info-r .coupon-info-r-amount-box.data-v-a06635b4 {
+  width: auto;
+  height: 68rpx;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+.coupon-info .coupon-info-r .coupon-info-r-amount-box .coupon-info-r-amount.data-v-a06635b4 {
+  height: 68rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 68rpx;
+  color: #FFFFFF;
+  text-align: center;
+  font-style: normal;
+  line-height: 1;
+}
+.coupon-info .coupon-info-r .coupon-info-r-amount-box .coupon-info-r-unit.data-v-a06635b4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  text-align: left;
+  font-style: normal;
+  line-height: 1;
+  /* 避免多余间距 */
+  margin-left: 4rpx;
+  /* 与数字略微分隔 */
+}
+.coupon-desc.data-v-a06635b4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #19191A;
+  line-height: 32rpx;
+  text-align: left;
+  font-style: normal;
+}
+.coupon-popup-actions.data-v-a06635b4 {
+  display: none;
+}
+.coupon-popup-actions-new.data-v-a06635b4 {
+  background: #F3F4F6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0 0 32rpx 32rpx;
+}
+.no-coupon-row.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 38rpx 0;
+}
+.no-coupon-text.data-v-a06635b4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #19191A;
+  line-height: 24rpx;
+  text-align: left;
+  font-style: normal;
+}
+.coupon-btn-main.data-v-a06635b4 {
+  width: calc(100% - 112rpx);
+  height: 92rpx;
+  background: #EE781F;
+  border-radius: 50rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  line-height: 92rpx;
+  text-align: center;
+  font-style: normal;
+  margin: 0 56rpx calc(env(safe-area-inset-bottom) + 32rpx);
+}
+.custom-radio.data-v-a06635b4 {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 12rpx;
+  vertical-align: middle;
+}
+.free-coupon.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+.free-coupon.disabled.data-v-a06635b4 {
+  pointer-events: none;
+}
+.calendar-page.data-v-a06635b4 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background: #fff;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.calendar-page.show.data-v-a06635b4 {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.fee-room-toggle.data-v-a06635b4 {
+  cursor: pointer;
+}
+.fee-room-toggle .fee-room-right.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+}
+.fee-room-toggle .fee-room-right .price.data-v-a06635b4 {
+  margin-right: 8rpx;
+}
+.fee-room-toggle .fee-room-right .arrow-icon.data-v-a06635b4 {
+  width: 36rpx;
+  height: 22rpx;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+  margin-left: 4rpx;
+}
+.fee-detail-list.data-v-a06635b4 {
+  background: #f8f8f8;
+  border-radius: 12rpx;
+  margin: 16rpx 0 8rpx 0;
+  padding: 12rpx 16rpx;
+}
+.fee-detail-list .fee-detail-item.data-v-a06635b4 {
+  margin-bottom: 10rpx;
+}
+.fee-detail-list .fee-detail-item.data-v-a06635b4:last-child {
+  margin-bottom: 0;
+}
+.fee-detail-list .fee-detail-item .fee-detail-date.data-v-a06635b4 {
+  font-size: 24rpx;
+  color: #6D7278;
+  margin-bottom: 2rpx;
+}
+.fee-detail-list .fee-detail-item .fee-detail-info.data-v-a06635b4 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18rpx;
+  font-size: 24rpx;
+  color: #19191A;
+}
+.fee-detail-list-simple.data-v-a06635b4 {
+  margin: 8rpx 0 0 0;
+  padding: 0 0 0 0;
+  max-height: 400rpx;
+  overflow-y: auto;
+}
+.fee-detail-list-simple .fee-detail-item-simple.data-v-a06635b4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #6D7278;
+  line-height: 24rpx;
+  text-align: right;
+  font-style: normal;
+  margin-bottom: 18rpx;
+}
+.fee-detail-list-simple .fee-detail-item-simple.data-v-a06635b4:last-child {
+  border-bottom: none;
+  margin-bottom: 40rpx;
+}
+.fee-detail-list-simple .fee-detail-item-simple .fee-detail-date-simple.data-v-a06635b4 {
+  flex: 1;
+  text-align: left;
+}
+.fee-detail-list-simple .fee-detail-item-simple .fee-detail-count-simple.data-v-a06635b4 {
+  flex: 0 0 60rpx;
+  text-align: center;
+}
+.fee-detail-list-simple .fee-detail-item-simple .fee-detail-amount-simple.data-v-a06635b4 {
+  flex: 1;
+  font-weight: 500;
+  text-align: right;
+  white-space: nowrap;
+}
+.fee-detail-avg-row.data-v-a06635b4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #6D7278;
+  line-height: 24rpx;
+  text-align: right;
+  font-style: normal;
+  margin-bottom: 18rpx;
+}

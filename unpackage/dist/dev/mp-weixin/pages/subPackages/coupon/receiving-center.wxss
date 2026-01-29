@@ -1,0 +1,897 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.page.data-v-314aabbc {
+  background: #F3F4F6;
+  height: 100vh;
+  overflow: hidden;
+}
+.page .receive.data-v-314aabbc {
+  position: relative;
+  height: 136rpx;
+}
+.page .receive .receive-banner.data-v-314aabbc {
+  height: 134rpx;
+  margin: 40rpx 15rpx 0 15rpx;
+  background-image: url("https://www.zxd-hotel.xin/zxdhotel/icon/lingqubej@2x.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.page .receive .receive-banner .banner-content.data-v-314aabbc {
+  position: relative;
+  top: 30rpx;
+  margin: 0 34rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page .receive .receive-banner .banner-content .banner-content-l.data-v-314aabbc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page .receive .receive-banner .banner-content .banner-content-l .banner-icon.data-v-314aabbc {
+  width: 26rpx;
+  height: 32rpx;
+  background-image: url("https://zxd-hotel.xin/zxdhotel/2025/06/03/red_20250603225415A004.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 20rpx;
+}
+.page .receive .receive-banner .banner-content .banner-content-l .banner-text.data-v-314aabbc {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 28rpx;
+  color: #FFE1B6;
+  line-height: 28rpx;
+  text-align: left;
+  font-style: normal;
+}
+.page .receive .receive-banner .banner-content .banner-content-r.data-v-314aabbc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page .receive .receive-banner .banner-content .banner-content-r .banner-arrow.data-v-314aabbc {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  line-height: 28rpx;
+  text-align: center;
+  font-style: normal;
+}
+.page .receive .receive-banner .banner-content .banner-content-r .banner-arrow-icon.data-v-314aabbc {
+  width: 11rpx;
+  height: 18rpx;
+  background-image: url("https://www.zxd-hotel.xin/zxdhotel/icon/fjt2@2x.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 14rpx;
+}
+.page .receive .receive-banner-bottom.data-v-314aabbc {
+  background-image: url("https://www.zxd-hotel.xin/zxdhotel/icon/lingqubd@2x.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 54rpx;
+}
+.page .fixed-header.data-v-314aabbc {
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.page .nav-title.data-v-314aabbc {
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #19191A;
+  text-align: center;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+}
+.page .tabs.data-v-314aabbc {
+  display: flex;
+  justify-content: space-around;
+  background: #FFF;
+  padding: 0 40rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.page .tabs .tab.data-v-314aabbc {
+  padding: 20rpx 40rpx;
+  font-size: 28rpx;
+  color: #333;
+  position: relative;
+}
+.page .tabs .tab.active.data-v-314aabbc::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 40rpx;
+  height: 4rpx;
+  background: #ff9900;
+  border-radius: 2rpx;
+}
+.page .coupon-list.data-v-314aabbc {
+  flex: 1;
+  overflow: hidden;
+  background: white;
+}
+.page .coupon-list .coupon-card.data-v-314aabbc {
+  display: flex;
+  align-items: center;
+  /* 垂直居中 */
+  justify-content: space-between;
+  /* 两边分布 */
+  position: relative;
+}
+.page .coupon-list .coupon-base-card.data-v-314aabbc {
+  display: revert;
+}
+.page .coupon-list .coupon-item-rule-desc.data-v-314aabbc {
+  margin: -40rpx 15rpx 20rpx 15rpx;
+  padding: 42rpx 32rpx 18rpx 32rpx;
+  border-radius: 0 0 28rpx 28rpx;
+  border: 1rpx solid #F7DFC1;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #B7560C;
+  line-height: 32rpx;
+  text-align: left;
+  font-style: normal;
+  background: linear-gradient(180deg, #FFEBD7 0%, #FDF6ED 100%);
+}
+.page .coupon-list .coupon-item.data-v-314aabbc {
+  flex: 1;
+  /* 占满剩余空间 */
+  display: flex;
+  align-items: center;
+  height: 209rpx;
+  margin: 0 15rpx 20rpx 15rpx;
+  background-image: url("https://www.zxd-hotel.xin/zxdhotel/icon/list_red_pack@2x.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 28rpx;
+}
+.page .coupon-list .coupon-item .coupon-tag-expired.data-v-314aabbc {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 124rpx;
+  height: 124rpx;
+  background-image: url("https://www.zxd-hotel.xin/zxdhotel/icon/dq@2x.png");
+  background-size: cover;
+  background-position: center;
+}
+.page .coupon-list .coupon-item .toBeUsed.data-v-314aabbc {
+  background-image: url("https://www.zxd-hotel.xin/zxdhotel/icon/daishiyong.png");
+}
+.page .coupon-list .coupon-item .used.data-v-314aabbc {
+  top: 20rpx;
+  right: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background-image: url(data:image/png;base64,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) !important;
+}
+.page .coupon-list .coupon-item .expired.data-v-314aabbc {
+  top: 20rpx;
+  right: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background-image: url(data:image/png;base64,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) !important;
+}
+.page .coupon-list .coupon-item .lb-used.data-v-314aabbc {
+  top: 20rpx;
+  right: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background-image: url("https://www.zxd-hotel.xin/zxdhotel/icon/lb-used.png") !important;
+}
+.page .coupon-list .coupon-item .lb-expired.data-v-314aabbc {
+  top: 20rpx;
+  right: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background-image: url("https://www.zxd-hotel.xin/zxdhotel/icon/lb-expired.png") !important;
+}
+.page .coupon-list .coupon-item .coupon-tag-expired-text.data-v-314aabbc {
+  position: absolute;
+  right: 5rpx;
+  top: 35rpx;
+  width: 124rpx;
+  height: 124rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #000000;
+  line-height: 17px;
+  text-align: left;
+  font-style: normal;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.page .coupon-list .lb-item.data-v-314aabbc {
+  background-image: url("https://www.zxd-hotel.xin/zxdhotel/icon/lbbj@2x.png");
+}
+.page .coupon-list .coupon-item-null.data-v-314aabbc {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 200rpx;
+  margin: 0 15rpx 20rpx 15rpx;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 28rpx;
+}
+.page .coupon-list .coupon-info.data-v-314aabbc {
+  width: 630rpx;
+  height: 180rpx;
+  margin: 10rpx 20rpx;
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+.page .coupon-list .coupon-info .coupon-info-l.data-v-314aabbc {
+  width: 500rpx;
+  height: 100%;
+  position: relative;
+  left: 25rpx;
+  display: flex;
+}
+.page .coupon-list .coupon-info .coupon-info-l .coupon-info-l-icon.data-v-314aabbc {
+  width: 74rpx;
+  height: 80rpx;
+}
+.page .coupon-list .coupon-info .coupon-info-l .coupon-info-l-title.data-v-314aabbc {
+  position: absolute;
+  top: 30rpx;
+  height: 32rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #19191A;
+  line-height: 32rpx;
+  text-align: left;
+  font-style: normal;
+}
+.page .coupon-list .coupon-info .coupon-info-l .coupon-info-l-l.data-v-314aabbc {
+  display: flex;
+  align-items: center;
+}
+.page .coupon-list .coupon-info .coupon-info-l .coupon-info-l-r.data-v-314aabbc {
+  margin-left: 36rpx;
+}
+.page .coupon-list .coupon-info .coupon-info-l .used-text.data-v-314aabbc {
+  color: #A2A2A8 !important;
+}
+.page .coupon-list .coupon-info .coupon-info-l .coupon-info-l-time.data-v-314aabbc {
+  position: absolute;
+  top: 80rpx;
+  height: 24rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #19191A;
+  line-height: 24rpx;
+  text-align: left;
+  font-style: normal;
+}
+.page .coupon-list .coupon-info .coupon-info-l .coupon-info-l-tag.data-v-314aabbc {
+  position: absolute;
+  top: 120rpx;
+}
+.page .coupon-list .coupon-info .coupon-info-l .coupon-info-l-tag .tag.data-v-314aabbc {
+  position: relative;
+  height: 32rpx;
+  border-radius: 4rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20rpx;
+  color: #EE781F;
+  text-align: left;
+  font-style: normal;
+  padding: 0 8rpx;
+  margin-right: 16rpx;
+  box-sizing: border-box;
+}
+.page .coupon-list .coupon-info .coupon-info-l .coupon-info-l-tag .tag.data-v-314aabbc::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid rgba(255, 183, 161, 0.5);
+  border-radius: 8rpx;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+.page .coupon-list .coupon-info .coupon-info-l .coupon-info-l-tag .used-tag.data-v-314aabbc::before {
+  border-color: #A2A2A8;
+}
+.page .coupon-list .coupon-info .coupon-info-r.data-v-314aabbc {
+  display: flex;
+  flex-direction: column;
+  /* 垂直排列 */
+  align-items: center;
+  /* 水平居中 */
+  justify-content: center;
+  /* 垂直居中 */
+}
+.page .coupon-list .coupon-info .coupon-info-r .coupon-info-r-amount-box-t.data-v-314aabbc {
+  width: 168rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page .coupon-list .coupon-info .coupon-info-r .coupon-info-r-amount-box-t .coupon-info-r-amount-box.data-v-314aabbc {
+  width: auto;
+  height: 68rpx;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+.page .coupon-list .coupon-info .coupon-info-r .coupon-info-r-amount-box-t .coupon-info-r-amount-box .coupon-info-r-amount.data-v-314aabbc {
+  height: 68rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 68rpx;
+  color: #FFFFFF;
+  text-align: center;
+  font-style: normal;
+  line-height: 1;
+}
+.page .coupon-list .coupon-info .coupon-info-r .coupon-info-r-amount-box-t .coupon-info-r-amount-box .coupon-info-r-unit.data-v-314aabbc {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  text-align: left;
+  font-style: normal;
+  line-height: 1;
+  /* 避免多余间距 */
+  margin-left: 4rpx;
+  /* 与数字略微分隔 */
+}
+.page .coupon-list .coupon-info .coupon-info-r .coupon-info-r-amount-box-b.data-v-314aabbc {
+  width: 140rpx;
+  height: 64rpx;
+  background: linear-gradient(90deg, #FFB053 0%, #FFF6DF 100%);
+  border-radius: 36rpx;
+  margin-top: 6rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #920023;
+  line-height: 64rpx;
+  text-align: center;
+  font-style: normal;
+  border: none;
+}
+.share-canvas.data-v-314aabbc {
+  position: fixed;
+  left: -9999px;
+  width: 500px;
+  height: 400px;
+  visibility: hidden;
+}
+.load-more-status.data-v-314aabbc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20rpx 60rpx 20rpx;
+}
+.load-more-status .loading.data-v-314aabbc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.load-more-status .loading .loading-icon.data-v-314aabbc {
+  width: 32rpx;
+  height: 32rpx;
+  border: 3rpx solid #ddd;
+  border-top: 3rpx solid #ff9900;
+  border-radius: 50%;
+  -webkit-animation: spin-data-v-314aabbc 1s linear infinite;
+          animation: spin-data-v-314aabbc 1s linear infinite;
+  margin-right: 16rpx;
+}
+.load-more-status .loading .loading-text.data-v-314aabbc {
+  font-size: 28rpx;
+  color: #666;
+}
+.load-more-status .no-more.data-v-314aabbc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.load-more-status .no-more .no-more-line.data-v-314aabbc {
+  flex: 1;
+  height: 1rpx;
+  background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+}
+.load-more-status .no-more .no-more-text.data-v-314aabbc {
+  font-size: 24rpx;
+  color: #999;
+  padding: 0 30rpx;
+  position: relative;
+}
+.load-more-status .empty.data-v-314aabbc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60rpx 20rpx;
+}
+.load-more-status .empty .empty-icon.data-v-314aabbc {
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 20rpx;
+  opacity: 0.6;
+}
+.load-more-status .empty .empty-text.data-v-314aabbc {
+  font-size: 28rpx;
+  color: #999;
+}
+@-webkit-keyframes spin-data-v-314aabbc {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+@keyframes spin-data-v-314aabbc {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+/* Tab切换加载遮罩 */
+.tab-loading-overlay.data-v-314aabbc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(243, 244, 246, 0.9);
+  -webkit-backdrop-filter: blur(8rpx);
+          backdrop-filter: blur(8rpx);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.tab-loading-overlay .tab-loading-content.data-v-314aabbc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 60rpx 80rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 10rpx 40rpx rgba(0, 0, 0, 0.1);
+}
+.tab-loading-overlay .tab-loading-content .tab-loading-spinner.data-v-314aabbc {
+  display: flex;
+  gap: 8rpx;
+  margin-bottom: 24rpx;
+}
+.tab-loading-overlay .tab-loading-content .tab-loading-spinner .spinner-ring.data-v-314aabbc {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff9900, #ffcc00);
+  -webkit-animation: spinner-bounce-data-v-314aabbc 1.2s infinite ease-in-out;
+          animation: spinner-bounce-data-v-314aabbc 1.2s infinite ease-in-out;
+}
+.tab-loading-overlay .tab-loading-content .tab-loading-spinner .spinner-ring.data-v-314aabbc:nth-child(1) {
+  -webkit-animation-delay: -0.24s;
+          animation-delay: -0.24s;
+}
+.tab-loading-overlay .tab-loading-content .tab-loading-spinner .spinner-ring.data-v-314aabbc:nth-child(2) {
+  -webkit-animation-delay: -0.12s;
+          animation-delay: -0.12s;
+}
+.tab-loading-overlay .tab-loading-content .tab-loading-spinner .spinner-ring.data-v-314aabbc:nth-child(3) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.tab-loading-overlay .tab-loading-content .tab-loading-text.data-v-314aabbc {
+  font-size: 28rpx;
+  color: #666;
+  font-weight: 500;
+}
+/* 加载时的模糊效果 */
+.loading-blur.data-v-314aabbc {
+  opacity: 0.6;
+  -webkit-filter: blur(2rpx);
+          filter: blur(2rpx);
+  transition: all 0.3s ease;
+}
+/* 首次加载动画 */
+.first-loading.data-v-314aabbc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80rpx 20rpx;
+}
+.first-loading .first-loading-spinner.data-v-314aabbc {
+  display: flex;
+  gap: 12rpx;
+  margin-bottom: 32rpx;
+}
+.first-loading .first-loading-spinner .bounce-dot.data-v-314aabbc {
+  width: 16rpx;
+  height: 16rpx;
+  background: linear-gradient(45deg, #ff9900, #ffcc00);
+  border-radius: 50%;
+  -webkit-animation: bounce-loading-data-v-314aabbc 1.4s infinite ease-in-out both;
+          animation: bounce-loading-data-v-314aabbc 1.4s infinite ease-in-out both;
+}
+.first-loading .first-loading-spinner .bounce-dot.data-v-314aabbc:nth-child(1) {
+  -webkit-animation-delay: -0.32s;
+          animation-delay: -0.32s;
+}
+.first-loading .first-loading-spinner .bounce-dot.data-v-314aabbc:nth-child(2) {
+  -webkit-animation-delay: -0.16s;
+          animation-delay: -0.16s;
+}
+.first-loading .first-loading-spinner .bounce-dot.data-v-314aabbc:nth-child(3) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.first-loading .first-loading-text.data-v-314aabbc {
+  font-size: 28rpx;
+  color: #666;
+  font-weight: 500;
+}
+@-webkit-keyframes spinner-bounce-data-v-314aabbc {
+0%, 80%, 100% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 0.5;
+}
+40% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 1;
+}
+}
+@keyframes spinner-bounce-data-v-314aabbc {
+0%, 80%, 100% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 0.5;
+}
+40% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 1;
+}
+}
+@-webkit-keyframes bounce-loading-data-v-314aabbc {
+0%, 80%, 100% {
+    -webkit-transform: scale(0.8) translateY(0);
+            transform: scale(0.8) translateY(0);
+}
+40% {
+    -webkit-transform: scale(1) translateY(-20rpx);
+            transform: scale(1) translateY(-20rpx);
+}
+}
+@keyframes bounce-loading-data-v-314aabbc {
+0%, 80%, 100% {
+    -webkit-transform: scale(0.8) translateY(0);
+            transform: scale(0.8) translateY(0);
+}
+40% {
+    -webkit-transform: scale(1) translateY(-20rpx);
+            transform: scale(1) translateY(-20rpx);
+}
+}
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.coupon-item-null.data-v-7acf0480 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 170rpx;
+  margin: 0 15rpx 20rpx 15rpx;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 28rpx;
+}
+.collection-center-page .fixed-header.data-v-7acf0480 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: #fff;
+}
+.collection-center-page .nav-title.data-v-7acf0480 {
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #19191A;
+  text-align: center;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+}
+.collection-center-page .coupon-list.data-v-7acf0480 {
+  padding: 0 15rpx calc(env(safe-area-inset-bottom)) 15rpx;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-y: auto;
+}
+.collection-center-page .coupon-list .coupon-item-container.data-v-7acf0480 {
+  margin-bottom: 20rpx;
+  position: relative;
+}
+.collection-center-page .coupon-list .coupon-item.data-v-7acf0480 {
+  display: flex;
+  align-items: center;
+  height: 209rpx;
+  background-image: url("https://www.zxd-hotel.xin/zxdhotel/icon/list_red_pack@2x.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 28rpx;
+}
+.collection-center-page .coupon-list .coupon-item-rule-desc.data-v-7acf0480 {
+  margin: -30rpx 0 20rpx 0;
+  padding: 42rpx 32rpx 18rpx 32rpx;
+  border-radius: 0 0 28rpx 28rpx;
+  border: 1rpx solid #F7DFC1;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #B7560C;
+  line-height: 32rpx;
+  text-align: left;
+  font-style: normal;
+  background: linear-gradient(180deg, #FFEBD7 0%, #FDF6ED 100%);
+}
+.collection-center-page .coupon-list .coupon-info.data-v-7acf0480 {
+  width: 630rpx;
+  height: 180rpx;
+  margin: 10rpx 20rpx;
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+.collection-center-page .coupon-list .coupon-info .coupon-info-l.data-v-7acf0480 {
+  width: 360rpx;
+  height: 100%;
+  position: relative;
+  left: 25rpx;
+}
+.collection-center-page .coupon-list .coupon-info .coupon-info-l .coupon-info-l-title.data-v-7acf0480 {
+  position: absolute;
+  top: 30rpx;
+  height: 32rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #19191A;
+  line-height: 32rpx;
+  text-align: left;
+  font-style: normal;
+}
+.collection-center-page .coupon-list .coupon-info .coupon-info-l .coupon-info-l-time.data-v-7acf0480 {
+  position: absolute;
+  top: 80rpx;
+  height: 24rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #19191A;
+  line-height: 24rpx;
+  text-align: left;
+  font-style: normal;
+}
+.collection-center-page .coupon-list .coupon-info .coupon-info-l .coupon-info-l-tag.data-v-7acf0480 {
+  position: absolute;
+  top: 120rpx;
+}
+.collection-center-page .coupon-list .coupon-info .coupon-info-l .coupon-info-l-tag .tag.data-v-7acf0480 {
+  position: relative;
+  height: 32rpx;
+  border-radius: 4rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20rpx;
+  color: #EE781F;
+  text-align: left;
+  font-style: normal;
+  padding: 0 8rpx;
+  margin-right: 16rpx;
+  box-sizing: border-box;
+}
+.collection-center-page .coupon-list .coupon-info .coupon-info-l .coupon-info-l-tag .tag.data-v-7acf0480::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid rgba(255, 183, 161, 0.5);
+  border-radius: 8rpx;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+.collection-center-page .coupon-list .coupon-info .coupon-info-r.data-v-7acf0480 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.collection-center-page .coupon-list .coupon-info .coupon-info-r .coupon-info-r-amount-box-t.data-v-7acf0480 {
+  width: 168rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.collection-center-page .coupon-list .coupon-info .coupon-info-r .coupon-info-r-amount-box-t .coupon-info-r-amount-box.data-v-7acf0480 {
+  width: auto;
+  height: 68rpx;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+.collection-center-page .coupon-list .coupon-info .coupon-info-r .coupon-info-r-amount-box-t .coupon-info-r-amount-box .coupon-info-r-amount.data-v-7acf0480 {
+  height: 68rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 68rpx;
+  color: #FFFFFF;
+  text-align: center;
+  font-style: normal;
+  line-height: 1;
+}
+.collection-center-page .coupon-list .coupon-info .coupon-info-r .coupon-info-r-amount-box-t .coupon-info-r-amount-box .coupon-info-r-unit.data-v-7acf0480 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  text-align: left;
+  font-style: normal;
+  line-height: 1;
+  margin-left: 4rpx;
+}
+.collection-center-page .coupon-list .coupon-info .coupon-info-r .coupon-info-r-amount-box-b.data-v-7acf0480 {
+  width: 140rpx;
+  height: 64rpx;
+  background: linear-gradient(90deg, #FFB053 0%, #FFF6DF 100%);
+  border-radius: 36rpx;
+  margin-top: 6rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #920023;
+  line-height: 64rpx;
+  text-align: center;
+  font-style: normal;
+}
+.collection-center-page .coupon-list .receive-btn.data-v-7acf0480 {
+  position: absolute;
+  right: 30rpx;
+  bottom: 30rpx;
+  width: 140rpx;
+  height: 64rpx;
+  background: linear-gradient(90deg, #FFB053 0%, #FFF6DF 100%);
+  border-radius: 36rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #920023;
+  line-height: 64rpx;
+  text-align: center;
+  font-style: normal;
+  border: none;
+}
+.collection-center-page .load-more-status.data-v-7acf0480 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20rpx 60rpx 20rpx;
+}
+.collection-center-page .load-more-status .loading.data-v-7acf0480 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.collection-center-page .load-more-status .loading .loading-icon.data-v-7acf0480 {
+  width: 32rpx;
+  height: 32rpx;
+  border: 3rpx solid #ddd;
+  border-top: 3rpx solid #ff9900;
+  border-radius: 50%;
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+  margin-right: 16rpx;
+}
+.collection-center-page .load-more-status .loading .loading-text.data-v-7acf0480 {
+  font-size: 28rpx;
+  color: #666;
+}
+.collection-center-page .load-more-status .no-more.data-v-7acf0480 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.collection-center-page .load-more-status .no-more .no-more-text.data-v-7acf0480 {
+  font-size: 24rpx;
+  color: #999;
+  padding: 0 30rpx;
+  position: relative;
+}
+.collection-center-page .load-more-status .empty.data-v-7acf0480 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60rpx 20rpx;
+}
+.collection-center-page .load-more-status .empty .empty-icon.data-v-7acf0480 {
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 20rpx;
+  opacity: 0.6;
+}
+.collection-center-page .load-more-status .empty .empty-text.data-v-7acf0480 {
+  font-size: 28rpx;
+  color: #999;
+}

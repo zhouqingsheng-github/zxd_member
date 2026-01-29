@@ -1,0 +1,247 @@
+
+.container.data-v-eab34418 {
+  min-height: 100vh;
+  height: 100vh;
+  background: #F3F4F6;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* 遮罩层样式 */
+.mask.data-v-eab34418 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(25, 25, 26, 0.6);
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
+  z-index: 999;
+}
+
+/* 搜索卡片弹窗样式 */
+.search-card-popup.data-v-eab34418 {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  overflow: hidden;
+  background-color: #FFF;
+}
+.filter-tabs.data-v-eab34418 {
+  display: flex;
+  padding: 20rpx 32rpx;
+  background: #FFFFFF;
+  border-bottom: 2rpx solid #E8E9EB;
+  gap: 10rpx;
+  align-items: center;
+  margin-top: 0;
+}
+.content-wrapper.data-v-eab34418 {
+  width: auto;
+  flex: 1;
+  height: calc(100vh - 25px - 88rpx - 120rpx - 96rpx - 30rpx);
+  padding: 0 28rpx 120rpx 28rpx;
+  position: relative;
+  margin-top: 0;
+}
+.content-wrapper.enable-scroll.data-v-eab34418 {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+.nav-title.data-v-eab34418 {
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #19191A;
+  text-align: center;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+}
+.nav-more.data-v-eab34418 {
+  font-size: 36rpx;
+  color: #19191A;
+  padding: 0 20rpx;
+}
+.search-header.data-v-eab34418 {
+  background: #FFFFFF;
+  padding: 24rpx 28rpx;
+  position: relative;
+  z-index: 1000;
+  margin-bottom: 0;
+}
+.search-content.data-v-eab34418 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 64rpx;
+  background: #F3F7FA !important;
+  border-radius: 46rpx;
+  padding: 14rpx 0;
+}
+.city-section.data-v-eab34418 {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  padding-left: 32rpx;
+  padding-right: 20rpx;
+  height: 100%;
+  min-width: 56rpx;
+  max-width: 112rpx;
+}
+.city-text.data-v-eab34418 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 24rpx;
+  color: #19191A;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+.city-arrow.data-v-eab34418 {
+  width: 14rpx;
+  height: 9rpx;
+  background-image: url("https://www.zxd-hotel.xin/zxdhotel/icon/down.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  margin-left: 4rpx;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.city-arrow.arrow-up.data-v-eab34418 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.date-section.data-v-eab34418 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  flex: 1;
+  padding-left: 20rpx;
+  gap: 8rpx;
+  position: relative;
+}
+.date-group.data-v-eab34418 {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+.date-label.data-v-eab34418 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #19191A;
+  text-align: left;
+  font-style: normal;
+}
+.date.data-v-eab34418 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 24rpx;
+  color: #19191A;
+  line-height: 1;
+  text-align: left;
+  font-style: normal;
+  margin-left: 12rpx;
+  margin-right: 20rpx;
+}
+.divider.data-v-eab34418 {
+  width: 2rpx;
+  height: 54rpx;
+  background: #E8E9EB;
+  margin-right: 20rpx;
+}
+.search-section.data-v-eab34418 {
+  flex: 1.5;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.search-bar.data-v-eab34418 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  opacity: 0.6;
+}
+.search-icon.data-v-eab34418 {
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 12rpx;
+}
+.search-input.data-v-eab34418 {
+  flex: 1;
+  font-size: 28rpx;
+  color: #19191A !important;
+  background: transparent !important;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-right: 12rpx;
+}
+.sort-text.data-v-eab34418 {
+  width: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 28rpx;
+  color: #19191A;
+  font-weight: 400;
+  margin-right: 24rpx;
+}
+.sort-option.data-v-eab34418 {
+  width: auto;
+  height: 56rpx;
+  background: #F3F7FA;
+  border-radius: 8rpx;
+  padding: 0 22rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #19191A;
+  line-height: 56rpx;
+  text-align: center;
+  font-style: normal;
+  position: relative;
+}
+.check-icon.data-v-eab34418 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 24rpx;
+  height: 24rpx;
+  z-index: 2;
+}
+
+/* 添加日历页面样式 */
+.calendar-page.data-v-eab34418 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1002;
+  background-color: #fff;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+.calendar-page.show.data-v-eab34418 {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+

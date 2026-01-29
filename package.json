@@ -1,0 +1,14 @@
+{
+	"id": "uview-ui",
+	"scripts": {
+		"test": "eslint . --fix"
+	},
+	"dependencies": {
+		"@dcloudio/uni-ui": "^1.5.7",
+		"uview-ui": "^2.0.38"
+	},
+	"devDependencies": {
+		"eslint": "^8.2.0",
+		"eslint-config-airbnb": "^19.0.0"
+	}
+}

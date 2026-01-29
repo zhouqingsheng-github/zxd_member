@@ -1,0 +1,52 @@
+
+.tabbar.data-v-7ba212ec {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100rpx; /* 固定高度 */
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.03);
+}
+.tabbar-item.data-v-7ba212ec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #D1D1D1;
+  font-size: 24rpx;
+  flex: 1;
+  justify-content: center;
+  padding: 10rpx 0 0 0;
+}
+.tabbar-item.active.data-v-7ba212ec {
+  color: #ED781F;
+}
+.tabbar-item.back-to-top.data-v-7ba212ec {
+  padding: 0;
+}
+.tabbar-icon.data-v-7ba212ec {
+  width: 36rpx;
+  height: 36rpx;
+  margin-bottom: 6rpx;
+}
+.back-to-top-icon.data-v-7ba212ec {
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 0;
+}
+.tabbar-text.data-v-7ba212ec {
+  width: auto;
+  height: 26rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 26rpx;
+  line-height: 26rpx;
+  text-align: center;
+  font-style: normal;
+  margin-top: 10rpx;
+}
+

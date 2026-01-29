@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.nav-title.data-v-513108be {
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #19191A;
+  text-align: center;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+}
+.facilities.data-v-513108be {
+  height: 100vh;
+  background-color: #FFF;
+}
+.tabs.data-v-513108be {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+  position: relative;
+}
+.tabs .tab-item.data-v-513108be {
+  flex: 1;
+  text-align: center;
+  font-size: 32rpx;
+  transition: all 0.3s;
+  position: relative;
+}
+.tabs .tab-item.active.data-v-513108be {
+  font-weight: 500;
+}
+.tabs .tab-item.active.data-v-513108be::after {
+  content: "";
+  display: block;
+  width: 40rpx;
+  height: 4rpx;
+  background: #ee781f;
+  border-radius: 2rpx;
+  position: absolute;
+  top: 70rpx;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.content-line.data-v-513108be {
+  width: 100%;
+  height: 20rpx;
+  background: #F3F4F6;
+}
+.content.data-v-513108be {
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  height: auto;
+}
+.section.data-v-513108be {
+  margin-bottom: 30rpx;
+}
+.section-title.data-v-513108be {
+  font-size: 36rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  font-weight: bold;
+}
+.service-item.data-v-513108be {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.service-item .info.data-v-513108be {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500 !important;
+  font-size: 28rpx !important;
+  color: #19191A !important;
+  line-height: 28rpx !important;
+  text-align: left !important;
+  font-style: normal !important;
+}
+.service-item .desc.data-v-513108be {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400 !important;
+  font-size: 24rpx !important;
+  color: #6D7278 !important;
+  line-height: 24rpx !important;
+  text-align: left !important;
+  font-style: normal !important;
+  margin-top: 12rpx;
+}
+.icon-wrapper.data-v-513108be {
+  width: 72rpx;
+  height: 72rpx;
+  margin-right: 20rpx;
+}
+.icon.data-v-513108be {
+  width: 100%;
+  height: 100%;
+}
+.info.data-v-513108be {
+  flex: 1;
+}
+.title.data-v-513108be {
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+}
+.desc.data-v-513108be {
+  font-size: 26rpx;
+}

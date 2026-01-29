@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "富文本内容",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
+    "u-parse": "/node-modules/uview-ui/components/u-parse/u-parse"
+  }
+}

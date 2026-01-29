@@ -1,0 +1,150 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.nav-title.data-v-42e18f40 {
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  text-align: center;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content.data-v-42e18f40 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f6fa;
+}
+.login-body.data-v-42e18f40 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-top: 1rpx solid #f0f0f0;
+  height: auto;
+  box-sizing: border-box;
+  position: relative;
+}
+.logo.data-v-42e18f40 {
+  width: 328rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 142rpx;
+  left: 212rpx;
+}
+.title.data-v-42e18f40 {
+  width: auto;
+  height: 34rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #19191A;
+  line-height: 34rpx;
+  letter-spacing: 3px;
+  text-align: left;
+  font-style: normal;
+  position: absolute;
+  top: 272rpx;
+  left: 212rpx;
+}
+.wx-login-btn.data-v-42e18f40 {
+  width: 670rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  background: #1AAD19;
+  border-radius: 50rpx;
+  position: absolute;
+  top: 426rpx;
+  left: 40rpx;
+  border: none;
+}
+.weixin-icon.data-v-42e18f40 {
+  position: absolute;
+  left: 202rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+}
+.btn-text.data-v-42e18f40 {
+  width: auto;
+  height: 32rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  line-height: 32rpx;
+  text-align: center;
+  font-style: normal;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.agreement.data-v-42e18f40 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 564rpx;
+  white-space: nowrap;
+  font-size: 0;
+}
+.agreement-checkbox.data-v-42e18f40 {
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  margin-right: 4rpx;
+}
+.agreement-text.data-v-42e18f40,
+.link.data-v-42e18f40 {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  white-space: nowrap;
+  display: inline;
+  position: static;
+  color: #969799;
+}
+.link.data-v-42e18f40 {
+  color: #EE781F;
+  margin: 0 2rpx;
+}
+.phone-login.data-v-42e18f40 {
+  width: 192rpx;
+  height: 24rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #6D7278;
+  line-height: 24rpx;
+  text-align: center;
+  font-style: normal;
+  position: absolute;
+  bottom: calc(60rpx + env(safe-area-inset-bottom));
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 2;
+}
+.mask-layer.data-v-42e18f40 {
+  position: absolute;
+  bottom: calc(env(safe-area-inset-bottom));
+  left: 0;
+  width: 100%;
+  height: 200rpx;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1;
+}
+.custom-radio.data-v-42e18f40 {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 12rpx;
+  vertical-align: middle;
+}
+/* 其他样式保持不变 */

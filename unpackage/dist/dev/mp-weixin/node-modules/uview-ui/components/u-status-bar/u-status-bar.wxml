@@ -1,0 +1,1 @@
+<view style="{{$root.s0+virtualHostStyle}}" class="{{['u-status-bar','data-v-3c8c2ae7',virtualHostClass]}}"><slot></slot></view>

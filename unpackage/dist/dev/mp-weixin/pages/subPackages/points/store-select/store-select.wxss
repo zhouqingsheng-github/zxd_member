@@ -1,0 +1,155 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.store-select-page.data-v-7946657e {
+  min-height: 100vh;
+  background-color: #F3F4F6;
+}
+.loading-container.data-v-7946657e {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 200rpx;
+}
+.loading-spinner.data-v-7946657e {
+  width: 60rpx;
+  height: 60rpx;
+  border: 4rpx solid #f3f3f3;
+  border-top: 4rpx solid #EE781F;
+  border-radius: 50%;
+  -webkit-animation: spin-data-v-7946657e 1s linear infinite;
+          animation: spin-data-v-7946657e 1s linear infinite;
+}
+@-webkit-keyframes spin-data-v-7946657e {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+@keyframes spin-data-v-7946657e {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+.loading-text.data-v-7946657e {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.store-list.data-v-7946657e {
+  padding: 20rpx;
+}
+.store-item.data-v-7946657e {
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  padding: 32rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+.store-item.disabled.data-v-7946657e {
+  opacity: 0.5;
+}
+.store-info.data-v-7946657e {
+  flex: 1;
+}
+.store-name-row.data-v-7946657e {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+.store-name.data-v-7946657e {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #19191A;
+  margin-right: 16rpx;
+}
+.stock-badge.data-v-7946657e {
+  padding: 4rpx 16rpx;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  background: #E8F5E9;
+  color: #4CAF50;
+}
+.stock-badge.no-stock.data-v-7946657e {
+  background: #FFEBEE;
+  color: #F44336;
+}
+.store-address.data-v-7946657e,
+.store-phone.data-v-7946657e {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+.icon.data-v-7946657e {
+  font-size: 28rpx;
+  margin-right: 8rpx;
+}
+.address-text.data-v-7946657e,
+.phone-text.data-v-7946657e {
+  margin-left: 8rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+.store-stock.data-v-7946657e {
+  margin-top: 16rpx;
+  padding-top: 16rpx;
+  border-top: 1rpx solid #F0F0F0;
+}
+.stock-label.data-v-7946657e {
+  font-size: 28rpx;
+  color: #999;
+  margin-right: 8rpx;
+}
+.stock-value.data-v-7946657e {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #EE781F;
+}
+.stock-value.no-stock-text.data-v-7946657e {
+  color: #F44336;
+}
+.select-icon.data-v-7946657e {
+  margin-left: 20rpx;
+}
+.arrow.data-v-7946657e {
+  font-size: 48rpx;
+  color: #999;
+  font-weight: 300;
+}
+.empty-container.data-v-7946657e {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 200rpx;
+}
+.empty-image.data-v-7946657e {
+  width: 300rpx;
+  height: 300rpx;
+  margin-bottom: 40rpx;
+}
+.empty-text.data-v-7946657e {
+  font-size: 32rpx;
+  color: #666;
+  margin-bottom: 16rpx;
+}
+.empty-tip.data-v-7946657e {
+  font-size: 28rpx;
+  color: #999;
+}

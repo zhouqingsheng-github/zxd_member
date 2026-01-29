@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.receive-page.data-v-ec58652a {
+  background: #FFF;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.receive-page .nav-title.data-v-ec58652a {
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #19191A;
+  text-align: center;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+}
+.receive-page .content.data-v-ec58652a {
+  text-align: center;
+}
+.receive-page .content .bg-image.data-v-ec58652a {
+  width: 264rpx;
+  height: 200rpx;
+  margin-top: 32rpx;
+}
+.receive-page .content .title.data-v-ec58652a {
+  height: 40rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 40rpx;
+  color: #19191A;
+  line-height: 40rpx;
+  text-align: center;
+  font-style: normal;
+  margin-top: 28rpx;
+}
+.receive-page .content .tips.data-v-ec58652a {
+  height: 28rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #19191A;
+  line-height: 28rpx;
+  text-align: center;
+  font-style: normal;
+  margin-top: 20rpx;
+}
+.receive-page .content .receive-btn.data-v-ec58652a {
+  margin: 80rpx 58rpx 0 58rpx;
+  height: 92rpx;
+  background: #EE781F;
+  border-radius: 50rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  line-height: 92rpx;
+  text-align: center;
+  font-style: normal;
+  position: relative;
+  overflow: visible;
+}
+.receive-page .content .share-btn.data-v-ec58652a {
+  margin: 28rpx 58rpx 0 58rpx;
+  height: 92rpx;
+  background: #FFFFFF;
+  border-radius: 50rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #EE781F;
+  line-height: 92rpx;
+  text-align: center;
+  font-style: normal;
+  position: relative;
+  overflow: visible;
+}
+.receive-page .content .share-btn.data-v-ec58652a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50rpx;
+  border: 1rpx solid #EE781F;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+.receive-page .content .share-btn.data-v-ec58652a::after {
+    border-width: 0.5px;
+}
+}

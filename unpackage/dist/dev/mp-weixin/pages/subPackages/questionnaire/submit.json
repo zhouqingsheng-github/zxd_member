@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "试睡官报名",
+  "navigationStyle": "custom",
+  "backgroundColor": "#F3F4F6",
+  "usingComponents": {
+    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar"
+  }
+}

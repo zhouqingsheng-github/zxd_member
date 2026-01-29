@@ -1,0 +1,178 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.nav-title.data-v-7fbd4a17 {
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #FFF;
+  text-align: center;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pay-success-container.data-v-7fbd4a17 {
+  min-height: 100vh;
+  background: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pay-success-container .header.data-v-7fbd4a17 {
+  width: 100vw;
+  background: #EE781F;
+  padding-bottom: 64rpx;
+}
+.pay-success-container .header .nav-bar.data-v-7fbd4a17 {
+  width: 100vw;
+}
+.pay-success-container .header .success-icon-box.data-v-7fbd4a17 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+.pay-success-container .header .success-icon-box .success-icon.data-v-7fbd4a17 {
+  width: 80rpx;
+  height: 80rpx;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 32rpx;
+}
+.pay-success-container .header .success-icon-box .success-text-group.data-v-7fbd4a17 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.pay-success-container .header .success-icon-box .success-text-group .success-text.data-v-7fbd4a17 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 44rpx;
+  color: #FFFFFF;
+  text-align: left;
+  font-style: normal;
+}
+.pay-success-container .header .success-icon-box .success-text-group .success-desc.data-v-7fbd4a17 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  text-align: left;
+  font-style: normal;
+}
+.pay-success-container .header .printPort.data-v-7fbd4a17 {
+  height: 20rpx;
+  background: #B95103;
+  border-radius: 14rpx;
+  margin: 84rpx 28rpx 0;
+}
+.pay-success-container .ticket-box.data-v-7fbd4a17 {
+  min-height: 638rpx;
+  margin: 0 50rpx;
+  margin-top: -64rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-image: url("https://zxd-hotel.xin/zxdhotel/2025/06/03/paper_20250603224821A001.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  padding: 0 28rpx;
+}
+.pay-success-container .ticket-box .amount.data-v-7fbd4a17 {
+  width: 100%;
+  text-align: center;
+  margin-top: 66rpx;
+}
+.pay-success-container .ticket-box .amount .amount-Y.data-v-7fbd4a17 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 36rpx;
+  color: #19191A;
+  text-align: left;
+  font-style: normal;
+}
+.pay-success-container .ticket-box .amount .amount-num.data-v-7fbd4a17 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 56rpx;
+  color: #19191A;
+  line-height: 56rpx;
+  text-align: right;
+  font-style: normal;
+}
+.pay-success-container .ticket-box .line.data-v-7fbd4a17 {
+  width: 100%;
+  margin: 50rpx 0 26rpx 0;
+  height: 1rpx;
+  background: #E8E9EB;
+}
+.pay-success-container .ticket-box .info-row.data-v-7fbd4a17 {
+  font-size: 28rpx;
+  color: #19191A;
+  margin-bottom: 40rpx;
+  display: flex;
+  align-items: flex-start;
+}
+.pay-success-container .ticket-box .info-row .label.data-v-7fbd4a17 {
+  margin-right: 30rpx;
+  flex-shrink: 0;
+  min-width: 140rpx;
+}
+.pay-success-container .ticket-box .info-row .content.data-v-7fbd4a17 {
+  flex: 1;
+  word-break: break-all;
+}
+.pay-success-container .ticket-box .info-row.data-v-7fbd4a17:last-child {
+  margin-bottom: 0;
+}
+.pay-success-container .btn-group.data-v-7fbd4a17 {
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60rpx;
+  /* 高分辨率适配 */
+}
+.pay-success-container .btn-group .main-btn.data-v-7fbd4a17 {
+  width: 100%;
+  height: 92rpx;
+  line-height: 92rpx;
+  background: #ee781f;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 500;
+  border-radius: 50rpx;
+  margin-bottom: 32rpx;
+  text-align: center;
+}
+.pay-success-container .btn-group .sub-btn.data-v-7fbd4a17 {
+  width: 100%;
+  height: 92rpx;
+  line-height: 92rpx;
+  background: #fff;
+  color: #ee781f;
+  font-size: 32rpx;
+  font-weight: 500;
+  border-radius: 50rpx;
+  border: 1rpx solid #ee781f;
+  text-align: center;
+  position: relative;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+.pay-success-container .btn-group .sub-btn.data-v-7fbd4a17 {
+    border: 0.5px solid #ee781f;
+}
+}

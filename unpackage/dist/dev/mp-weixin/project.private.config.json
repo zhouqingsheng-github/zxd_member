@@ -1,0 +1,123 @@
+{
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "积分商城",
+          "pathName": "pages/subPackages/points/mall-index/mall-index",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        },
+        {
+          "name": "pages/subPackages/questionnaire/detail",
+          "pathName": "pages/subPackages/questionnaire/detail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "填写订单",
+          "pathName": "pages/subPackages/order/index",
+          "query": "id=134&orderId=265",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "试睡官报名",
+          "pathName": "pages/subPackages/questionnaire/detail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "WIFI连接",
+          "pathName": "pages/subPackages/wifi/index",
+          "query": "scene=hotelId%3D1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "房型详细",
+          "pathName": "pages/subPackages/home/detail",
+          "query": "id=25",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "登录页面",
+          "pathName": "pages/subPackages/user/login",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "会员权益",
+          "pathName": "pages/subPackages/user/member-right",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "会员权益",
+          "pathName": "pages/subPackages/user/member-right",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "分享红包",
+          "pathName": "pages/subPackages/coupon/receive",
+          "query": "spread=48467",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "填写订单",
+          "pathName": "pages/subPackages/order/index",
+          "query": "id=198&orderId=4429",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的红包",
+          "pathName": "pages/coupon/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "政策设施",
+          "pathName": "pages/subPackages/agreement/facilities",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "分享会员",
+          "pathName": "pages/subPackages/user/share-receive",
+          "query": "spread=50",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "红包列表",
+          "pathName": "pages/coupon/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "去兑换页面",
+          "pathName": "pages/subPackages/home/jointSalesDetail",
+          "query": "id=25&dataId=9",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "setting": {
+    "urlCheck": false
+  }
+}

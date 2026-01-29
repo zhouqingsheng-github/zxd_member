@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "设置",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "酒店详情",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#F3F4F6",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "u-swiper": "/uni_modules/uview-ui/components/u-swiper/u-swiper",
+    "bed-count-picker": "/components/BedCountPicker",
+    "hotel-calendar": "/components/HotelCalendar"
+  }
+}

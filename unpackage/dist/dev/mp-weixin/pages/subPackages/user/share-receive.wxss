@@ -1,0 +1,228 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.member-card-bj.data-v-b9d0aa28 {
+  width: 332rpx;
+  height: 46rpx;
+  margin: auto;
+  padding-top: 52rpx;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
+}
+.custom-navbar-title.data-v-b9d0aa28 {
+  width: 100%;
+  height: 100rpx;
+  font-family: PingFangSC, PingFang SC, serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #19191A;
+  line-height: 100rpx;
+  text-align: center;
+  font-style: normal;
+}
+.share-receive-page.data-v-b9d0aa28 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow: hidden;
+}
+.sticky-header.data-v-b9d0aa28 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-shrink: 0;
+}
+.header-section.data-v-b9d0aa28 {
+  text-align: center;
+  height: 442rpx;
+  background-color: #f5f5f5;
+}
+.header-section-2.data-v-b9d0aa28 {
+  background: white;
+  width: 100%;
+  height: 108rpx;
+}
+.main-content.data-v-b9d0aa28 {
+  flex: 1;
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+}
+.right-item.data-v-b9d0aa28 {
+  height: 160rpx;
+  background: #F6F6F6;
+  border-radius: 28rpx;
+  margin: 20rpx 56rpx 0 56rpx;
+  position: relative;
+}
+.right-item-1.data-v-b9d0aa28 {
+  height: 80rpx;
+  background: transparent !important;
+}
+.right-icon.data-v-b9d0aa28 {
+  width: 56rpx;
+  height: 56rpx;
+  margin-top: 52rpx;
+  margin-left: 40rpx;
+}
+.right-info.data-v-b9d0aa28 {
+  flex: 1;
+}
+.right-title.data-v-b9d0aa28 {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 10rpx;
+}
+.right-desc.data-v-b9d0aa28 {
+  font-size: 24rpx;
+  color: #999999;
+}
+.cta-section.data-v-b9d0aa28 {
+  text-align: center;
+}
+.fixed-bottom.data-v-b9d0aa28 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+  background-color: #fff;
+  z-index: 100;
+  flex-shrink: 0;
+}
+.receive-btn.data-v-b9d0aa28 {
+  margin: auto;
+  text-align: center;
+  width: 80%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #FF6600;
+  border-radius: 44rpx;
+  color: white;
+  font-size: 32rpx;
+  font-weight: bold;
+  border: none;
+}
+.disabled-btn.data-v-b9d0aa28 {
+  background-color: #cccccc;
+}
+.login-tip.data-v-b9d0aa28 {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.login-link.data-v-b9d0aa28 {
+  color: #FF9A9E;
+  font-weight: bold;
+}
+.login-popup.data-v-b9d0aa28 {
+  padding: 40rpx;
+  text-align: center;
+}
+.popup-title.data-v-b9d0aa28 {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16rpx;
+}
+.popup-subtitle.data-v-b9d0aa28 {
+  font-size: 28rpx;
+  color: #999;
+  margin-bottom: 40rpx;
+}
+.login-options.data-v-b9d0aa28 {
+  margin-bottom: 30rpx;
+}
+.login-btn.data-v-b9d0aa28 {
+  width: 100%;
+  height: 80rpx;
+  border-radius: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+  border: none;
+  padding: 10rpx 20rpx;
+}
+.phone-login.data-v-b9d0aa28 {
+  background-color: #FF6600;
+  color: #fff;
+}
+.wx-login.data-v-b9d0aa28 {
+  background-color: #07C160;
+  color: #fff;
+}
+.login-icon.data-v-b9d0aa28 {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.popup-cancel.data-v-b9d0aa28 {
+  padding: 20rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+.custom-nav-bar.data-v-b9d0aa28 {
+  background-color: #FF6600 !important;
+}
+.search-button.data-v-b9d0aa28 {
+  background-color: #FF6600;
+  color: white;
+}
+.title-content.data-v-b9d0aa28 {
+  margin-left: 130rpx;
+  margin-right: 38rpx;
+  position: absolute;
+  top: 26rpx;
+}
+.title-content .title.data-v-b9d0aa28 {
+  width: auto;
+  height: 28rpx;
+  font-family: PingFangSC, PingFang SC, serif;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #19191A;
+  line-height: 28rpx;
+  text-align: left;
+  font-style: normal;
+}
+.title-content .description.data-v-b9d0aa28 {
+  width: 472rpx;
+  height: 64rpx;
+  font-family: PingFangSC, PingFang SC, serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #6D7278;
+  line-height: 32rpx;
+  text-align: left;
+  font-style: normal;
+  margin-top: 16rpx;
+}
+.orange-text.data-v-b9d0aa28 {
+  color: #FF6600;
+}
+.right-item.data-v-b9d0aa28:last-child {
+  border: none;
+}
+.right-info.data-v-b9d0aa28 {
+  flex: 1;
+}
+.right-title.data-v-b9d0aa28 {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 10rpx;
+}
+.right-desc.data-v-b9d0aa28 {
+  font-size: 24rpx;
+  color: #999999;
+}

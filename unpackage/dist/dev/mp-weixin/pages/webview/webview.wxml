@@ -1,0 +1,1 @@
+<view class="{{['webview-page','data-v-baadaa0c',virtualHostClass]}}" style="{{virtualHostStyle}}"><block wx:if="{{pageUrl}}"><web-view class="webview-content data-v-baadaa0c" src="{{pageUrl}}"></web-view></block><block wx:else><view class="empty data-v-baadaa0c">无效链接</view></block></view>

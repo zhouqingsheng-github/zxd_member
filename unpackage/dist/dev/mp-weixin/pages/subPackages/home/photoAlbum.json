@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "相册",
+  "navigationStyle": "custom",
+  "backgroundColor": "#FFF",
+  "usingComponents": {
+    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
+    "photo-grid": "/components/PhotoGrid"
+  }
+}

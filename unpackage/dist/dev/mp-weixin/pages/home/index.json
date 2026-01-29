@@ -1,0 +1,22 @@
+{
+  "navigationBarTitleText": "首页",
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom",
+  "backgroundColor": "#F3F4F6",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "u-icon": "/uni_modules/uview-ui/components/u-icon/u-icon",
+    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
+    "u-swiper": "/uni_modules/uview-ui/components/u-swiper/u-swiper",
+    "empty-state": "/components/EmptyState",
+    "u-button": "/uni_modules/uview-ui/components/u-button/u-button",
+    "city-picker": "/components/CityPicker",
+    "custom-tabbar": "/components/CustomTabbar",
+    "hotel-calendar": "/components/HotelCalendar",
+    "bed-count-picker": "/components/BedCountPicker",
+    "hotel-list": "/components/HotelList",
+    "search-card": "/components/SearchCard",
+    "draggable-floating-button": "/components/DraggableFloatingButton"
+  }
+}

@@ -1,0 +1,466 @@
+{
+  "pages": [
+    {
+      "path": "pages/home/index",
+      "style": {
+        "navigationBarTitleText": "首页",
+        "navigationBarTextStyle": "white",
+        "navigationStyle": "custom",
+        "backgroundColor": "#F3F4F6",
+        "enablePullDownRefresh": true,
+        "backgroundTextStyle": "dark"
+      }
+    },
+    {
+      "path": "pages/order/index",
+      "style": {
+        "navigationBarTitleText": "订单",
+        "navigationStyle": "custom",
+        "backgroundColor": "#F3F4F6",
+        "enableShareAppMessage": true,
+        "enableShareTimeline": true
+      }
+    },
+    {
+      "path": "pages/coupon/index",
+      "style": {
+        "navigationBarTitleText": "我的红包",
+        "navigationStyle": "custom",
+        "backgroundColor": "#F3F4F6",
+        "enableShareAppMessage": true,
+        "enableShareTimeline": true
+      }
+    },
+    {
+      "path": "pages/user/index",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/webview/webview",
+      "style": {
+        "navigationBarTitleText": "网页浏览",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "navigationBarTextStyle": "black",
+        "backgroundTextStyle": "light"
+      }
+    }
+  ],
+  "tabBar": {
+    "custom": true,
+    "color": "#19191A",
+    "selectedColor": "#EE781F",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home_selected.png"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "text": "订单",
+        "iconPath": "static/tabbar/order.png",
+        "selectedIconPath": "static/tabbar/order_selected.png"
+      },
+      {
+        "pagePath": "pages/coupon/index",
+        "text": "优惠券",
+        "iconPath": "static/tabbar/coupon.png",
+        "selectedIconPath": "static/tabbar/coupon_selected.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "static/tabbar/mine.png",
+        "selectedIconPath": "static/tabbar/mine_selected.png"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "pages/subPackages/home",
+      "pages": [
+        {
+          "path": "detail",
+          "style": {
+            "navigationBarTitleText": "酒店详情",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "backgroundColor": "#F3F4F6",
+            "backgroundTextStyle": "dark"
+          }
+        },
+        {
+          "path": "jointSalesDetail",
+          "style": {
+            "navigationBarTitleText": "酒店详情",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "backgroundColor": "#F3F4F6",
+            "backgroundTextStyle": "dark"
+          }
+        },
+        {
+          "path": "search/index",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "搜索酒店",
+            "enablePullDownRefresh": false,
+            "disableScroll": true
+          }
+        },
+        {
+          "path": "search/jointSales",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "搜索酒店",
+            "enablePullDownRefresh": false,
+            "disableScroll": true
+          }
+        },
+        {
+          "path": "search-result/index",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "搜索",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "city-select/index",
+          "style": {
+            "navigationBarTitleText": "城市选择",
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "photoAlbum",
+          "style": {
+            "navigationBarTitleText": "相册",
+            "navigationStyle": "custom",
+            "backgroundColor": "#FFF"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/subPackages/order",
+      "pages": [
+        {
+          "path": "index",
+          "style": {
+            "navigationBarTitleText": "填写订单",
+            "navigationStyle": "custom",
+            "backgroundColor": "#F3F4F6"
+          }
+        },
+        {
+          "path": "detail",
+          "style": {
+            "navigationBarTitleText": "订单详情",
+            "navigationStyle": "custom",
+            "backgroundColor": "#F3F4F6"
+          }
+        },
+        {
+          "path": "three_detail",
+          "style": {
+            "navigationBarTitleText": "订单详情",
+            "navigationStyle": "custom",
+            "backgroundColor": "#F3F4F6"
+          }
+        },
+        {
+          "path": "paySuccess",
+          "style": {
+            "navigationBarTitleText": "支付详情",
+            "navigationStyle": "custom",
+            "backgroundColor": "#F3F4F6"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/subPackages/coupon",
+      "pages": [
+        {
+          "path": "detail",
+          "style": {
+            "navigationBarTitleText": "优惠券详情"
+          }
+        },
+        {
+          "path": "receive",
+          "style": {
+            "navigationBarTitleText": "来自好友的分享",
+            "navigationStyle": "custom",
+            "backgroundColor": "#F3F4F6",
+            "enableShareAppMessage": true,
+            "enableShareTimeline": true
+          }
+        },
+        {
+          "path": "receive-success",
+          "style": {
+            "navigationBarTitleText": "来自好友的分享",
+            "navigationStyle": "custom",
+            "backgroundColor": "#F3F4F6",
+            "enableShareAppMessage": true,
+            "enableShareTimeline": true
+          }
+        },
+        {
+          "path": "receiving-center",
+          "style": {
+            "navigationBarTitleText": "领取中心",
+            "navigationStyle": "custom",
+            "backgroundColor": "#F3F4F6",
+            "enableShareAppMessage": true,
+            "enableShareTimeline": true
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/subPackages/user",
+      "pages": [
+        {
+          "path": "setting",
+          "style": {
+            "navigationBarTitleText": "设置",
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "login",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "phone-login",
+          "style": {
+            "navigationBarTitleText": "登录/注册",
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "member-activate",
+          "style": {
+            "navigationBarTitleText": "开通会员",
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "member-success",
+          "style": {
+            "navigationBarTitleText": "开通会员",
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "member-right",
+          "style": {
+            "navigationBarTitleText": "会员权益",
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "share-receive",
+          "style": {
+            "navigationBarTitleText": "会员领取",
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/subPackages/richText",
+      "pages": [
+        {
+          "path": "richText",
+          "style": {
+            "navigationBarTitleText": "富文本内容",
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/subPackages/agreement",
+      "pages": [
+        {
+          "path": "facilities",
+          "style": {
+            "navigationBarTitleText": "政策设施",
+            "navigationStyle": "custom",
+            "backgroundColor": "#F3F4F6"
+          }
+        },
+        {
+          "path": "bookingNotice",
+          "style": {
+            "navigationBarTitleText": "预订须知",
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "paymentAgreement",
+          "style": {
+            "navigationBarTitleText": "支付服务协议",
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "userAgreement",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "privacyPolicy",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "intellectualProperty",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "aboutUs",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "memberAgreement",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "sleepTesterGuide",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/subPackages/questionnaire",
+      "pages": [
+        {
+          "path": "submit",
+          "style": {
+            "navigationBarTitleText": "试睡官报名",
+            "navigationStyle": "custom",
+            "backgroundColor": "#F3F4F6"
+          }
+        },
+        {
+          "path": "detail",
+          "style": {
+            "navigationBarTitleText": "试睡官招募",
+            "navigationStyle": "custom",
+            "backgroundColor": "#F3F4F6",
+            "disableScroll": true
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/subPackages/wifi",
+      "pages": [
+        {
+          "path": "index",
+          "style": {
+            "navigationBarTitleText": "WiFi连接",
+            "navigationStyle": "custom",
+            "backgroundColor": "#EE781F",
+            "enableShareAppMessage": false,
+            "enableShareTimeline": false
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/subPackages/points",
+      "pages": [
+        {
+          "path": "mall-index/mall-index",
+          "style": {
+            "navigationBarTitleText": "积分商城",
+            "navigationStyle": "custom",
+            "backgroundColor": "#F3F4F6",
+            "enablePullDownRefresh": true,
+            "backgroundTextStyle": "dark"
+          }
+        },
+        {
+          "path": "product-detail/product-detail",
+          "style": {
+            "navigationBarTitleText": "商品详情",
+            "navigationStyle": "custom",
+            "backgroundColor": "#FFFFFF"
+          }
+        },
+        {
+          "path": "order-confirm/order-confirm",
+          "style": {
+            "navigationBarTitleText": "确认订单",
+            "navigationStyle": "custom",
+            "backgroundColor": "#F3F4F6"
+          }
+        },
+        {
+          "path": "store-select/store-select",
+          "style": {
+            "navigationBarTitleText": "选择门店",
+            "navigationStyle": "custom",
+            "backgroundColor": "#F3F4F6"
+          }
+        },
+        {
+          "path": "order-list/order-list",
+          "style": {
+            "navigationBarTitleText": "我的兑换",
+            "navigationStyle": "custom",
+            "backgroundColor": "#F3F4F6"
+          }
+        },
+        {
+          "path": "order-detail/order-detail",
+          "style": {
+            "navigationBarTitleText": "订单详情",
+            "navigationStyle": "custom",
+            "backgroundColor": "#F3F4F6"
+          }
+        }
+      ]
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "住小叮",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F3F4F6",
+    "backgroundTextStyle": "light"
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+    }
+  },
+  "darkmode": true,
+  "themeLocation": "theme.json"
+}

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "领取中心",
+  "navigationStyle": "custom",
+  "backgroundColor": "#F3F4F6",
+  "enableShareAppMessage": true,
+  "enableShareTimeline": true,
+  "usingComponents": {
+    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
+    "empty-state": "/components/EmptyState"
+  }
+}

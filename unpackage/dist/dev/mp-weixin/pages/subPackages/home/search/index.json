@@ -1,0 +1,15 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "搜索酒店",
+  "enablePullDownRefresh": false,
+  "disableScroll": true,
+  "usingComponents": {
+    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
+    "u-popup": "/uni_modules/uview-ui/components/u-popup/u-popup",
+    "hotel-list": "/components/HotelList",
+    "search-card": "/components/SearchCard",
+    "hotel-calendar": "/components/HotelCalendar",
+    "bed-count-picker": "/components/BedCountPicker",
+    "empty-state": "/components/EmptyState"
+  }
+}

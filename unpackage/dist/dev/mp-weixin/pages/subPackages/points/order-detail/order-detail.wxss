@@ -1,0 +1,228 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.order-detail-container.data-v-9a3acb04 {
+  min-height: 100vh;
+  background-color: #F3F4F6;
+  padding-bottom: 120rpx;
+}
+.status-section.data-v-9a3acb04 {
+  margin: 20rpx 24rpx;
+  padding: 48rpx 32rpx;
+  background: linear-gradient(135deg, #FF9A56 0%, #EE781F 100%);
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.status-section.pending.data-v-9a3acb04 {
+  background: linear-gradient(135deg, #FFB74D 0%, #FF9800 100%);
+}
+.status-section.paid.data-v-9a3acb04 {
+  background: linear-gradient(135deg, #FF9A56 0%, #EE781F 100%);
+}
+.status-section.completed.data-v-9a3acb04 {
+  background: linear-gradient(135deg, #66BB6A 0%, #4CAF50 100%);
+}
+.status-section.cancelled.data-v-9a3acb04 {
+  background: linear-gradient(135deg, #BDBDBD 0%, #9E9E9E 100%);
+}
+.status-section .status-icon.data-v-9a3acb04 {
+  font-size: 80rpx;
+  color: #FFFFFF;
+}
+.status-section .status-text.data-v-9a3acb04 {
+  margin-top: 16rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.verification-section.data-v-9a3acb04 {
+  margin: 20rpx 24rpx;
+  padding: 40rpx 32rpx;
+  background-color: #FFFFFF;
+  border-radius: 16rpx;
+  text-align: center;
+}
+.verification-section .verification-title.data-v-9a3acb04 {
+  font-size: 28rpx;
+  color: #666666;
+  margin-bottom: 20rpx;
+}
+.verification-section .verification-code.data-v-9a3acb04 {
+  font-size: 72rpx;
+  font-weight: bold;
+  color: #EE781F;
+  letter-spacing: 8rpx;
+  margin-bottom: 20rpx;
+}
+.verification-section .verification-tip.data-v-9a3acb04 {
+  font-size: 24rpx;
+  color: #999999;
+}
+.section-card.data-v-9a3acb04 {
+  margin: 20rpx 24rpx;
+  padding: 32rpx;
+  background-color: #FFFFFF;
+  border-radius: 16rpx;
+}
+.section-title.data-v-9a3acb04 {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #19191A;
+  margin-bottom: 24rpx;
+}
+.product-item.data-v-9a3acb04 {
+  display: flex;
+}
+.product-item .product-image.data-v-9a3acb04 {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 12rpx;
+  margin-right: 24rpx;
+}
+.product-item .product-info.data-v-9a3acb04 {
+  flex: 1;
+}
+.product-item .product-info .product-name.data-v-9a3acb04 {
+  font-size: 28rpx;
+  color: #19191A;
+  margin-bottom: 12rpx;
+}
+.product-item .product-info .product-spec.data-v-9a3acb04 {
+  font-size: 24rpx;
+  color: #666666;
+  margin-bottom: 12rpx;
+}
+.product-item .product-info .product-quantity.data-v-9a3acb04 {
+  font-size: 24rpx;
+  color: #999999;
+}
+.store-info .info-row.data-v-9a3acb04,
+.user-info .info-row.data-v-9a3acb04,
+.order-info .info-row.data-v-9a3acb04 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #F3F4F6;
+}
+.store-info .info-row.data-v-9a3acb04:last-child,
+.user-info .info-row.data-v-9a3acb04:last-child,
+.order-info .info-row.data-v-9a3acb04:last-child {
+  border-bottom: none;
+}
+.store-info .info-row .info-label.data-v-9a3acb04,
+.user-info .info-row .info-label.data-v-9a3acb04,
+.order-info .info-row .info-label.data-v-9a3acb04 {
+  font-size: 28rpx;
+  color: #666666;
+}
+.store-info .info-row .info-value.data-v-9a3acb04,
+.user-info .info-row .info-value.data-v-9a3acb04,
+.order-info .info-row .info-value.data-v-9a3acb04 {
+  font-size: 28rpx;
+  color: #19191A;
+  text-align: right;
+  flex: 1;
+  margin-left: 32rpx;
+}
+.store-info .info-row .info-value.phone.data-v-9a3acb04,
+.user-info .info-row .info-value.phone.data-v-9a3acb04,
+.order-info .info-row .info-value.phone.data-v-9a3acb04 {
+  color: #EE781F;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8rpx;
+}
+.phone-icon.data-v-9a3acb04 {
+  font-size: 28rpx;
+  margin-left: 8rpx;
+}
+.cost-info .cost-row.data-v-9a3acb04 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.cost-info .cost-row .cost-label.data-v-9a3acb04 {
+  font-size: 28rpx;
+  color: #666666;
+}
+.cost-info .cost-row .cost-value.data-v-9a3acb04 {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.cost-info .cost-row .cost-value.points.data-v-9a3acb04 {
+  color: #EE781F;
+}
+.cost-info .cost-row .cost-value.cash.data-v-9a3acb04 {
+  color: #EE781F;
+}
+.bottom-bar.data-v-9a3acb04 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 24rpx;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+  background-color: #FFFFFF;
+  box-shadow: 0 -4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+.bottom-bar .cancel-btn.data-v-9a3acb04 {
+  height: 88rpx;
+  background-color: #F3F4F6;
+  border-radius: 44rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #666666;
+}
+.loading-overlay.data-v-9a3acb04 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.loading-spinner.data-v-9a3acb04 {
+  width: 60rpx;
+  height: 60rpx;
+  border: 4rpx solid #f3f3f3;
+  border-top: 4rpx solid #EE781F;
+  border-radius: 50%;
+  -webkit-animation: spin-data-v-9a3acb04 1s linear infinite;
+          animation: spin-data-v-9a3acb04 1s linear infinite;
+}
+@-webkit-keyframes spin-data-v-9a3acb04 {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+@keyframes spin-data-v-9a3acb04 {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}

@@ -1,0 +1,1 @@
+<text data-event-opts="{{[['tap',[['_onClick',['$event']]]]]}}" class="{{['uni-icons','uniui-'+type,customPrefix,customPrefix?type:'',virtualHostClass]}}" style="{{'color:'+(color)+';'+('font-size:'+(iconSize)+';')+virtualHostStyle}}" bindtap="__e"></text>

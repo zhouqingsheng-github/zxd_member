@@ -1,0 +1,257 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.other-tinkerbells.data-v-71e217db {
+  margin-top: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24rpx;
+}
+.other-tinkerbells .other-tinkerbells-l.data-v-71e217db {
+  width: 130rpx;
+  height: 2rpx;
+  border: 2rpx solid;
+  border-image: linear-gradient(270deg, #979797, rgba(243, 244, 246, 0)) 2 2;
+}
+.other-tinkerbells .other-tinkerbells-r.data-v-71e217db {
+  width: 130rpx;
+  height: 2rpx;
+  border: 2rpx solid;
+  border-image: linear-gradient(270deg, rgba(243, 244, 246, 0), #979797) 2 2;
+}
+.other-tinkerbells .other-tinkerbells-c.data-v-71e217db {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #6D7278;
+  line-height: 28rpx;
+  text-align: center;
+  font-style: normal;
+}
+.data-v-71e217db .empty-state {
+  margin-top: 50rpx !important;
+}
+.custom-title.data-v-71e217db {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  color: #FFF;
+  width: auto;
+  height: 190rpx;
+  top: 202rpx;
+  left: 56rpx;
+  right: 0;
+}
+.custom-title .title-text.data-v-71e217db {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 60rpx;
+  color: #FFFFFF;
+  line-height: 60rpx;
+  text-align: left;
+  font-style: normal;
+}
+.custom-title .subtitle.data-v-71e217db {
+  margin-top: 20rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 48rpx;
+  color: #FFFFFF;
+  line-height: 48rpx;
+  text-align: left;
+  font-style: normal;
+}
+.custom-title .btn.data-v-71e217db {
+  width: 152rpx;
+  height: 40rpx;
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 24rpx;
+  color: #FF3F1A;
+  line-height: 40rpx;
+  text-align: center;
+  font-style: normal;
+  margin-top: 22rpx;
+}
+.empty-state.data-v-71e217db {
+  width: 370rpx;
+  height: 200rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100rpx;
+  margin-bottom: 40rpx;
+}
+.empty-icon.data-v-71e217db {
+  width: 100%;
+  height: 100vh;
+}
+.empty-text.data-v-71e217db {
+  margin: auto;
+  width: auto;
+  height: 24rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #A2A2A8;
+  line-height: 24rpx;
+  text-align: center;
+  font-style: normal;
+}
+.container.data-v-71e217db {
+  position: relative;
+  min-height: 100vh;
+  background: #F3F4F6;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.home-banner.data-v-71e217db {
+  width: 100%;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.data-v-71e217db .uni-navbar {
+  background-color: transparent !important;
+  position: absolute;
+}
+.banner-swiper.data-v-71e217db {
+  width: 100%;
+  overflow: hidden;
+}
+.banner-img.data-v-71e217db {
+  width: 100%;
+  display: block;
+  border-bottom-left-radius: 32rpx;
+  border-bottom-right-radius: 32rpx;
+  overflow: hidden;
+  background: transparent;
+}
+.main-content.data-v-71e217db {
+  position: relative;
+  top: -254rpx;
+  z-index: 1;
+  padding: 0 24rpx 0 24rpx;
+}
+/*搜索卡片样式 */
+.data-v-71e217db .search-card {
+  border-radius: 28rpx;
+  overflow: hidden;
+}
+.custom-navbar-title.data-v-71e217db {
+  width: 100%;
+  height: 100rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  line-height: 100rpx;
+  text-align: center;
+  font-style: normal;
+}
+.calendar-page.data-v-71e217db {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: #fff;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  /* iOS滚动优化 */
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+.calendar-page.show.data-v-71e217db {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.page-hidden.data-v-71e217db {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+}
+.page-visible.data-v-71e217db {
+  opacity: 1;
+  pointer-events: auto;
+}
+.no-hotel-text.data-v-71e217db {
+  margin-left: 8rpx;
+  font-size: 26rpx;
+}
+.no-hotel-tip.data-v-71e217db::before,
+.no-hotel-tip.data-v-71e217db::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #ddd;
+}
+.no-hotel-tip.data-v-71e217db::before {
+  margin-right: 10rpx;
+}
+.no-hotel-tip.data-v-71e217db::after {
+  margin-left: 10rpx;
+}
+/*弹窗广告样式 */
+.popup-ad-mask.data-v-71e217db {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup-ad-container.data-v-71e217db {
+  position: relative;
+  width: 90%;
+  height: 40%;
+}
+.popup-ad-image.data-v-71e217db {
+  width: 100%;
+  height: 100%;
+  border-radius: 16rpx;
+}
+.popup-ad-close.data-v-71e217db {
+  position: absolute;
+  bottom: -90rpx;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 60rpx;
+  height: 60rpx;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup-ad-btn.data-v-71e217db {
+  width: 40%;
+  margin: auto;
+  height: 92rpx;
+  background: #EE781F;
+  border-radius: 50rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  line-height: 92rpx;
+  text-align: center;
+  font-style: normal;
+}
