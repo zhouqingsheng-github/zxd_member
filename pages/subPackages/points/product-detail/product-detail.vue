@@ -235,22 +235,20 @@ export default {
     async getProductDetail() {
       try {
         uni.showLoading({ title: '加载中...' })
-        const res = await getProductDetail(this.productId)
+        const data = await getProductDetail(this.productId)
         
-        if (res.code === '200' && res.data) {
-          this.productInfo = res.data
-          this.carouselImages = res.data.carouselImages || [res.data.mainImage]
-          this.skuList = res.data.skuList || []
-          
-          // 默认选中第一个SKU
-          if (this.skuList.length > 0) {
-            this.selectedSku = this.skuList[0]
-          }
-          
-          // 计算最大购买数量
-          if (this.productInfo.purchaseLimit > 0) {
-            this.maxQuantity = this.productInfo.purchaseLimit
-          }
+        this.productInfo = data
+        this.carouselImages = data.carouselImages || [data.mainImage]
+        this.skuList = data.skuList || []
+        
+        // 默认选中第一个SKU
+        if (this.skuList.length > 0) {
+          this.selectedSku = this.skuList[0]
+        }
+        
+        // 计算最大购买数量
+        if (this.productInfo.purchaseLimit > 0) {
+          this.maxQuantity = this.productInfo.purchaseLimit
         }
       } catch (error) {
         console.error('获取商品详情失败:', error)

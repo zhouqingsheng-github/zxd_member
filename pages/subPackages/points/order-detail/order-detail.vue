@@ -160,11 +160,8 @@ export default {
       this.loading = true;
       
       try {
-        const res = await getPointsOrderDetail(this.orderId);
-        
-        if (res && res.code === '200' && res.data) {
-          this.orderDetail = res.data;
-        }
+        const data = await getPointsOrderDetail(this.orderId);
+        this.orderDetail = data;
       } catch (error) {
         console.error('加载订单详情失败:', error);
         uni.showToast({
@@ -183,23 +180,16 @@ export default {
         success: async (res) => {
           if (res.confirm) {
             try {
-              const result = await cancelPointsOrder(this.orderId);
+              await cancelPointsOrder(this.orderId);
               
-              if (result && result.code === '200') {
-                uni.showToast({
-                  title: '取消成功',
-                  icon: 'success'
-                });
-                // 重新加载订单详情
-                setTimeout(() => {
-                  this.loadOrderDetail();
-                }, 1500);
-              } else {
-                uni.showToast({
-                  title: result.msg || '取消失败',
-                  icon: 'none'
-                });
-              }
+              uni.showToast({
+                title: '取消成功',
+                icon: 'success'
+              });
+              // 重新加载订单详情
+              setTimeout(() => {
+                this.loadOrderDetail();
+              }, 1500);
             } catch (error) {
               console.error('取消订单失败:', error);
               uni.showToast({
