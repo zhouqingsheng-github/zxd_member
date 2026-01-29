@@ -9,24 +9,39 @@
       <!-- 头部 -->
       <view class="header">
         <view class="header-content">
-          <image :src="selectedSku.imageUrl || product.mainImage" class="sku-image" mode="aspectFill" />
+          <view class="sku-image-wrapper">
+            <image 
+              :src="selectedSku.imageUrl || product.mainImage" 
+              class="sku-image" 
+              mode="aspectFill" 
+            />
+            <view class="image-border"></view>
+          </view>
           <view class="sku-info">
             <view class="sku-price">
               <text class="points">{{ selectedSku.pointsRequired || 0 }}</text>
               <text class="points-unit">积分</text>
               <text v-if="selectedSku.cashRequired > 0" class="cash">+¥{{ selectedSku.cashRequired }}</text>
             </view>
-            <view class="sku-stock">库存：{{ selectedSku.stock || 0 }}</view>
+            <view class="sku-stock">
+              <text class="stock-label">库存：</text>
+              <text class="stock-value">{{ selectedSku.stock || 0 }}</text>
+            </view>
           </view>
         </view>
         <view class="close-btn" @click="handleClose">
-          <u-icon name="close" size="40" color="#666666" />
+          <view class="close-icon">
+            <u-icon name="close" size="36" color="#666666" />
+          </view>
         </view>
       </view>
 
       <!-- 规格选择 -->
       <view class="spec-section">
-        <view class="section-title">选择规格</view>
+        <view class="section-title">
+          <text class="title-text">选择规格</text>
+          <view class="title-decoration"></view>
+        </view>
         <view class="spec-list">
           <view 
             v-for="sku in skuList" 
@@ -42,36 +57,47 @@
             <view v-if="sku.stock === 0" class="spec-disabled-mask">
               <text class="disabled-text">无货</text>
             </view>
+            <view v-if="selectedSku.id === sku.id" class="spec-check">
+              <u-icon name="checkbox-mark" color="#FFFFFF" size="24" />
+            </view>
           </view>
         </view>
       </view>
 
       <!-- 数量选择 -->
       <view class="quantity-section">
-        <view class="section-title">数量</view>
+        <view class="section-title">
+          <text class="title-text">数量</text>
+          <view class="title-decoration"></view>
+        </view>
         <u-number-box 
           v-model="quantity" 
           :min="1" 
           :max="selectedSku.stock || 1"
-          button-size="60"
-          input-width="100"
+          button-size="64"
+          input-width="120"
+          bg-color="#F7F8FA"
+          button-color="#FF7043"
         />
       </view>
 
       <!-- 底部按钮 -->
       <view class="footer">
-        <view class="total-price">
-          <text class="total-label">合计：</text>
-          <text class="total-points">{{ totalPoints }}</text>
-          <text class="total-unit">积分</text>
-          <text v-if="totalCash > 0" class="total-cash">+¥{{ totalCash }}</text>
+        <view class="total-section">
+          <text class="total-label">合计</text>
+          <view class="total-price">
+            <text class="total-points">{{ totalPoints }}</text>
+            <text class="total-unit">积分</text>
+            <text v-if="totalCash > 0" class="total-cash">+¥{{ totalCash }}</text>
+          </view>
         </view>
         <button 
           class="confirm-btn" 
+          :class="{ 'btn-disabled': !selectedSku.id || selectedSku.stock === 0 }"
           :disabled="!selectedSku.id || selectedSku.stock === 0"
           @click="handleConfirm"
         >
-          立即兑换
+          <text class="btn-text">立即兑换</text>
         </button>
       </view>
     </view>
@@ -112,7 +138,6 @@ export default {
   watch: {
     show(val) {
       if (val && this.skuList.length > 0) {
-        // 默认选中第一个有库存的SKU
         const availableSku = this.skuList.find(sku => sku.stock > 0);
         if (availableSku) {
           this.selectedSku = availableSku;
@@ -155,6 +180,7 @@ export default {
   padding-bottom: env(safe-area-inset-bottom);
 }
 
+/* 头部 */
 .header {
   display: flex;
   align-items: flex-start;
@@ -168,12 +194,29 @@ export default {
   display: flex;
 }
 
-.sku-image {
+.sku-image-wrapper {
+  position: relative;
   width: 160rpx;
   height: 160rpx;
-  border-radius: 16rpx;
-  background: #F5F5F5;
   flex-shrink: 0;
+}
+
+.sku-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+  background: #F5F5F5;
+}
+
+.image-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2rpx solid rgba(255, 112, 67, 0.2);
+  border-radius: 20rpx;
+  pointer-events: none;
 }
 
 .sku-info {
@@ -190,27 +233,40 @@ export default {
 }
 
 .points {
-  font-size: 48rpx;
-  color: #FF6B35;
+  font-size: 52rpx;
+  color: #FF7043;
   font-weight: bold;
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  line-height: 1;
 }
 
 .points-unit {
   font-size: 24rpx;
-  color: #FF6B35;
-  margin-left: 4rpx;
+  color: #FF7043;
+  margin-left: 6rpx;
 }
 
 .cash {
   font-size: 28rpx;
-  color: #FF6B35;
+  color: #FF7043;
   margin-left: 12rpx;
 }
 
 .sku-stock {
+  display: flex;
+  align-items: baseline;
+  margin-top: 16rpx;
+}
+
+.stock-label {
   font-size: 24rpx;
   color: #999999;
+}
+
+.stock-value {
+  font-size: 28rpx;
+  color: #1A1A1A;
+  font-weight: 500;
 }
 
 .close-btn {
@@ -218,16 +274,40 @@ export default {
   margin-left: 20rpx;
 }
 
+.close-icon {
+  width: 56rpx;
+  height: 56rpx;
+  background: #F7F8FA;
+  border-radius: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 规格选择 */
 .spec-section,
 .quantity-section {
   padding: 32rpx;
 }
 
 .section-title {
-  font-size: 28rpx;
-  color: #1A1A1A;
-  font-weight: 500;
+  display: flex;
+  align-items: center;
   margin-bottom: 24rpx;
+}
+
+.title-text {
+  font-size: 30rpx;
+  color: #1A1A1A;
+  font-weight: 600;
+}
+
+.title-decoration {
+  width: 40rpx;
+  height: 6rpx;
+  background: linear-gradient(90deg, #FF7043 0%, transparent 100%);
+  border-radius: 3rpx;
+  margin-left: 16rpx;
 }
 
 .spec-list {
@@ -238,20 +318,21 @@ export default {
 
 .spec-item {
   position: relative;
-  padding: 16rpx 32rpx;
+  min-width: 160rpx;
+  padding: 20rpx 32rpx;
   background: #F7F8FA;
-  border-radius: 12rpx;
+  border-radius: 16rpx;
   border: 2rpx solid transparent;
   transition: all 0.3s ease;
 }
 
 .spec-item-active {
-  background: #FFF4F0;
-  border-color: #FF6B35;
+  background: linear-gradient(135deg, #FFF4F0 0%, #FFE8E0 100%);
+  border-color: #FF7043;
 }
 
 .spec-item-disabled {
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 .spec-text {
@@ -260,8 +341,8 @@ export default {
 }
 
 .spec-item-active .spec-text {
-  color: #FF6B35;
-  font-weight: 500;
+  color: #FF7043;
+  font-weight: 600;
 }
 
 .spec-disabled-mask {
@@ -276,16 +357,43 @@ export default {
 }
 
 .disabled-text {
-  font-size: 20rpx;
+  font-size: 22rpx;
   color: #999999;
 }
 
+.spec-check {
+  position: absolute;
+  top: -4rpx;
+  right: -4rpx;
+  width: 36rpx;
+  height: 36rpx;
+  background: linear-gradient(135deg, #FF7043 0%, #FF5722 100%);
+  border-radius: 18rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 12rpx rgba(255, 112, 67, 0.3);
+}
+
+/* 底部按钮 */
 .footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 24rpx 32rpx;
   border-top: 1rpx solid #F0F0F0;
+  background: #FAFAFA;
+}
+
+.total-section {
+  flex: 1;
+}
+
+.total-label {
+  font-size: 24rpx;
+  color: #999999;
+  display: block;
+  margin-bottom: 8rpx;
 }
 
 .total-price {
@@ -293,44 +401,45 @@ export default {
   align-items: baseline;
 }
 
-.total-label {
-  font-size: 26rpx;
-  color: #666666;
-}
-
 .total-points {
-  font-size: 40rpx;
-  color: #FF6B35;
+  font-size: 44rpx;
+  color: #FF7043;
   font-weight: bold;
-  margin-left: 8rpx;
+  line-height: 1;
 }
 
 .total-unit {
   font-size: 22rpx;
-  color: #FF6B35;
+  color: #FF7043;
   margin-left: 4rpx;
 }
 
 .total-cash {
-  font-size: 24rpx;
-  color: #FF6B35;
+  font-size: 26rpx;
+  color: #FF7043;
   margin-left: 8rpx;
 }
 
 .confirm-btn {
   width: 280rpx;
-  height: 80rpx;
-  background: linear-gradient(135deg, #FF6B35 0%, #FF8E53 100%);
-  border-radius: 40rpx;
-  color: #FFFFFF;
-  font-size: 28rpx;
-  font-weight: 500;
+  height: 88rpx;
+  background: linear-gradient(135deg, #FF7043 0%, #FF5722 100%);
+  border-radius: 44rpx;
   border: none;
-  box-shadow: 0 8rpx 24rpx rgba(255, 107, 53, 0.3);
+  box-shadow: 0 8rpx 24rpx rgba(255, 112, 67, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.confirm-btn[disabled] {
+.btn-disabled {
   background: #D1D1D6;
   box-shadow: none;
+}
+
+.btn-text {
+  color: #FFFFFF;
+  font-size: 30rpx;
+  font-weight: 600;
 }
 </style>

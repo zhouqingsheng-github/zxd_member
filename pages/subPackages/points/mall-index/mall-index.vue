@@ -1,95 +1,123 @@
 <template>
   <view class="mall-page">
-    <!-- 自定义导航栏 -->
-    <uni-nav-bar 
-      :fixed="true" 
-      :shadow="false" 
-      :border="false" 
-      status-bar
-      background-color="linear-gradient(135deg, #FF6B35 0%, #FF8E53 100%)"
-    >
-      <template #default>
+    <!-- 头部区域 -->
+    <view class="header-section">
+      <!-- 状态栏占位 -->
+      <view class="status-bar" :style="{ height: statusBarHeight + 'px' }"></view>
+      
+      <!-- 导航栏 -->
+      <view class="nav-bar">
         <text class="nav-title">积分商城</text>
-      </template>
-    </uni-nav-bar>
-    
-    <!-- 头部渐变背景 -->
-    <view class="header-gradient">
-      <!-- 积分卡片 -->
-      <view class="points-card">
-        <view class="points-content">
-          <view class="points-label">我的积分</view>
-          <view class="points-value">{{ userPoints }}</view>
-        </view>
-        <view class="points-icon">💎</view>
       </view>
       
-      <!-- 搜索栏 -->
-      <view class="search-wrapper">
-        <u-search 
-          v-model="searchKeyword" 
-          placeholder="搜索你想要的商品"
-          :show-action="false"
-          shape="round"
-          bg-color="#FFFFFF"
-          @search="handleSearch"
-          @clear="handleSearchClear"
-        />
+      <!-- 装饰性背景 -->
+      <view class="header-decoration">
+        <view class="decoration-circle circle-1"></view>
+        <view class="decoration-circle circle-2"></view>
+        <view class="decoration-circle circle-3"></view>
+      </view>
+      
+      <!-- 积分卡片 -->
+      <view class="points-card-wrapper">
+        <view class="points-card">
+          <view class="card-bg"></view>
+          <view class="card-content">
+            <view class="points-info">
+              <text class="points-label">我的积分</text>
+              <view class="points-value-row">
+                <text class="points-value">{{ userPoints }}</text>
+                <text class="points-unit">分</text>
+              </view>
+            </view>
+            <view class="points-icon-wrapper">
+              <image 
+                src="/static/images/points-icon.png" 
+                class="points-icon"
+                mode="aspectFit"
+              />
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 搜索框 -->
+      <view class="search-section">
+        <view class="search-box" @click="handleSearchClick">
+          <u-icon name="search" color="#999999" size="36" />
+          <text class="search-placeholder">搜索你想要的商品</text>
+        </view>
       </view>
     </view>
 
+    <!-- 分类Tab -->
+    <view class="category-section">
+      <scroll-view class="category-scroll" scroll-x :show-scrollbar="false">
+        <view class="category-list">
+          <view 
+            v-for="(cat, index) in categoryList" 
+            :key="index"
+            class="category-item"
+            @click="handleCategoryChange(index)"
+          >
+            <text 
+              class="category-text" 
+              :class="{ 'category-text-active': currentCategory === index }"
+            >
+              {{ cat.name }}
+            </text>
+            <view 
+              class="category-indicator" 
+              :class="{ 'indicator-active': currentCategory === index }"
+            ></view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
     <scroll-view 
-      class="scroll-container"
+      class="content-scroll"
       scroll-y
       @scrolltolower="loadMore"
       refresher-enabled
       :refresher-triggered="refreshing"
       @refresherrefresh="onRefresh"
     >
-      <!-- 分类Tab -->
-      <view class="category-section">
-        <scroll-view class="category-scroll" scroll-x :show-scrollbar="false">
-          <view class="category-list">
-            <view 
-              v-for="(cat, index) in categoryList" 
-              :key="index"
-              class="category-item"
-              :class="{ 'category-item-active': currentCategory === index }"
-              @click="handleCategoryChange(index)"
-            >
-              <text class="category-text">{{ cat.name }}</text>
-            </view>
-          </view>
-        </scroll-view>
-      </view>
-      
       <!-- 商品网格 -->
-      <view class="product-grid">
-        <ProductCard
-          v-for="item in productList"
-          :key="item.id"
-          :product="item"
-          @click="goToDetail"
-        />
+      <view class="product-section">
+        <view class="product-grid">
+          <ProductCard
+            v-for="item in productList"
+            :key="item.id"
+            :product="item"
+            @click="goToDetail"
+          />
+        </view>
       </view>
 
       <!-- 加载状态 -->
       <view v-if="loading && productList.length === 0" class="loading-state">
-        <u-loading-icon mode="circle" color="#FF6B35" size="60" />
+        <u-loading-icon mode="circle" color="#FF7043" size="60" />
         <text class="loading-text">加载中...</text>
       </view>
 
       <!-- 空状态 -->
       <view v-if="!loading && productList.length === 0" class="empty-state">
-        <text class="empty-icon">🛍️</text>
+        <image 
+          src="/static/images/empty-product.png" 
+          class="empty-image"
+          mode="aspectFit"
+        />
         <text class="empty-text">暂无商品</text>
-        <text class="empty-tip">换个分类看看吧</text>
+        <text class="empty-tip">换个分类看看吧~</text>
       </view>
 
       <!-- 加载更多 -->
       <view v-if="productList.length > 0" class="loadmore-state">
-        <text v-if="loadingMore" class="loadmore-text">加载中...</text>
-        <text v-else-if="noMore" class="loadmore-text">— 已经到底了 —</text>
+        <view v-if="loadingMore" class="loadmore-loading">
+          <u-loading-icon mode="circle" color="#FF7043" size="40" />
+          <text class="loadmore-text">加载中...</text>
+        </view>
+        <text v-else-if="noMore" class="loadmore-end">— 已经到底了 —</text>
       </view>
     </scroll-view>
   </view>
@@ -106,6 +134,7 @@ export default {
   },
   data() {
     return {
+      statusBarHeight: 0,
       userPoints: 0,
       searchKeyword: '',
       categoryList: [],
@@ -120,6 +149,10 @@ export default {
     };
   },
   onLoad() {
+    // 获取状态栏高度
+    const systemInfo = uni.getSystemInfoSync();
+    this.statusBarHeight = systemInfo.statusBarHeight || 0;
+    
     this.init();
   },
   onShow() {
@@ -155,10 +188,6 @@ export default {
         ];
       } catch (error) {
         console.error('加载分类失败:', error);
-        uni.showToast({
-          title: '加载分类失败',
-          icon: 'none'
-        });
       }
     },
     
@@ -219,13 +248,11 @@ export default {
       }
     },
     
-    handleSearch() {
-      this.loadProducts(true);
-    },
-    
-    handleSearchClear() {
-      this.searchKeyword = '';
-      this.loadProducts(true);
+    handleSearchClick() {
+      uni.showToast({
+        title: '搜索功能开发中',
+        icon: 'none'
+      });
     },
     
     handleCategoryChange(index) {
@@ -257,69 +284,181 @@ export default {
 .mall-page {
   width: 100%;
   min-height: 100vh;
-  background: #F7F8FA;
+  background: #F5F7FA;
+}
+
+/* 头部区域 */
+.header-section {
+  position: relative;
+  background: linear-gradient(135deg, #FF7043 0%, #FF5722 50%, #F4511E 100%);
+  padding-bottom: 40rpx;
+  overflow: hidden;
+}
+
+.status-bar {
+  width: 100%;
+}
+
+.nav-bar {
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
 }
 
 .nav-title {
   font-size: 36rpx;
   color: #FFFFFF;
   font-weight: 600;
+  letter-spacing: 2rpx;
 }
 
-.header-gradient {
-  background: linear-gradient(180deg, #FF6B35 0%, #FF8E53 50%, #F7F8FA 100%);
-  padding: 20rpx 32rpx 40rpx;
+/* 装饰性背景 */
+.header-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.decoration-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.circle-1 {
+  width: 400rpx;
+  height: 400rpx;
+  top: -200rpx;
+  right: -100rpx;
+}
+
+.circle-2 {
+  width: 300rpx;
+  height: 300rpx;
+  top: 100rpx;
+  left: -150rpx;
+}
+
+.circle-3 {
+  width: 200rpx;
+  height: 200rpx;
+  bottom: -50rpx;
+  right: 50rpx;
+}
+
+/* 积分卡片 */
+.points-card-wrapper {
+  padding: 0 32rpx 24rpx;
+  position: relative;
+  z-index: 10;
 }
 
 .points-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
-  backdrop-filter: blur(20rpx);
+  position: relative;
+  height: 180rpx;
   border-radius: 24rpx;
-  padding: 32rpx;
-  margin-bottom: 24rpx;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 8rpx 32rpx rgba(255, 107, 53, 0.2);
+  overflow: hidden;
+  box-shadow: 0 12rpx 40rpx rgba(0, 0, 0, 0.15);
 }
 
-.points-content {
+.card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  backdrop-filter: blur(20rpx);
+}
+
+.card-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40rpx;
+}
+
+.points-info {
   flex: 1;
 }
 
 .points-label {
   font-size: 26rpx;
   color: #666666;
-  margin-bottom: 8rpx;
+  display: block;
+  margin-bottom: 12rpx;
+}
+
+.points-value-row {
+  display: flex;
+  align-items: baseline;
 }
 
 .points-value {
-  font-size: 64rpx;
-  color: #FF6B35;
+  font-size: 72rpx;
+  color: #FF7043;
   font-weight: bold;
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+  line-height: 1;
+}
+
+.points-unit {
+  font-size: 28rpx;
+  color: #FF7043;
+  margin-left: 8rpx;
+}
+
+.points-icon-wrapper {
+  width: 120rpx;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .points-icon {
-  font-size: 80rpx;
+  width: 100rpx;
+  height: 100rpx;
 }
 
-.search-wrapper {
+/* 搜索框 */
+.search-section {
+  padding: 0 32rpx;
+  position: relative;
+  z-index: 10;
+}
+
+.search-box {
+  height: 72rpx;
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 48rpx;
-  overflow: hidden;
-  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10rpx);
+  border-radius: 36rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 32rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.08);
 }
 
-.scroll-container {
-  flex: 1;
+.search-placeholder {
+  font-size: 28rpx;
+  color: #999999;
+  margin-left: 16rpx;
 }
 
+/* 分类Tab */
 .category-section {
   background: #FFFFFF;
-  padding: 24rpx 0;
-  margin-bottom: 20rpx;
-  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+  padding: 32rpx 0 24rpx;
+  margin-top: 20rpx;
 }
 
 .category-scroll {
@@ -329,40 +468,57 @@ export default {
 .category-list {
   display: inline-flex;
   padding: 0 32rpx;
-  gap: 16rpx;
+  gap: 48rpx;
 }
 
 .category-item {
-  display: inline-block;
-  padding: 12rpx 32rpx;
-  background: #F7F8FA;
-  border-radius: 48rpx;
-  transition: all 0.3s ease;
-}
-
-.category-item-active {
-  background: linear-gradient(135deg, #FF6B35 0%, #FF8E53 100%);
-  box-shadow: 0 4rpx 16rpx rgba(255, 107, 53, 0.3);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .category-text {
-  font-size: 26rpx;
+  font-size: 28rpx;
   color: #666666;
   white-space: nowrap;
+  transition: all 0.3s ease;
+  padding-bottom: 12rpx;
 }
 
-.category-item-active .category-text {
-  color: #FFFFFF;
-  font-weight: 500;
+.category-text-active {
+  font-size: 32rpx;
+  color: #FF7043;
+  font-weight: 600;
+}
+
+.category-indicator {
+  width: 0;
+  height: 6rpx;
+  background: linear-gradient(90deg, #FF7043 0%, #FF5722 100%);
+  border-radius: 3rpx;
+  transition: width 0.3s ease;
+}
+
+.indicator-active {
+  width: 40rpx;
+}
+
+/* 内容区域 */
+.content-scroll {
+  flex: 1;
+}
+
+.product-section {
+  padding: 24rpx 32rpx 32rpx;
 }
 
 .product-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20rpx;
-  padding: 0 32rpx 32rpx;
+  gap: 24rpx;
 }
 
+/* 加载状态 */
 .loading-state {
   display: flex;
   flex-direction: column;
@@ -377,6 +533,7 @@ export default {
   margin-top: 24rpx;
 }
 
+/* 空状态 */
 .empty-state {
   display: flex;
   flex-direction: column;
@@ -385,9 +542,10 @@ export default {
   padding: 120rpx 0;
 }
 
-.empty-icon {
-  font-size: 120rpx;
-  margin-bottom: 24rpx;
+.empty-image {
+  width: 320rpx;
+  height: 320rpx;
+  margin-bottom: 32rpx;
 }
 
 .empty-text {
@@ -401,13 +559,26 @@ export default {
   color: #999999;
 }
 
+/* 加载更多 */
 .loadmore-state {
-  padding: 40rpx 0;
-  text-align: center;
+  padding: 40rpx 0 60rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.loadmore-loading {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
 }
 
 .loadmore-text {
   font-size: 24rpx;
   color: #999999;
+}
+
+.loadmore-end {
+  font-size: 24rpx;
+  color: #CCCCCC;
 }
 </style>
