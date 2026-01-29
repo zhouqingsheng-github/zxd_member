@@ -157,7 +157,10 @@
               @click="selectSku(sku)"
             >
               <text class="sku-name">{{ sku.skuName }}</text>
-              <text class="sku-points">{{ sku.pointsRequired }}积分</text>
+              <view class="sku-price-row">
+                <text class="sku-points">{{ sku.pointsRequired }}积分</text>
+                <text v-if="sku.cashRequired && sku.cashRequired > 0" class="sku-cash">+￥{{ sku.cashRequired }}</text>
+              </view>
               <view v-if="sku.stock === 0" class="sku-sold-out">已售罄</view>
               <u-icon v-if="selectedSku.id === sku.id" name="checkbox-mark" color="#FF7043" size="32" class="sku-check" />
             </view>
@@ -851,9 +854,20 @@ export default {
   margin-bottom: 8rpx;
 }
 
+.sku-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4rpx;
+}
+
 .sku-points {
   font-size: 22rpx;
   color: #FF7043;
+}
+
+.sku-cash {
+  font-size: 20rpx;
+  color: #999999;
 }
 
 .sku-sold-out {
