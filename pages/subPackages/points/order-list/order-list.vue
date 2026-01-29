@@ -33,7 +33,6 @@
           </view>
         </view>
       </view>
-    </view>
 
     <scroll-view 
       class="scroll-container"
