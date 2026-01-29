@@ -3,7 +3,7 @@
  * 放在分包目录下，减小主包体积
  */
 
-import http from '@/util/request/index.js'
+const { http } = uni.$u
 
 // ==================== 商品相关 ====================
 
