@@ -163,6 +163,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   height: 100%;
 }
 
@@ -170,6 +171,7 @@ export default {
   font-size: 36rpx;
   font-weight: 600;
   color: #000000;
+  text-align: center;
 }
 
 .loading-container {
