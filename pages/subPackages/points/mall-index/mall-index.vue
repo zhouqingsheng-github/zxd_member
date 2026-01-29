@@ -38,6 +38,10 @@
                 <text class="points-value">{{ userPoints }}</text>
                 <text class="points-unit">分</text>
               </view>
+              <view class="exchange-record-btn" @click="goToOrderList">
+                <text class="record-text">兑换记录</text>
+                <u-icon name="arrow-right" color="#FF7043" size="28" />
+              </view>
             </view>
             <view class="points-icon-wrapper">
               <image 
@@ -52,9 +56,19 @@
       
       <!-- 搜索框 -->
       <view class="search-section">
-        <view class="search-box" @click="handleSearchClick">
+        <view class="search-box">
           <u-icon name="search" color="#999999" size="36" />
-          <text class="search-placeholder">搜索你想要的商品</text>
+          <input 
+            class="search-input" 
+            v-model="searchKeyword"
+            placeholder="搜索你想要的商品"
+            placeholder-class="search-placeholder-class"
+            confirm-type="search"
+            @confirm="handleSearch"
+          />
+          <view v-if="searchKeyword" class="clear-btn" @click="clearSearch">
+            <u-icon name="close-circle-fill" color="#CCCCCC" size="32" />
+          </view>
         </view>
       </view>
     </view>
@@ -258,11 +272,13 @@ export default {
       }
     },
     
-    handleSearchClick() {
-      uni.showToast({
-        title: '搜索功能开发中',
-        icon: 'none'
-      });
+    handleSearch() {
+      this.loadProducts(true);
+    },
+    
+    clearSearch() {
+      this.searchKeyword = '';
+      this.loadProducts(true);
     },
     
     handleCategoryChange(index) {
@@ -471,6 +487,24 @@ export default {
   margin-left: 8rpx;
 }
 
+.exchange-record-btn {
+  display: flex;
+  align-items: center;
+  margin-top: 16rpx;
+  padding: 8rpx 20rpx;
+  background: linear-gradient(135deg, #FFF4F0 0%, #FFE8E0 100%);
+  border-radius: 20rpx;
+  width: fit-content;
+  border: 1rpx solid rgba(255, 112, 67, 0.2);
+}
+
+.record-text {
+  font-size: 24rpx;
+  color: #FF7043;
+  margin-right: 4rpx;
+  font-weight: 500;
+}
+
 .points-icon-wrapper {
   width: 120rpx;
   height: 120rpx;
@@ -502,9 +536,25 @@ export default {
   box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.08);
 }
 
-.search-placeholder {
+.search-input {
+  flex: 1;
+  height: 100%;
   font-size: 28rpx;
+  color: #1A1A1A;
+  margin-left: 16rpx;
+}
+
+.search-placeholder-class {
   color: #999999;
+  font-size: 28rpx;
+}
+
+.clear-btn {
+  width: 48rpx;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-left: 16rpx;
 }
 
