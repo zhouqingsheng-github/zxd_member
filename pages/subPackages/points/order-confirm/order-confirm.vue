@@ -349,7 +349,7 @@ export default {
 }
 
 .scroll-container {
-  padding: 20rpx 24rpx 160rpx;
+  padding: 20rpx 32rpx 160rpx;
 }
 
 .section-card {
