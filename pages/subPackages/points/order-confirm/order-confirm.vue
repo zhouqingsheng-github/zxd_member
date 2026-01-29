@@ -7,11 +7,14 @@
       :border="false" 
       status-bar
       background-color="#FFFFFF"
+      color="#000000"
       left-icon="left"
       @clickLeft="goBack"
     >
       <template #default>
-        <text class="nav-title">确认订单</text>
+        <view class="nav-title-wrapper">
+          <text class="nav-title">确认订单</text>
+        </view>
       </template>
     </uni-nav-bar>
     
@@ -340,6 +343,14 @@ export default {
   width: 100%;
   min-height: 100vh;
   background: #F7F8FA;
+}
+
+.nav-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .nav-title {
