@@ -15,8 +15,7 @@
 
     <!-- 分类Tab -->
     <view class="tabs-section">
-      <scroll-view class="tabs-scroll" scroll-x :show-scrollbar="false">
-        <view class="tabs-list">
+      <view class="tabs-list">
           <view 
             v-for="(tab, index) in tabList" 
             :key="index"
@@ -35,7 +34,7 @@
             ></view>
           </view>
         </view>
-      </scroll-view>
+      </view>
     </view>
 
     <scroll-view 
@@ -297,18 +296,16 @@ export default {
   flex-shrink: 0;
 }
 
-.tabs-scroll {
-  white-space: nowrap;
-}
-
 .tabs-list {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   padding: 0 32rpx;
-  gap: 48rpx;
 }
 
 .tab-item {
-  display: inline-flex;
+  flex: 1;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
