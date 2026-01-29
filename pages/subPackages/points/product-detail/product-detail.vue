@@ -7,13 +7,11 @@
           <u-icon name="arrow-left" color="#FFFFFF" size="40" />
         </view>
         <view class="nav-title">商品详情</view>
-        <view class="nav-btn" @click="goToHome">
-          <u-icon name="home" color="#FFFFFF" size="36" />
-        </view>
+        <view class="nav-placeholder"></view>
       </view>
     </view>
 
-    <scroll-view scroll-y class="content-scroll" @scrolltolower="loadMore">
+    <scroll-view scroll-y class="content-scroll">
       <!-- 轮播图 -->
       <view class="swiper-section">
         <swiper 
@@ -35,7 +33,7 @@
       <view class="product-info-card">
         <view class="price-section">
           <view class="price-row">
-            <text class="points-price">{{ selectedSku.pointsRequired || productInfo.minPoints }}</text>
+            <text class="points-price">{{ selectedSku.pointsRequired || minPoints }}</text>
             <text class="points-unit">积分</text>
             <text v-if="selectedSku.cashRequired > 0" class="cash-price">+¥{{ selectedSku.cashRequired }}</text>
           </view>
@@ -128,7 +126,7 @@
           <image :src="productInfo.mainImage" class="popup-image" mode="aspectFill" />
           <view class="popup-info">
             <view class="popup-price">
-              <text class="popup-points">{{ selectedSku.pointsRequired || productInfo.minPoints }}</text>
+              <text class="popup-points">{{ selectedSku.pointsRequired || minPoints }}</text>
               <text class="popup-unit">积分</text>
             </view>
             <view class="popup-name">{{ productInfo.spuName }}</view>
@@ -210,6 +208,13 @@ export default {
       skuPopupShow: false,
       currentTab: 0,
       tabs: ['商品详情', '规格参数']
+    }
+  },
+  computed: {
+    // 计算最低积分价格
+    minPoints() {
+      if (this.skuList.length === 0) return 0
+      return Math.min(...this.skuList.map(sku => sku.pointsRequired))
     }
   },
   onLoad(options) {
@@ -318,11 +323,7 @@ export default {
       uni.navigateBack()
     },
     
-    goToHome() {
-      uni.navigateTo({
-        url: '/pages/subPackages/points/mall-index/mall-index'
-      })
-    }
+
   }
 }
 </script>
@@ -364,6 +365,11 @@ export default {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+}
+
+.nav-placeholder {
+  width: 64rpx;
+  height: 64rpx;
 }
 
 .nav-btn:active {
