@@ -3,7 +3,7 @@
     <!-- 订单头部 -->
     <view class="order-header">
       <view class="order-no">订单号：{{ order.orderNo }}</view>
-      <view class="order-status" :class="getStatusClass(order.status)">
+      <view class="order-status" :class="statusClass">
         {{ getStatusText(order.status) }}
       </view>
     </view>
@@ -63,6 +63,12 @@ export default {
       default: () => ({})
     }
   },
+  computed: {
+    statusClass() {
+      if (!this.order.status) return '';
+      return 'status-' + this.order.status.toLowerCase();
+    }
+  },
   methods: {
     handleClick() {
       this.$emit('click', this.order);
@@ -82,9 +88,7 @@ export default {
       };
       return statusMap[status] || '未知';
     },
-    getStatusClass(status) {
-      return 'status-' + status.toLowerCase();
-    },
+
     formatTime(time) {
       if (!time) return '';
       const date = new Date(time);
