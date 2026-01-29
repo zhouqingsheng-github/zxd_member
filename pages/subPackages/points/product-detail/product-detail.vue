@@ -11,7 +11,7 @@
       </view>
     </view>
 
-    <scroll-view scroll-y class="content-scroll">
+    <scroll-view scroll-y class="content-scroll" :style="{ height: scrollHeight + 'px' }">
       <!-- 轮播图 -->
       <view class="swiper-section">
         <swiper 
@@ -99,9 +99,6 @@
           </view>
         </view>
       </view>
-
-      <!-- 底部占位 -->
-      <view class="bottom-placeholder"></view>
     </scroll-view>
 
     <!-- 底部操作栏 -->
@@ -198,6 +195,7 @@ export default {
     return {
       statusBarHeight: 0,
       safeAreaBottom: 0,
+      scrollHeight: 0,
       productId: '',
       productInfo: {},
       carouselImages: [],
@@ -227,6 +225,11 @@ export default {
       const systemInfo = uni.getSystemInfoSync()
       this.statusBarHeight = systemInfo.statusBarHeight || 0
       this.safeAreaBottom = systemInfo.safeAreaInsets?.bottom || 0
+      
+      // 计算scroll-view的高度：屏幕高度 - 导航栏高度 - 底部操作栏高度
+      const navBarHeight = this.statusBarHeight + 44 // 状态栏 + 导航栏
+      const bottomBarHeight = 120 + this.safeAreaBottom // 底部按钮 + 安全区
+      this.scrollHeight = systemInfo.windowHeight - navBarHeight - bottomBarHeight
     },
     
     async getProductDetail() {
@@ -579,11 +582,6 @@ export default {
 .spec-item-value {
   font-size: 28rpx;
   color: #1A1A1A;
-}
-
-/* 底部占位 */
-.bottom-placeholder {
-  height: 160rpx;
 }
 
 /* 底部操作栏 */
