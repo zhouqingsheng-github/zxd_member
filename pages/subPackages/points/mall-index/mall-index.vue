@@ -7,7 +7,17 @@
       
       <!-- 导航栏 -->
       <view class="nav-bar">
+        <view class="nav-left" @click="goBack">
+          <view class="back-btn">
+            <u-icon name="arrow-left" color="#FFFFFF" size="40" />
+          </view>
+        </view>
         <text class="nav-title">积分商城</text>
+        <view class="nav-right" @click="goToOrderList">
+          <view class="history-btn">
+            <u-icon name="list" color="#FFFFFF" size="40" />
+          </view>
+        </view>
       </view>
       
       <!-- 装饰性背景 -->
@@ -275,6 +285,16 @@ export default {
       uni.navigateTo({
         url: `/pages/subPackages/points/product-detail/product-detail?id=${product.id}`
       });
+    },
+    
+    goBack() {
+      uni.navigateBack();
+    },
+    
+    goToOrderList() {
+      uni.navigateTo({
+        url: '/pages/subPackages/points/order-list/order-list'
+      });
     }
   }
 };
@@ -303,9 +323,40 @@ export default {
   height: 88rpx;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 32rpx;
   position: relative;
   z-index: 10;
+}
+
+.nav-left,
+.nav-right {
+  width: 80rpx;
+  display: flex;
+  align-items: center;
+}
+
+.nav-right {
+  justify-content: flex-end;
+}
+
+.back-btn,
+.history-btn {
+  width: 64rpx;
+  height: 64rpx;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10rpx);
+  border-radius: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.back-btn:active,
+.history-btn:active {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0.95);
 }
 
 .nav-title {
