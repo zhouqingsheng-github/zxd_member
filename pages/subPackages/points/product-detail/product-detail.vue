@@ -75,7 +75,7 @@
 </template>
 
 <script>
-import SkuSelector from '@/components/points/SkuSelector.vue';
+import SkuSelector from '../components/SkuSelector.vue';
 import { getProductDetail } from '@/common/api';
 
 export default {

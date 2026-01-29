@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import ProductCard from '@/components/points/ProductCard.vue';
+import ProductCard from '../components/ProductCard.vue';
 import { getProductList, getCategoryTree } from '@/common/api';
 import { getUserInfo } from '@/store/index';
 
