@@ -170,7 +170,7 @@ export default {
       const hasPointsMall = this.navItems.some(item => item.action === 'pointsMall');
       if (!hasPointsMall) {
         this.navItems.unshift({
-          icon: 'https://www.zxd-hotel.xin/zxdhotel/icon/points_mall.png',
+          icon: '/static/base/points_mall_icon_black.png',
           text: '积分商城',
           action: 'pointsMall',
           url: '/pages/subPackages/points/mall-index/mall-index'
