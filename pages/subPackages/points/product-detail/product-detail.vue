@@ -13,7 +13,7 @@
 
     <scroll-view scroll-y class="content-scroll" @scroll="handleScroll">
       <!-- 轮播图 -->
-      <view class="swiper-section" :style="{ height: swiperHeight + 'px', paddingTop: navBarHeight + 'px' }">
+      <view class="swiper-section" :style="{ height: swiperHeight + 'px', paddingTop: navBarHeight + 'px', marginTop: '-' + navBarHeight + 'px' }">
         <swiper 
           class="product-swiper" 
           :indicator-dots="true" 
@@ -101,7 +101,7 @@
       </view>
       
       <!-- 底部占位 -->
-      <view class="bottom-safe-area" :style="{ height: bottomBarHeight + 'px' }"></view>
+      <view class="bottom-safe-area" :style="{ height: (bottomBarHeight + 40) + 'px' }"></view>
     </scroll-view>
 
     <!-- 底部操作栏 -->
