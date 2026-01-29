@@ -166,16 +166,6 @@ export default {
   methods: {
     async initNavItems() {
       this.navItems = await activeItem();
-      // 添加积分商城入口(如果后端菜单配置中没有)
-      const hasPointsMall = this.navItems.some(item => item.action === 'pointsMall');
-      if (!hasPointsMall) {
-        this.navItems.unshift({
-          icon: '/static/base/points_mall_icon_black.png',
-          text: '积分商城',
-          action: 'pointsMall',
-          url: '/pages/subPackages/points/mall-index/mall-index'
-        });
-      }
     },
     formatDate(dateStr) {
       if (!dateStr) return '';
