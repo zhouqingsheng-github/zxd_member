@@ -56,7 +56,7 @@ export const getStoreStockBySkuId = (skuId, config = {}) => {
  * @param {string} params.recipientPhone - 收货人电话
  */
 export const createPointsOrder = (params, config = {}) => {
-  return http.post('/hotel-points/app/orders/create', { ...params, ...config })
+  return http.post('/hotel-points/app/orders/create', params, config)
 }
 
 /**
