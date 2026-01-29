@@ -132,20 +132,25 @@
     
     <!-- 底部操作栏 -->
     <view v-if="!loading" class="footer-bar">
-      <view class="total-section">
-        <text class="total-label">合计：</text>
-        <text class="total-points">{{ totalPoints }}</text>
-        <text class="total-unit">积分</text>
-        <text v-if="totalCash > 0" class="total-cash">+¥{{ totalCash }}</text>
+      <view class="bar-content">
+        <view class="price-info">
+          <view class="price-row">
+            <text v-if="totalPoints > 0" class="price-points">{{ totalPoints }}</text>
+            <text v-if="totalPoints > 0" class="price-unit">积分</text>
+          </view>
+          <view v-if="totalCash > 0" class="price-cash">
+            <text v-if="totalPoints > 0" class="cash-label">+</text>
+            <text class="cash-amount">￥{{ totalCash }}</text>
+          </view>
+        </view>
+        <view 
+          class="submit-btn"
+          :class="{ 'btn-disabled': !canSubmit || submitting }"
+          @click="canSubmit && !submitting && handleSubmit()"
+        >
+          <text class="btn-text">{{ submitting ? '提交中...' : '提交订单' }}</text>
+        </view>
       </view>
-      <button 
-        class="submit-btn"
-        :class="{ 'btn-disabled': !canSubmit || submitting }"
-        :disabled="!canSubmit || submitting"
-        @click="handleSubmit"
-      >
-        <text class="btn-text">{{ submitting ? '提交中...' : '提交订单' }}</text>
-      </button>
     </view>
   </view>
 </template>
@@ -577,60 +582,78 @@ export default {
   padding: 20rpx 32rpx;
   padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
   box-shadow: 0 -4rpx 20rpx rgba(0, 0, 0, 0.06);
+}
+
+.bar-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.total-section {
+.price-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.price-row {
   display: flex;
   align-items: baseline;
 }
 
-.total-label {
-  font-size: 26rpx;
-  color: #666666;
-}
-
-.total-points {
-  font-size: 40rpx;
-  color: #FF6B35;
+.price-points {
+  font-size: 48rpx;
+  color: #FF7043;
   font-weight: bold;
+}
+
+.price-unit {
+  font-size: 24rpx;
+  color: #FF7043;
   margin-left: 8rpx;
 }
 
-.total-unit {
+.price-cash {
+  display: flex;
+  align-items: baseline;
+  margin-top: 4rpx;
+}
+
+.cash-label {
   font-size: 22rpx;
-  color: #FF6B35;
-  margin-left: 4rpx;
+  color: #FF7043;
+  margin-right: 4rpx;
 }
 
-.total-cash {
+.cash-amount {
   font-size: 28rpx;
-  color: #FF6B35;
-  margin-left: 8rpx;
+  color: #FF7043;
+  font-weight: 600;
 }
 
 .submit-btn {
   width: 280rpx;
-  height: 80rpx;
-  background: linear-gradient(135deg, #FF6B35 0%, #FF8E53 100%);
-  border-radius: 40rpx;
-  border: none;
-  box-shadow: 0 8rpx 24rpx rgba(255, 107, 53, 0.3);
+  height: 88rpx;
+  background: #FF7043;
+  border-radius: 44rpx;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+.submit-btn:active {
+  opacity: 0.8;
 }
 
 .btn-disabled {
   background: #D1D1D6;
-  box-shadow: none;
+  opacity: 0.6;
 }
 
 .btn-text {
   color: #FFFFFF;
-  font-size: 28rpx;
+  font-size: 32rpx;
   font-weight: 600;
 }
 </style>
