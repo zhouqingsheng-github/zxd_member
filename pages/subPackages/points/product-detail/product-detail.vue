@@ -193,7 +193,7 @@
 </template>
 
 <script>
-import api from '@/common/api'
+import { getProductDetail } from '@/common/api'
 
 export default {
   data() {
@@ -227,7 +227,7 @@ export default {
     async getProductDetail() {
       try {
         uni.showLoading({ title: '加载中...' })
-        const res = await api.getProductDetail(this.productId)
+        const res = await getProductDetail(this.productId)
         
         if (res.code === '200' && res.data) {
           this.productInfo = res.data
