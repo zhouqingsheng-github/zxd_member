@@ -114,7 +114,7 @@
     </view>
 
     <!-- SKU选择弹窗 -->
-    <u-popup v-model="skuPopupShow" mode="bottom" border-radius="32" :safe-area-inset-bottom="true">
+    <u-popup :show="skuPopupShow" @close="skuPopupShow = false" mode="bottom" border-radius="32" :safe-area-inset-bottom="true">
       <view class="sku-popup">
         <view class="popup-header">
           <view class="popup-close" @click="skuPopupShow = false">
