@@ -409,12 +409,14 @@ export default {
   color: #FFFFFF;
   font-weight: 600;
   text-shadow: 0 2rpx 8rpx rgba(0,0,0,0.3);
+  opacity: 0;
   transition: all 0.3s ease;
 }
 
 .nav-bar-white .nav-title {
   color: #1A1A1A;
   text-shadow: none;
+  opacity: 1;
 }
 
 /* 滚动容器 */
