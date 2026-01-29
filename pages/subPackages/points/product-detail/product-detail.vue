@@ -11,7 +11,7 @@
       </view>
     </view>
 
-    <scroll-view scroll-y class="content-scroll" :style="{ height: scrollHeight + 'px' }">
+    <scroll-view scroll-y class="content-scroll" :style="{ paddingTop: navBarHeight + 'px', paddingBottom: bottomBarHeight + 'px' }">
       <!-- 轮播图 -->
       <view class="swiper-section">
         <swiper 
@@ -195,7 +195,8 @@ export default {
     return {
       statusBarHeight: 0,
       safeAreaBottom: 0,
-      scrollHeight: 0,
+      navBarHeight: 0,
+      bottomBarHeight: 0,
       productId: '',
       productInfo: {},
       carouselImages: [],
@@ -226,10 +227,9 @@ export default {
       this.statusBarHeight = systemInfo.statusBarHeight || 0
       this.safeAreaBottom = systemInfo.safeAreaInsets?.bottom || 0
       
-      // 计算scroll-view的高度：屏幕高度 - 导航栏高度 - 底部操作栏高度
-      const navBarHeight = this.statusBarHeight + 44 // 状态栏 + 导航栏
-      const bottomBarHeight = 120 + this.safeAreaBottom // 底部按钮 + 安全区
-      this.scrollHeight = systemInfo.windowHeight - navBarHeight - bottomBarHeight
+      // 计算导航栏和底部栏的高度，用于padding
+      this.navBarHeight = this.statusBarHeight + 44 // 状态栏 + 导航栏(44px)
+      this.bottomBarHeight = 60 + this.safeAreaBottom // 底部按钮区域(60px) + 安全区
     },
     
     async getProductDetail() {
@@ -391,8 +391,12 @@ export default {
 
 /* 滚动容器 */
 .content-scroll {
-  flex: 1;
-  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
 }
 
 /* 轮播图 */
@@ -535,7 +539,6 @@ export default {
 /* Tab内容 */
 .tab-content {
   background: #FFFFFF;
-  min-height: 400rpx;
   padding: 32rpx;
 }
 
@@ -549,7 +552,7 @@ export default {
 }
 
 .empty-detail {
-  padding: 120rpx 0;
+  padding: 60rpx 0;
   text-align: center;
 }
 
