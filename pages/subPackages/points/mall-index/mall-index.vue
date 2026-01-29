@@ -32,27 +32,23 @@
         <view class="points-card">
           <view class="card-bg"></view>
           <view class="card-content">
-            <view class="points-main">
-              <view class="points-info">
-                <text class="points-label">我的积分</text>
-                <view class="points-value-row">
-                  <text class="points-value">{{ userPoints }}</text>
-                  <text class="points-unit">分</text>
-                </view>
-              </view>
-              <view class="points-icon-wrapper">
-                <image 
-                  src="/static/images/points-icon.png" 
-                  class="points-icon"
-                  mode="aspectFit"
-                />
+            <view class="points-info">
+              <text class="points-label">我的积分</text>
+              <view class="points-value-row">
+                <text class="points-value">{{ userPoints }}</text>
+                <text class="points-unit">分</text>
               </view>
             </view>
-            <view class="card-footer">
-              <view class="record-btn" @click="goToOrderList">
-                <text class="record-text">兑换记录</text>
-                <u-icon name="arrow-right" color="#FF7043" size="24" />
-              </view>
+            <view class="points-icon-wrapper">
+              <image 
+                src="/static/images/points-icon.png" 
+                class="points-icon"
+                mode="aspectFit"
+              />
+            </view>
+            <view class="record-btn" @click="goToOrderList">
+              <text class="record-text">兑换记录</text>
+              <u-icon name="arrow-right" color="#FF7043" size="24" />
             </view>
           </view>
         </view>
@@ -456,15 +452,9 @@ export default {
   position: relative;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 32rpx 40rpx 24rpx;
-}
-
-.points-main {
-  display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 40rpx;
 }
 
 .points-info {
@@ -497,17 +487,15 @@ export default {
   margin-left: 8rpx;
 }
 
-.card-footer {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .record-btn {
+  position: absolute;
+  right: 24rpx;
+  bottom: 20rpx;
   display: flex;
   align-items: center;
-  padding: 12rpx 24rpx;
+  padding: 10rpx 20rpx;
   background: linear-gradient(135deg, #FFF4F0 0%, #FFE8E0 100%);
-  border-radius: 24rpx;
+  border-radius: 20rpx;
   box-shadow: 0 4rpx 12rpx rgba(255, 112, 67, 0.15);
   transition: all 0.3s ease;
 }
@@ -518,7 +506,7 @@ export default {
 }
 
 .record-text {
-  font-size: 24rpx;
+  font-size: 22rpx;
   color: #FF7043;
   font-weight: 500;
   margin-right: 4rpx;
