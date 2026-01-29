@@ -355,7 +355,7 @@ export default {
 .section-card {
   background: #FFFFFF;
   border-radius: 24rpx;
-  padding: 32rpx 28rpx;
+  padding: 32rpx;
   margin-bottom: 20rpx;
   box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.04);
 }
