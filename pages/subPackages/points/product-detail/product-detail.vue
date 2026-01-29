@@ -11,9 +11,9 @@
       </view>
     </view>
 
-    <scroll-view scroll-y class="content-scroll" :style="{ paddingBottom: bottomBarHeight + 'px' }" @scroll="handleScroll">
+    <scroll-view scroll-y class="content-scroll" @scroll="handleScroll">
       <!-- 轮播图 -->
-      <view class="swiper-section" :style="{ paddingTop: navBarHeight + 'px' }">
+      <view class="swiper-section" :style="{ height: swiperHeight + 'px', paddingTop: navBarHeight + 'px' }">
         <swiper 
           class="product-swiper" 
           :indicator-dots="true" 
@@ -99,6 +99,9 @@
           </view>
         </view>
       </view>
+      
+      <!-- 底部占位 -->
+      <view class="bottom-safe-area" :style="{ height: bottomBarHeight + 'px' }"></view>
     </scroll-view>
 
     <!-- 底部操作栏 -->
@@ -197,6 +200,7 @@ export default {
       safeAreaBottom: 0,
       navBarHeight: 0,
       bottomBarHeight: 0,
+      swiperHeight: 375,
       navBarWhite: false,
       productId: '',
       productInfo: {},
@@ -228,9 +232,12 @@ export default {
       this.statusBarHeight = systemInfo.statusBarHeight || 0
       this.safeAreaBottom = systemInfo.safeAreaInsets?.bottom || 0
       
-      // 计算导航栏和底部栏的高度，用于padding
+      // 计算导航栏和底部栏的高度
       this.navBarHeight = this.statusBarHeight + 44 // 状态栏 + 导航栏(44px)
-      this.bottomBarHeight = 60 + this.safeAreaBottom // 底部按钮区域(60px) + 安全区
+      this.bottomBarHeight = 120 + this.safeAreaBottom // 底部按钮区域 + 安全区
+      
+      // 计算轮播图高度：375px(固定高度) + 导航栏高度
+      this.swiperHeight = 375 + this.navBarHeight
     },
     
     async getProductDetail() {
@@ -423,8 +430,8 @@ export default {
 /* 轮播图 */
 .swiper-section {
   width: 100%;
-  height: 750rpx;
   background: #FFFFFF;
+  box-sizing: border-box;
 }
 
 .product-swiper {
