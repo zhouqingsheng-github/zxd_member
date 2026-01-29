@@ -2,12 +2,21 @@
   <view class="store-select-page">
     <!-- 导航栏 -->
     <uni-nav-bar 
-      title="选择门店" 
       :fixed="true" 
-      :border="false"
+      :shadow="false" 
+      :border="false" 
+      status-bar
+      background-color="#FFFFFF"
+      color="#000000"
       left-icon="left"
       @clickLeft="back"
-    />
+    >
+      <template #default>
+        <view class="nav-title-wrapper">
+          <text class="nav-title">选择门店</text>
+        </view>
+      </template>
+    </uni-nav-bar>
     
     <!-- 加载状态 -->
     <view v-if="loading" class="loading-container">
@@ -31,11 +40,11 @@
             <view v-else class="stock-badge no-stock">无货</view>
           </view>
           <view class="store-address">
-            <text class="icon">📍</text>
+            <u-icon name="map-fill" color="#FF7043" size="28" />
             <text class="address-text">{{ store.address }}</text>
           </view>
           <view class="store-phone">
-            <text class="icon">📞</text>
+            <u-icon name="phone-fill" color="#FF7043" size="28" />
             <text class="phone-text">{{ store.phone }}</text>
           </view>
           <view class="store-stock">
@@ -150,6 +159,19 @@ export default {
   background-color: #F3F4F6;
 }
 
+.nav-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.nav-title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #000000;
+}
+
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -220,6 +242,8 @@ export default {
   font-size: 24rpx;
   background: #E8F5E9;
   color: #4CAF50;
+  white-space: nowrap;
+  flex-shrink: 0;
   
   &.no-stock {
     background: #FFEBEE;
@@ -234,14 +258,9 @@ export default {
   margin-bottom: 12rpx;
 }
 
-.icon {
-  font-size: 28rpx;
-  margin-right: 8rpx;
-}
-
 .address-text,
 .phone-text {
-  margin-left: 8rpx;
+  margin-left: 12rpx;
   font-size: 28rpx;
   color: #666;
 }
