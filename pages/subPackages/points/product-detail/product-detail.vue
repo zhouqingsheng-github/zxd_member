@@ -109,12 +109,12 @@
       <view class="bar-content">
         <view class="price-info">
           <view class="price-row">
-            <text class="price-points">{{ selectedSku.pointsRequired || minPoints }}</text>
+            <text class="price-points">{{ totalPoints }}</text>
             <text class="price-unit">积分</text>
           </view>
-          <view v-if="selectedSku.cashRequired && selectedSku.cashRequired > 0" class="price-cash">
+          <view v-if="totalCash > 0" class="price-cash">
             <text class="cash-label">+</text>
-            <text class="cash-amount">￥{{ selectedSku.cashRequired }}</text>
+            <text class="cash-amount">￥{{ totalCash }}</text>
           </view>
         </view>
         <button class="exchange-btn" @click="handleExchange">
@@ -229,6 +229,16 @@ export default {
     minPoints() {
       if (this.skuList.length === 0) return 0
       return Math.min(...this.skuList.map(sku => sku.pointsRequired))
+    },
+    // 计算总积分
+    totalPoints() {
+      const unitPrice = this.selectedSku.pointsRequired || this.minPoints
+      return unitPrice * this.quantity
+    },
+    // 计算总金额
+    totalCash() {
+      if (!this.selectedSku.cashRequired) return 0
+      return (this.selectedSku.cashRequired * this.quantity).toFixed(2)
     }
   },
   onLoad(options) {
