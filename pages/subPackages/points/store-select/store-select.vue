@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import { getStoreStock } from '@/common/api/points.js';
+import { getStoreStockBySkuId } from '@/common/api';
 
 export default {
   data() {
@@ -96,7 +96,7 @@ export default {
       this.loading = true;
       
       try {
-        const res = await getStoreStock(this.skuId);
+        const res = await getStoreStockBySkuId(this.skuId);
         
         if (res && res.length > 0) {
           this.stores = res.map(item => ({

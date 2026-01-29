@@ -137,7 +137,7 @@
 </template>
 
 <script>
-import { getExchangeOrderDetail, cancelExchangeOrder } from '@/common/api/points';
+import { getPointsOrderDetail, cancelPointsOrder } from '@/common/api';
 
 export default {
   data() {
@@ -160,7 +160,7 @@ export default {
       this.loading = true;
       
       try {
-        const res = await getExchangeOrderDetail(this.orderId);
+        const res = await getPointsOrderDetail(this.orderId);
         
         if (res && res.code === '200' && res.data) {
           this.orderDetail = res.data;
@@ -183,7 +183,7 @@ export default {
         success: async (res) => {
           if (res.confirm) {
             try {
-              const result = await cancelExchangeOrder(this.orderId);
+              const result = await cancelPointsOrder(this.orderId);
               
               if (result && result.code === '200') {
                 uni.showToast({

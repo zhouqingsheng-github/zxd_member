@@ -112,7 +112,7 @@
 </template>
 
 <script>
-import { getOrderList, cancelOrder } from '@/common/api/points.js';
+import { getPointsOrderList, cancelPointsOrder } from '@/common/api';
 
 export default {
   data() {
@@ -189,7 +189,7 @@ export default {
         const statusMap = ['', 'PAID', 'COMPLETED', 'CANCELLED'];
         const status = statusMap[this.activeTab] || '';
         
-        const res = await getOrderList({
+        const res = await getPointsOrderList({
           status,
           page: this.page,
           pageSize: this.pageSize
@@ -233,7 +233,7 @@ export default {
       uni.showLoading({ title: '取消中...' });
       
       try {
-        await cancelOrder(orderId);
+        await cancelPointsOrder(orderId);
         uni.showToast({
           title: '订单已取消',
           icon: 'success'
