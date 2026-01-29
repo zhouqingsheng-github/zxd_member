@@ -204,6 +204,7 @@ export default {
 
 .store-list {
   padding: 20rpx;
+  padding-bottom: 60rpx;
 }
 
 .store-item {
