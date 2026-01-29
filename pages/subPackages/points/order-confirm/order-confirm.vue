@@ -20,7 +20,6 @@
       <view class="section-card" @click="selectStore">
         <view class="section-header">
           <view class="header-left">
-            <text class="section-icon">📍</text>
             <text class="section-title">自提门店</text>
             <text class="required-mark">*</text>
           </view>
@@ -40,7 +39,6 @@
       <view class="section-card">
         <view class="section-header">
           <view class="header-left">
-            <text class="section-icon">🛍️</text>
             <text class="section-title">商品信息</text>
           </view>
         </view>
@@ -62,7 +60,6 @@
       <view class="section-card">
         <view class="section-header">
           <view class="header-left">
-            <text class="section-icon">👤</text>
             <text class="section-title">联系信息</text>
           </view>
         </view>
@@ -100,7 +97,6 @@
       <view class="section-card">
         <view class="section-header">
           <view class="header-left">
-            <text class="section-icon">💰</text>
             <text class="section-title">费用明细</text>
           </view>
         </view>
@@ -353,13 +349,13 @@ export default {
 }
 
 .scroll-container {
-  padding: 20rpx 32rpx 160rpx;
+  padding: 20rpx 24rpx 160rpx;
 }
 
 .section-card {
   background: #FFFFFF;
   border-radius: 24rpx;
-  padding: 32rpx;
+  padding: 32rpx 28rpx;
   margin-bottom: 20rpx;
   box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.04);
 }
@@ -376,10 +372,7 @@ export default {
   align-items: center;
 }
 
-.section-icon {
-  font-size: 36rpx;
-  margin-right: 12rpx;
-}
+
 
 .section-title {
   font-size: 30rpx;
