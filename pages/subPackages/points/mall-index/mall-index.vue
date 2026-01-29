@@ -32,27 +32,27 @@
         <view class="points-card">
           <view class="card-bg"></view>
           <view class="card-content">
-            <view class="points-info">
-              <text class="points-label">我的积分</text>
-              <view class="points-value-row">
-                <text class="points-value">{{ userPoints }}</text>
-                <text class="points-unit">分</text>
-              </view>
-            </view>
-            <view class="card-actions">
-              <view class="action-btn" @click="goToOrderList">
-                <view class="btn-icon">
-                  <u-icon name="list" color="#FF7043" size="36" />
+            <view class="points-main">
+              <view class="points-info">
+                <text class="points-label">我的积分</text>
+                <view class="points-value-row">
+                  <text class="points-value">{{ userPoints }}</text>
+                  <text class="points-unit">分</text>
                 </view>
-                <text class="btn-label">兑换记录</text>
+              </view>
+              <view class="points-icon-wrapper">
+                <image 
+                  src="/static/images/points-icon.png" 
+                  class="points-icon"
+                  mode="aspectFit"
+                />
               </view>
             </view>
-            <view class="points-icon-wrapper">
-              <image 
-                src="/static/images/points-icon.png" 
-                class="points-icon"
-                mode="aspectFit"
-              />
+            <view class="card-footer">
+              <view class="record-btn" @click="goToOrderList">
+                <text class="record-text">兑换记录</text>
+                <u-icon name="arrow-right" color="#FF7043" size="24" />
+              </view>
             </view>
           </view>
         </view>
@@ -456,9 +456,15 @@ export default {
   position: relative;
   height: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32rpx 40rpx 24rpx;
+}
+
+.points-main {
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40rpx;
 }
 
 .points-info {
@@ -491,36 +497,31 @@ export default {
   margin-left: 8rpx;
 }
 
-.card-actions {
+.card-footer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
-.action-btn {
+.record-btn {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 16rpx 24rpx;
-}
-
-.btn-icon {
-  width: 72rpx;
-  height: 72rpx;
+  padding: 12rpx 24rpx;
   background: linear-gradient(135deg, #FFF4F0 0%, #FFE8E0 100%);
-  border-radius: 36rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12rpx;
+  border-radius: 24rpx;
   box-shadow: 0 4rpx 12rpx rgba(255, 112, 67, 0.15);
+  transition: all 0.3s ease;
 }
 
-.btn-label {
-  font-size: 22rpx;
-  color: #666666;
+.record-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2rpx 8rpx rgba(255, 112, 67, 0.2);
+}
+
+.record-text {
+  font-size: 24rpx;
+  color: #FF7043;
   font-weight: 500;
+  margin-right: 4rpx;
 }
 
 .points-icon-wrapper {
