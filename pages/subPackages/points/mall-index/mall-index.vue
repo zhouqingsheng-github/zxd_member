@@ -38,9 +38,13 @@
                 <text class="points-value">{{ userPoints }}</text>
                 <text class="points-unit">分</text>
               </view>
-              <view class="exchange-record-btn" @click="goToOrderList">
-                <text class="record-text">兑换记录</text>
-                <u-icon name="arrow-right" color="#FF7043" size="28" />
+            </view>
+            <view class="card-actions">
+              <view class="action-btn" @click="goToOrderList">
+                <view class="btn-icon">
+                  <u-icon name="list" color="#FF7043" size="36" />
+                </view>
+                <text class="btn-label">兑换记录</text>
               </view>
             </view>
             <view class="points-icon-wrapper">
@@ -487,21 +491,35 @@ export default {
   margin-left: 8rpx;
 }
 
-.exchange-record-btn {
+.card-actions {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-top: 16rpx;
-  padding: 8rpx 20rpx;
-  background: linear-gradient(135deg, #FFF4F0 0%, #FFE8E0 100%);
-  border-radius: 20rpx;
-  width: fit-content;
-  border: 1rpx solid rgba(255, 112, 67, 0.2);
+  justify-content: center;
 }
 
-.record-text {
-  font-size: 24rpx;
-  color: #FF7043;
-  margin-right: 4rpx;
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16rpx 24rpx;
+}
+
+.btn-icon {
+  width: 72rpx;
+  height: 72rpx;
+  background: linear-gradient(135deg, #FFF4F0 0%, #FFE8E0 100%);
+  border-radius: 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12rpx;
+  box-shadow: 0 4rpx 12rpx rgba(255, 112, 67, 0.15);
+}
+
+.btn-label {
+  font-size: 22rpx;
+  color: #666666;
   font-weight: 500;
 }
 

@@ -1,19 +1,17 @@
 <template>
   <view class="order-list-page">
     <!-- 自定义导航栏 -->
-    <uni-nav-bar 
-      :fixed="true" 
-      :shadow="false" 
-      :border="false" 
-      status-bar
-      background-color="#FFFFFF"
-      left-icon="left"
-      @clickLeft="goBack"
-    >
-      <template #default>
+    <view class="nav-bar" :style="{ paddingTop: statusBarHeight + 'px' }">
+      <view class="nav-content">
+        <view class="nav-left" @click="goBack">
+          <view class="back-btn">
+            <u-icon name="arrow-left" color="#1A1A1A" size="40" />
+          </view>
+        </view>
         <text class="nav-title">我的订单</text>
-      </template>
-    </uni-nav-bar>
+        <view class="nav-right"></view>
+      </view>
+    </view>
 
     <!-- 分类Tab -->
     <view class="tabs-section">
@@ -23,10 +21,18 @@
             v-for="(tab, index) in tabList" 
             :key="index"
             class="tab-item"
-            :class="{ 'tab-item-active': currentTab === index }"
             @click="handleTabChange(index)"
           >
-            <text class="tab-text">{{ tab.name }}</text>
+            <text 
+              class="tab-text" 
+              :class="{ 'tab-text-active': currentTab === index }"
+            >
+              {{ tab.name }}
+            </text>
+            <view 
+              class="tab-indicator" 
+              :class="{ 'indicator-active': currentTab === index }"
+            ></view>
           </view>
         </view>
       </scroll-view>
@@ -41,7 +47,7 @@
       @refresherrefresh="onRefresh"
     >
       <!-- 订单列表 -->
-      <view class="order-list">
+      <view v-if="orderList.length > 0" class="order-list">
         <OrderCard
           v-for="order in orderList"
           :key="order.id"
@@ -54,21 +60,31 @@
 
       <!-- 加载状态 -->
       <view v-if="loading && orderList.length === 0" class="loading-state">
-        <u-loading-icon mode="circle" color="#FF6B35" size="60" />
+        <u-loading-icon mode="circle" color="#FF7043" size="60" />
         <text class="loading-text">加载中...</text>
       </view>
 
       <!-- 空状态 -->
       <view v-if="!loading && orderList.length === 0" class="empty-state">
-        <text class="empty-icon">📦</text>
-        <text class="empty-text">暂无订单</text>
-        <text class="empty-tip">快去兑换心仪的商品吧</text>
+        <view class="empty-content">
+          <view class="empty-icon-wrapper">
+            <text class="empty-icon">📦</text>
+          </view>
+          <text class="empty-text">暂无订单</text>
+          <text class="empty-tip">快去兑换心仪的商品吧</text>
+          <button class="go-shopping-btn" @click="goToMall">
+            <text class="btn-text">去逛逛</text>
+          </button>
+        </view>
       </view>
 
       <!-- 加载更多 -->
       <view v-if="orderList.length > 0" class="loadmore-state">
-        <text v-if="loadingMore" class="loadmore-text">加载中...</text>
-        <text v-else-if="noMore" class="loadmore-text">— 已经到底了 —</text>
+        <view v-if="loadingMore" class="loadmore-loading">
+          <u-loading-icon mode="circle" color="#FF7043" size="40" />
+          <text class="loadmore-text">加载中...</text>
+        </view>
+        <text v-else-if="noMore" class="loadmore-end">— 已经到底了 —</text>
       </view>
     </scroll-view>
   </view>
@@ -84,12 +100,13 @@ export default {
   },
   data() {
     return {
+      statusBarHeight: 0,
       tabList: [
-        { name: '全部', value: '' },
-        { name: '待支付', value: 'PENDING' },
-        { name: '待核销', value: 'PAID' },
-        { name: '已完成', value: 'COMPLETED' },
-        { name: '已取消', value: 'CANCELLED' }
+        { name: '全部', status: null },
+        { name: '待支付', status: 'PENDING_PAYMENT' },
+        { name: '待核销', status: 'PENDING_VERIFICATION' },
+        { name: '已完成', status: 'COMPLETED' },
+        { name: '已取消', status: 'CANCELLED' }
       ],
       currentTab: 0,
       orderList: [],
@@ -101,13 +118,10 @@ export default {
       pageSize: 10
     };
   },
-  onLoad(options) {
-    if (options.tab) {
-      const tabIndex = this.tabList.findIndex(t => t.value === options.tab);
-      if (tabIndex >= 0) {
-        this.currentTab = tabIndex;
-      }
-    }
+  onLoad() {
+    const systemInfo = uni.getSystemInfoSync();
+    this.statusBarHeight = systemInfo.statusBarHeight || 0;
+    
     this.loadOrders(true);
   },
   methods: {
@@ -133,13 +147,13 @@ export default {
           pageSize: this.pageSize
         };
         
-        const status = this.tabList[this.currentTab].value;
-        if (status) {
-          params.status = status;
+        const currentStatus = this.tabList[this.currentTab].status;
+        if (currentStatus) {
+          params.status = currentStatus;
         }
         
         const result = await getPointsOrderList(params);
-        const list = result.records || result.list || [];
+        const list = result.records || [];
         
         if (reset) {
           this.orderList = list;
@@ -188,72 +202,42 @@ export default {
     },
     
     async handleCancelOrder(order) {
-      uni.showModal({
-        title: '提示',
-        content: '确定要取消该订单吗?',
-        success: async (res) => {
-          if (res.confirm) {
-            try {
-              uni.showLoading({
-                title: '取消中...'
-              });
-              
-              await cancelPointsOrder(order.id);
-              
-              uni.hideLoading();
-              uni.showToast({
-                title: '取消成功',
-                icon: 'success'
-              });
-              
-              this.loadOrders(true);
-            } catch (error) {
-              uni.hideLoading();
-              console.error('取消订单失败:', error);
-              uni.showToast({
-                title: error.message || '取消失败',
-                icon: 'none'
-              });
-            }
-          }
-        }
-      });
-    },
-    
-    async handlePayOrder(order) {
       try {
-        uni.showLoading({
-          title: '支付中...'
+        const res = await uni.showModal({
+          title: '提示',
+          content: '确定要取消该订单吗？'
         });
         
-        const result = await payPointsOrder(order.id);
-        
-        uni.hideLoading();
-        
-        if (result && result.payParams) {
+        if (res.confirm) {
+          await cancelPointsOrder(order.id);
           uni.showToast({
-            title: '请完成支付',
-            icon: 'none'
-          });
-        } else {
-          uni.showToast({
-            title: '支付成功',
+            title: '取消成功',
             icon: 'success'
           });
-          
           this.loadOrders(true);
         }
       } catch (error) {
-        uni.hideLoading();
-        console.error('支付订单失败:', error);
+        console.error('取消订单失败:', error);
         uni.showToast({
-          title: error.message || '支付失败',
+          title: '取消失败',
           icon: 'none'
         });
       }
     },
     
+    async handlePayOrder(order) {
+      // TODO: 实现支付逻辑
+      uni.showToast({
+        title: '支付功能开发中',
+        icon: 'none'
+      });
+    },
+    
     goBack() {
+      uni.navigateBack();
+    },
+    
+    goToMall() {
       uni.navigateBack();
     }
   }
@@ -263,20 +247,54 @@ export default {
 <style scoped>
 .order-list-page {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #F5F7FA;
+}
+
+/* 导航栏 */
+.nav-bar {
+  background: #FFFFFF;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+  flex-shrink: 0;
+}
+
+.nav-content {
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32rpx;
+}
+
+.nav-left,
+.nav-right {
+  width: 80rpx;
+}
+
+.back-btn {
+  width: 64rpx;
+  height: 64rpx;
   background: #F7F8FA;
+  border-radius: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-title {
   font-size: 32rpx;
   color: #1A1A1A;
-  font-weight: 500;
+  font-weight: 600;
 }
 
+/* 分类Tab */
 .tabs-section {
   background: #FFFFFF;
-  padding: 20rpx 0;
-  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #F0F0F0;
+  flex-shrink: 0;
 }
 
 .tabs-scroll {
@@ -286,31 +304,13 @@ export default {
 .tabs-list {
   display: inline-flex;
   padding: 0 32rpx;
-  gap: 32rpx;
+  gap: 48rpx;
 }
 
 .tab-item {
-  display: inline-block;
-  padding: 12rpx 0;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.tab-item::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%) scaleX(0);
-  width: 40rpx;
-  height: 6rpx;
-  background: linear-gradient(135deg, #FF6B35 0%, #FF8E53 100%);
-  border-radius: 3rpx;
-  transition: transform 0.3s ease;
-}
-
-.tab-item-active::after {
-  transform: translateX(-50%) scaleX(1);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .tab-text {
@@ -318,28 +318,44 @@ export default {
   color: #666666;
   white-space: nowrap;
   transition: all 0.3s ease;
+  padding-bottom: 12rpx;
 }
 
-.tab-item-active .tab-text {
-  color: #FF6B35;
+.tab-text-active {
+  font-size: 32rpx;
+  color: #FF7043;
   font-weight: 600;
-  font-size: 30rpx;
 }
 
+.tab-indicator {
+  width: 0;
+  height: 6rpx;
+  background: linear-gradient(90deg, #FF7043 0%, #FF5722 100%);
+  border-radius: 3rpx;
+  transition: width 0.3s ease;
+}
+
+.indicator-active {
+  width: 40rpx;
+}
+
+/* 滚动容器 */
 .scroll-container {
-  padding: 20rpx 32rpx;
+  flex: 1;
+  overflow-y: scroll;
 }
 
 .order-list {
-  /* 列表样式由OrderCard组件控制 */
+  padding: 24rpx 32rpx 32rpx;
 }
 
+/* 加载状态 */
 .loading-state {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 120rpx 0;
+  padding: 200rpx 0;
 }
 
 .loading-text {
@@ -348,37 +364,90 @@ export default {
   margin-top: 24rpx;
 }
 
+/* 空状态 */
 .empty-state {
+  width: 100%;
+  min-height: 600rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 32rpx;
+}
+
+.empty-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+}
+
+.empty-icon-wrapper {
+  width: 200rpx;
+  height: 200rpx;
+  background: linear-gradient(135deg, #FFF4F0 0%, #FFE8E0 100%);
+  border-radius: 100rpx;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 120rpx 0;
+  margin-bottom: 40rpx;
 }
 
 .empty-icon {
   font-size: 120rpx;
-  margin-bottom: 24rpx;
+  line-height: 1;
 }
 
 .empty-text {
   font-size: 32rpx;
   color: #666666;
-  margin-bottom: 12rpx;
+  margin-bottom: 16rpx;
+  font-weight: 500;
 }
 
 .empty-tip {
   font-size: 26rpx;
   color: #999999;
+  margin-bottom: 48rpx;
 }
 
+.go-shopping-btn {
+  width: 280rpx;
+  height: 88rpx;
+  background: linear-gradient(135deg, #FF7043 0%, #FF5722 100%);
+  border-radius: 44rpx;
+  border: none;
+  box-shadow: 0 8rpx 24rpx rgba(255, 112, 67, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-text {
+  color: #FFFFFF;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+/* 加载更多 */
 .loadmore-state {
-  padding: 40rpx 0;
-  text-align: center;
+  padding: 40rpx 0 60rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.loadmore-loading {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
 }
 
 .loadmore-text {
   font-size: 24rpx;
   color: #999999;
+}
+
+.loadmore-end {
+  font-size: 24rpx;
+  color: #CCCCCC;
 }
 </style>
