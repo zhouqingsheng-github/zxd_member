@@ -1,223 +1,178 @@
-@charset "UTF-8";
-/**
- * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
- * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
- * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
- */
+
 .order-list-page.data-v-b05bd0c4 {
-  min-height: 100vh;
-  background-color: #F3F4F6;
-}
-.tabs-container.data-v-b05bd0c4 {
-  background: #FFFFFF;
-  padding: 0 20rpx;
-}
-.order-list-container.data-v-b05bd0c4 {
-  padding: 20rpx;
-}
-.loading-container.data-v-b05bd0c4 {
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 200rpx;
+  background: #F5F7FA;
 }
-.loading-spinner.data-v-b05bd0c4 {
-  width: 60rpx;
-  height: 60rpx;
-  border: 4rpx solid #f3f3f3;
-  border-top: 4rpx solid #EE781F;
-  border-radius: 50%;
-  -webkit-animation: spin-data-v-b05bd0c4 1s linear infinite;
-          animation: spin-data-v-b05bd0c4 1s linear infinite;
-}
-@-webkit-keyframes spin-data-v-b05bd0c4 {
-0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-}
-100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-}
-}
-@keyframes spin-data-v-b05bd0c4 {
-0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-}
-100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-}
-}
-.loading-text.data-v-b05bd0c4 {
-  margin-top: 20rpx;
-  font-size: 28rpx;
-  color: #999;
-}
-.order-list.data-v-b05bd0c4 {
-  padding-bottom: 20rpx;
-}
-.order-item.data-v-b05bd0c4 {
+
+/* 导航栏 */
+.nav-bar.data-v-b05bd0c4 {
   background: #FFFFFF;
-  border-radius: 16rpx;
-  padding: 24rpx;
-  margin-bottom: 20rpx;
-  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+  flex-shrink: 0;
 }
-.order-header.data-v-b05bd0c4 {
+.nav-content.data-v-b05bd0c4 {
+  height: 88rpx;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding-bottom: 20rpx;
-  border-bottom: 1rpx solid #F0F0F0;
+  justify-content: space-between;
+  padding: 0 32rpx;
 }
-.order-no.data-v-b05bd0c4 {
-  font-size: 26rpx;
-  color: #999;
+.nav-left.data-v-b05bd0c4,
+.nav-right.data-v-b05bd0c4 {
+  width: 80rpx;
+  display: flex;
+  align-items: center;
 }
-.order-status.data-v-b05bd0c4 {
-  font-size: 28rpx;
+.nav-title.data-v-b05bd0c4 {
+  font-size: 32rpx;
+  color: #1A1A1A;
   font-weight: 600;
 }
-.order-status.status-pending.data-v-b05bd0c4 {
-  color: #FF9800;
+
+/* 分类Tab */
+.tabs-section.data-v-b05bd0c4 {
+  background: #FFFFFF;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #F0F0F0;
+  flex-shrink: 0;
 }
-.order-status.status-paid.data-v-b05bd0c4 {
-  color: #EE781F;
-}
-.order-status.status-completed.data-v-b05bd0c4 {
-  color: #4CAF50;
-}
-.order-status.status-cancelled.data-v-b05bd0c4 {
-  color: #999;
-}
-.order-content.data-v-b05bd0c4 {
+.tabs-list.data-v-b05bd0c4 {
   display: flex;
-  padding: 20rpx 0;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 32rpx;
 }
-.product-image.data-v-b05bd0c4 {
-  width: 160rpx;
-  height: 160rpx;
-  border-radius: 12rpx;
-  margin-right: 20rpx;
-}
-.product-info.data-v-b05bd0c4 {
+.tab-item.data-v-b05bd0c4 {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-.product-name.data-v-b05bd0c4 {
-  font-size: 30rpx;
-  font-weight: 600;
-  color: #19191A;
-  line-height: 1.4;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-.product-spec.data-v-b05bd0c4 {
-  font-size: 26rpx;
-  color: #999;
-  margin-top: 8rpx;
-}
-.product-quantity.data-v-b05bd0c4 {
-  font-size: 26rpx;
-  color: #666;
-  margin-top: 8rpx;
-}
-.store-info.data-v-b05bd0c4 {
-  display: flex;
   align-items: center;
-  padding: 16rpx 0;
-  border-top: 1rpx solid #F0F0F0;
 }
-.store-icon.data-v-b05bd0c4 {
+.tab-text.data-v-b05bd0c4 {
   font-size: 28rpx;
-  margin-right: 8rpx;
+  color: #666666;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  padding-bottom: 12rpx;
 }
-.store-name.data-v-b05bd0c4 {
-  margin-left: 8rpx;
-  font-size: 28rpx;
-  color: #666;
-}
-.order-footer.data-v-b05bd0c4 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 16rpx;
-  border-top: 1rpx solid #F0F0F0;
-}
-.order-amount.data-v-b05bd0c4 {
-  display: flex;
-  align-items: baseline;
-}
-.points-label.data-v-b05bd0c4 {
+.tab-text-active.data-v-b05bd0c4 {
   font-size: 32rpx;
+  color: #FF7043;
   font-weight: 600;
-  color: #EE781F;
 }
-.cash-label.data-v-b05bd0c4 {
-  font-size: 28rpx;
-  color: #EE781F;
-  margin-left: 8rpx;
+.tab-indicator.data-v-b05bd0c4 {
+  width: 0;
+  height: 6rpx;
+  background: linear-gradient(90deg, #FF7043 0%, #FF5722 100%);
+  border-radius: 3rpx;
+  transition: width 0.3s ease;
 }
-.order-actions.data-v-b05bd0c4 {
-  display: flex;
-  gap: 16rpx;
-}
-.action-btn.data-v-b05bd0c4 {
-  padding: 12rpx 32rpx;
-  border-radius: 40rpx;
-  font-size: 26rpx;
-  border: 1rpx solid #E0E0E0;
-  color: #666;
-}
-.cancel-btn.data-v-b05bd0c4 {
-  border-color: #EE781F;
-  color: #EE781F;
-}
-.order-time.data-v-b05bd0c4 {
-  font-size: 24rpx;
-  color: #999;
-  margin-top: 16rpx;
-  text-align: right;
-}
-.load-more.data-v-b05bd0c4,
-.no-more.data-v-b05bd0c4 {
-  text-align: center;
-  padding: 40rpx 0;
-  font-size: 28rpx;
-  color: #999;
-}
-.loading-spinner-small.data-v-b05bd0c4 {
+.indicator-active.data-v-b05bd0c4 {
   width: 40rpx;
-  height: 40rpx;
-  border: 3rpx solid #f3f3f3;
-  border-top: 3rpx solid #EE781F;
-  border-radius: 50%;
-  -webkit-animation: spin-data-v-b05bd0c4 1s linear infinite;
-          animation: spin-data-v-b05bd0c4 1s linear infinite;
-  margin: 0 auto;
 }
-.empty-container.data-v-b05bd0c4 {
+
+/* 滚动容器 */
+.scroll-container.data-v-b05bd0c4 {
+  flex: 1;
+  overflow-y: scroll;
+}
+.order-list.data-v-b05bd0c4 {
+  padding: 24rpx 32rpx 32rpx;
+}
+
+/* 加载状态 */
+.loading-state.data-v-b05bd0c4 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 200rpx;
+  padding: 200rpx 0;
 }
-.empty-image.data-v-b05bd0c4 {
-  width: 300rpx;
-  height: 300rpx;
+.loading-text.data-v-b05bd0c4 {
+  font-size: 26rpx;
+  color: #999999;
+  margin-top: 24rpx;
+}
+
+/* 空状态 */
+.empty-state.data-v-b05bd0c4 {
+  width: 100%;
+  height: 100%;
+  min-height: 800rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 32rpx;
+  box-sizing: border-box;
+}
+.empty-content.data-v-b05bd0c4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.empty-icon-wrapper.data-v-b05bd0c4 {
+  width: 200rpx;
+  height: 200rpx;
+  background: linear-gradient(135deg, #FFF4F0 0%, #FFE8E0 100%);
+  border-radius: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 40rpx;
+}
+.empty-icon.data-v-b05bd0c4 {
+  font-size: 120rpx;
+  line-height: 1;
 }
 .empty-text.data-v-b05bd0c4 {
   font-size: 32rpx;
-  color: #666;
+  color: #666666;
+  margin-bottom: 16rpx;
+  font-weight: 500;
 }
+.empty-tip.data-v-b05bd0c4 {
+  font-size: 26rpx;
+  color: #999999;
+  margin-bottom: 48rpx;
+}
+.go-shopping-btn.data-v-b05bd0c4 {
+  width: 280rpx;
+  height: 88rpx;
+  background: linear-gradient(135deg, #FF7043 0%, #FF5722 100%);
+  border-radius: 44rpx;
+  border: none;
+  box-shadow: 0 8rpx 24rpx rgba(255, 112, 67, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-text.data-v-b05bd0c4 {
+  color: #FFFFFF;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+/* 加载更多 */
+.loadmore-state.data-v-b05bd0c4 {
+  padding: 40rpx 0 60rpx;
+  display: flex;
+  justify-content: center;
+}
+.loadmore-loading.data-v-b05bd0c4 {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+.loadmore-text.data-v-b05bd0c4 {
+  font-size: 24rpx;
+  color: #999999;
+}
+.loadmore-end.data-v-b05bd0c4 {
+  font-size: 24rpx;
+  color: #CCCCCC;
+}
+
