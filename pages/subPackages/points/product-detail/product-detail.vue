@@ -1,19 +1,19 @@
 <template>
   <view class="product-detail-page">
     <!-- 自定义导航栏 -->
-    <view class="nav-bar" :style="{ paddingTop: statusBarHeight + 'px' }">
+    <view class="nav-bar" :class="{ 'nav-bar-white': navBarWhite }" :style="{ paddingTop: statusBarHeight + 'px' }">
       <view class="nav-content">
         <view class="nav-btn" @click="goBack">
-          <u-icon name="arrow-left" color="#FFFFFF" size="40" />
+          <u-icon name="arrow-left" :color="navBarWhite ? '#1A1A1A' : '#FFFFFF'" size="40" />
         </view>
         <view class="nav-title">商品详情</view>
         <view class="nav-placeholder"></view>
       </view>
     </view>
 
-    <scroll-view scroll-y class="content-scroll" :style="{ paddingTop: navBarHeight + 'px', paddingBottom: bottomBarHeight + 'px' }">
+    <scroll-view scroll-y class="content-scroll" :style="{ paddingBottom: bottomBarHeight + 'px' }" @scroll="handleScroll">
       <!-- 轮播图 -->
-      <view class="swiper-section">
+      <view class="swiper-section" :style="{ paddingTop: navBarHeight + 'px' }">
         <swiper 
           class="product-swiper" 
           :indicator-dots="true" 
@@ -197,6 +197,7 @@ export default {
       safeAreaBottom: 0,
       navBarHeight: 0,
       bottomBarHeight: 0,
+      navBarWhite: false,
       productId: '',
       productInfo: {},
       carouselImages: [],
@@ -320,6 +321,12 @@ export default {
       })
     },
     
+    handleScroll(e) {
+      const scrollTop = e.detail.scrollTop
+      // 当滚动超过导航栏高度时，导航栏变白
+      this.navBarWhite = scrollTop > this.navBarHeight
+    },
+    
     goBack() {
       uni.navigateBack()
     },
@@ -346,6 +353,12 @@ export default {
   right: 0;
   z-index: 999;
   background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  transition: all 0.3s ease;
+}
+
+.nav-bar-white {
+  background: #FFFFFF !important;
+  box-shadow: 0 2rpx 16rpx rgba(0,0,0,0.08);
 }
 
 .nav-content {
@@ -368,6 +381,10 @@ export default {
   transition: all 0.3s ease;
 }
 
+.nav-bar-white .nav-btn {
+  background: rgba(0, 0, 0, 0.05);
+}
+
 .nav-placeholder {
   width: 64rpx;
   height: 64rpx;
@@ -385,6 +402,12 @@ export default {
   color: #FFFFFF;
   font-weight: 600;
   text-shadow: 0 2rpx 8rpx rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.nav-bar-white .nav-title {
+  color: #1A1A1A;
+  text-shadow: none;
 }
 
 /* 滚动容器 */
