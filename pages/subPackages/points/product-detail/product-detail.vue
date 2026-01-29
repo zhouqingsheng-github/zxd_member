@@ -1,46 +1,57 @@
 <template>
-  <view class="product-detail">
+  <view class="detail-page">
     <!-- 自定义导航栏 -->
     <uni-nav-bar 
       :fixed="true" 
       :shadow="false" 
       :border="false" 
       status-bar
-      background-color="#FFFFFF"
+      background-color="rgba(255, 255, 255, 0.95)"
       left-icon="left"
       @clickLeft="goBack"
-      title="商品详情"
-    />
+    >
+      <template #default>
+        <text class="nav-title">商品详情</text>
+      </template>
+    </uni-nav-bar>
 
     <scroll-view v-if="!loading" class="scroll-container" scroll-y>
       <!-- 商品轮播图 -->
-      <view class="swiper-container">
+      <view class="swiper-section">
         <u-swiper 
           :list="swiperImages" 
           :autoplay="true"
           :circular="true"
           :height="750"
           indicator-mode="dot"
+          indicator-active-color="#FF6B35"
+          indicator-inactive-color="rgba(255, 255, 255, 0.5)"
         />
       </view>
 
-      <!-- 商品基本信息 -->
-      <view class="product-info">
+      <!-- 商品信息卡片 -->
+      <view class="info-card">
         <view class="product-name">{{ product.spuName }}</view>
-        <view class="product-price">
+        <view class="price-row">
           <view class="price-main">
             <text class="points">{{ product.minPointsRequired }}</text>
             <text class="points-unit">积分</text>
             <text v-if="product.minCashRequired > 0" class="cash">+¥{{ product.minCashRequired }}</text>
           </view>
-          <view class="stock-info">库存 {{ product.totalStock }}</view>
+          <view class="stock-badge" :class="{ 'no-stock': product.totalStock === 0 }">
+            <text class="stock-text">{{ product.totalStock === 0 ? '已兑完' : `库存${product.totalStock}` }}</text>
+          </view>
         </view>
       </view>
 
       <!-- 商品详情 -->
-      <view class="product-detail-content">
-        <view class="detail-title">商品详情</view>
-        <view class="detail-html">
+      <view class="detail-card">
+        <view class="detail-title">
+          <view class="title-line"></view>
+          <text class="title-text">商品详情</text>
+          <view class="title-line"></view>
+        </view>
+        <view class="detail-content">
           <rich-text :nodes="product.detailContent"></rich-text>
         </view>
       </view>
@@ -48,7 +59,7 @@
 
     <!-- 加载状态 -->
     <view v-if="loading" class="loading-state">
-      <u-loading-icon mode="circle" />
+      <u-loading-icon mode="circle" color="#FF6B35" size="60" />
       <text class="loading-text">加载中...</text>
     </view>
 
@@ -56,10 +67,11 @@
     <view v-if="!loading" class="footer-bar">
       <button 
         class="exchange-btn" 
+        :class="{ 'btn-disabled': product.totalStock === 0 }"
         :disabled="product.totalStock === 0"
         @click="showSkuSelector = true"
       >
-        {{ product.totalStock === 0 ? '已兑完' : '立即兑换' }}
+        <text class="btn-text">{{ product.totalStock === 0 ? '已兑完' : '立即兑换' }}</text>
       </button>
     </view>
 
@@ -128,7 +140,6 @@ export default {
     
     handleSkuConfirm(data) {
       this.showSkuSelector = false;
-      // 跳转到确认订单页
       uni.navigateTo({
         url: `/pages/subPackages/points/order-confirm/order-confirm?skuId=${data.skuId}&quantity=${data.quantity}`
       });
@@ -142,41 +153,48 @@ export default {
 </script>
 
 <style scoped>
-.product-detail {
+.detail-page {
   width: 100%;
-  height: 100vh;
-  background: #F3F4F6;
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;
+  background: #F7F8FA;
+}
+
+.nav-title {
+  font-size: 32rpx;
+  color: #1A1A1A;
+  font-weight: 500;
 }
 
 .scroll-container {
-  flex: 1;
-  padding-bottom: 120rpx;
+  padding-bottom: 140rpx;
 }
 
-.swiper-container {
+.swiper-section {
   width: 100%;
   background: #FFFFFF;
 }
 
-.product-info {
+.info-card {
   background: #FFFFFF;
   padding: 32rpx;
-  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+  border-radius: 24rpx 24rpx 0 0;
+  position: relative;
+  z-index: 2;
+  margin-top: -40rpx;
 }
 
 .product-name {
   font-size: 36rpx;
-  color: #19191A;
-  font-weight: 500;
-  line-height: 50rpx;
+  color: #1A1A1A;
+  font-weight: 600;
+  line-height: 52rpx;
   margin-bottom: 24rpx;
 }
 
-.product-price {
+.price-row {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -186,58 +204,89 @@ export default {
 }
 
 .points {
-  font-size: 48rpx;
-  color: #EE781F;
+  font-size: 56rpx;
+  color: #FF6B35;
   font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
 }
 
 .points-unit {
   font-size: 28rpx;
-  color: #EE781F;
-  margin-left: 4rpx;
+  color: #FF6B35;
+  margin-left: 8rpx;
 }
 
 .cash {
   font-size: 32rpx;
-  color: #EE781F;
-  margin-left: 12rpx;
+  color: #FF6B35;
+  margin-left: 16rpx;
 }
 
-.stock-info {
-  font-size: 28rpx;
-  color: #A2A2A8;
+.stock-badge {
+  background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+  padding: 8rpx 24rpx;
+  border-radius: 24rpx;
 }
 
-.product-detail-content {
+.stock-badge.no-stock {
+  background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+}
+
+.stock-text {
+  font-size: 24rpx;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.detail-card {
   background: #FFFFFF;
-  padding: 32rpx;
+  padding: 40rpx 32rpx;
+  margin-top: 20rpx;
+  border-radius: 24rpx;
 }
 
 .detail-title {
-  font-size: 32rpx;
-  color: #19191A;
-  font-weight: 500;
-  margin-bottom: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32rpx;
 }
 
-.detail-html {
+.title-line {
+  width: 60rpx;
+  height: 4rpx;
+  background: linear-gradient(90deg, transparent 0%, #FF6B35 100%);
+}
+
+.title-text {
+  font-size: 32rpx;
+  color: #1A1A1A;
+  font-weight: 600;
+  margin: 0 24rpx;
+}
+
+.title-line:last-child {
+  background: linear-gradient(90deg, #FF6B35 0%, transparent 100%);
+}
+
+.detail-content {
   font-size: 28rpx;
   color: #666666;
-  line-height: 44rpx;
+  line-height: 48rpx;
 }
 
 .loading-state {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 200rpx 0;
 }
 
 .loading-text {
-  font-size: 28rpx;
-  color: #A2A2A8;
-  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #999999;
+  margin-top: 24rpx;
 }
 
 .footer-bar {
@@ -248,24 +297,29 @@ export default {
   background: #FFFFFF;
   padding: 20rpx 32rpx;
   padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
-  box-shadow: 0 -4rpx 20rpx rgba(0, 0, 0, 0.05);
+  box-shadow: 0 -4rpx 20rpx rgba(0, 0, 0, 0.06);
 }
 
 .exchange-btn {
   width: 100%;
-  height: 88rpx;
-  background: #EE781F;
-  border-radius: 44rpx;
-  color: #FFFFFF;
-  font-size: 32rpx;
-  font-weight: 500;
+  height: 96rpx;
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8E53 100%);
+  border-radius: 48rpx;
   border: none;
+  box-shadow: 0 8rpx 24rpx rgba(255, 107, 53, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.exchange-btn[disabled] {
+.btn-disabled {
   background: #D1D1D6;
+  box-shadow: none;
+}
+
+.btn-text {
+  color: #FFFFFF;
+  font-size: 32rpx;
+  font-weight: 600;
 }
 </style>

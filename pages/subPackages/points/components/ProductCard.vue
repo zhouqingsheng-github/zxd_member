@@ -1,25 +1,40 @@
 <template>
   <view class="product-card" @click="handleClick">
-    <view class="product-image-wrapper">
+    <!-- 商品图片 -->
+    <view class="image-wrapper">
       <image 
-        class="product-image" 
         :src="product.mainImage" 
+        class="product-image"
         mode="aspectFill"
-        :lazy-load="true"
       />
-      <view v-if="product.totalStock === 0" class="sold-out-mask">
-        <text class="sold-out-text">已兑完</text>
+      <!-- 库存标签 -->
+      <view v-if="product.totalStock === 0" class="sold-out-badge">
+        <text class="badge-text">已兑完</text>
+      </view>
+      <!-- 热门标签 -->
+      <view v-else-if="product.isHot" class="hot-badge">
+        <text class="badge-text">🔥 热门</text>
       </view>
     </view>
-    <view class="product-info">
+    
+    <!-- 商品信息 -->
+    <view class="product-content">
       <view class="product-name">{{ product.spuName }}</view>
-      <view class="product-price">
-        <view class="price-main">
-          <text class="points">{{ product.minPointsRequired }}</text>
-          <text class="points-unit">积分</text>
-          <text v-if="product.minCashRequired > 0" class="cash">+¥{{ product.minCashRequired }}</text>
+      
+      <!-- 价格区域 -->
+      <view class="price-section">
+        <view class="price-row">
+          <view class="points-price">
+            <text class="points-value">{{ product.minPointsRequired }}</text>
+            <text class="points-unit">积分</text>
+          </view>
+          <text v-if="product.minCashRequired > 0" class="cash-price">
+            +¥{{ product.minCashRequired }}
+          </text>
         </view>
-        <view v-if="product.totalStock > 0" class="stock-text">库存{{ product.totalStock }}</view>
+        <view v-if="product.totalStock > 0 && product.totalStock < 10" class="stock-tip">
+          仅剩{{ product.totalStock }}件
+        </view>
       </view>
     </view>
   </view>
@@ -37,31 +52,27 @@ export default {
   },
   methods: {
     handleClick() {
-      if (this.product.totalStock === 0) {
-        uni.showToast({
-          title: '商品已兑完',
-          icon: 'none'
-        });
-        return;
-      }
       this.$emit('click', this.product);
     }
   }
-}
+};
 </script>
 
 <style scoped>
 .product-card {
   background: #FFFFFF;
-  border-radius: 16rpx;
+  border-radius: 20rpx;
   overflow: hidden;
-  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
 }
 
-.product-image-wrapper {
+.image-wrapper {
   position: relative;
   width: 100%;
   height: 340rpx;
+  overflow: hidden;
+  background: #F5F5F5;
 }
 
 .product-image {
@@ -69,73 +80,90 @@ export default {
   height: 100%;
 }
 
-.sold-out-mask {
+.sold-out-badge {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 16rpx;
+  right: 16rpx;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10rpx);
+  padding: 8rpx 20rpx;
+  border-radius: 24rpx;
 }
 
-.sold-out-text {
+.hot-badge {
+  position: absolute;
+  top: 16rpx;
+  left: 16rpx;
+  background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+  padding: 8rpx 20rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 4rpx 12rpx rgba(255, 107, 107, 0.3);
+}
+
+.badge-text {
+  font-size: 22rpx;
   color: #FFFFFF;
-  font-size: 32rpx;
-  font-weight: bold;
+  font-weight: 500;
 }
 
-.product-info {
-  padding: 20rpx;
+.product-content {
+  padding: 24rpx;
 }
 
 .product-name {
   font-size: 28rpx;
-  color: #19191A;
+  color: #1A1A1A;
   font-weight: 500;
+  line-height: 40rpx;
   margin-bottom: 16rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  line-height: 40rpx;
-  height: 80rpx;
+  min-height: 80rpx;
 }
 
-.product-price {
+.price-section {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
 }
 
-.price-main {
+.price-row {
   display: flex;
   align-items: baseline;
 }
 
-.points {
+.points-price {
+  display: flex;
+  align-items: baseline;
+}
+
+.points-value {
   font-size: 36rpx;
-  color: #EE781F;
+  color: #FF6B35;
   font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
 }
 
 .points-unit {
-  font-size: 24rpx;
-  color: #EE781F;
+  font-size: 22rpx;
+  color: #FF6B35;
   margin-left: 4rpx;
 }
 
-.cash {
+.cash-price {
   font-size: 24rpx;
-  color: #EE781F;
+  color: #FF6B35;
   margin-left: 8rpx;
 }
 
-.stock-text {
-  font-size: 24rpx;
-  color: #A2A2A8;
+.stock-tip {
+  font-size: 20rpx;
+  color: #FF6B35;
+  background: #FFF4F0;
+  padding: 4rpx 12rpx;
+  border-radius: 12rpx;
 }
 </style>

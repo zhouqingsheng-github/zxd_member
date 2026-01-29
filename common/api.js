@@ -188,7 +188,7 @@ export const getProductList = (params, config = {}) => http.get('/hotel-points/a
 export const getProductDetail = (id, config = {}) => http.get(`/hotel-points/app/products/${id}`, { ...config });
 
 // 查询分类树
-export const getCategoryTree = (config = {}) => http.get('/hotel-points/app/categories/tree', { ...config });
+export const getCategoryTree = (config = {}) => http.get('/hotel-points/app/products/categories/tree', { ...config });
 
 // 查询SKU在各门店的库存情况
 export const getStoreStockBySkuId = (skuId, config = {}) => http.get(`/hotel-points/app/stock/stores/${skuId}`, { ...config });

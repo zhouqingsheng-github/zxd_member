@@ -1,5 +1,5 @@
 <template>
-  <view class="confirm-container">
+  <view class="confirm-page">
     <!-- 自定义导航栏 -->
     <uni-nav-bar 
       :fixed="true" 
@@ -7,32 +7,43 @@
       :border="false" 
       status-bar
       background-color="#FFFFFF"
-      title="确认订单"
       left-icon="left"
       @clickLeft="goBack"
-    />
+    >
+      <template #default>
+        <text class="nav-title">确认订单</text>
+      </template>
+    </uni-nav-bar>
     
     <scroll-view v-if="!loading" class="scroll-container" scroll-y>
       <!-- 门店选择 -->
-      <view class="section-card store-section" @click="selectStore">
-        <view class="section-title">
-          <text>自提门店</text>
-          <text class="required">*</text>
+      <view class="section-card" @click="selectStore">
+        <view class="section-header">
+          <view class="header-left">
+            <text class="section-icon">📍</text>
+            <text class="section-title">自提门店</text>
+            <text class="required-mark">*</text>
+          </view>
+          <u-icon name="arrow-right" color="#999999" size="32" />
         </view>
-        <view v-if="selectedStore.storeId" class="store-info">
+        <view v-if="selectedStore.storeId" class="store-content">
           <view class="store-name">{{ selectedStore.storeName }}</view>
           <view class="store-address">{{ selectedStore.storeAddress }}</view>
-          <view class="store-phone">电话: {{ selectedStore.storePhone }}</view>
+          <view class="store-phone">📞 {{ selectedStore.storePhone }}</view>
         </view>
-        <view v-else class="store-placeholder">
+        <view v-else class="placeholder-text">
           请选择自提门店
         </view>
-        <u-icon name="arrow-right" color="#999999" size="28" />
       </view>
       
       <!-- 商品信息 -->
-      <view class="section-card product-section">
-        <view class="section-title">商品信息</view>
+      <view class="section-card">
+        <view class="section-header">
+          <view class="header-left">
+            <text class="section-icon">🛍️</text>
+            <text class="section-title">商品信息</text>
+          </view>
+        </view>
         <view class="product-item">
           <image 
             :src="skuInfo.imageUrl || skuInfo.mainImage" 
@@ -48,76 +59,93 @@
       </view>
       
       <!-- 用户信息 -->
-      <view class="section-card user-section">
-        <view class="section-title">联系信息</view>
-        <view class="form-item">
-          <view class="form-label">
-            <text>姓名</text>
-            <text class="required">*</text>
+      <view class="section-card">
+        <view class="section-header">
+          <view class="header-left">
+            <text class="section-icon">👤</text>
+            <text class="section-title">联系信息</text>
           </view>
-          <input 
-            v-model="form.userName" 
-            class="form-input"
-            placeholder="请输入姓名"
-          />
         </view>
-        <view class="form-item">
-          <view class="form-label">
-            <text>手机号</text>
-            <text class="required">*</text>
+        <view class="form-list">
+          <view class="form-item">
+            <view class="form-label">
+              <text>姓名</text>
+              <text class="required-mark">*</text>
+            </view>
+            <input 
+              v-model="form.userName" 
+              class="form-input"
+              placeholder="请输入姓名"
+              placeholder-class="input-placeholder"
+            />
           </view>
-          <input 
-            v-model="form.userPhone" 
-            class="form-input"
-            type="number"
-            maxlength="11"
-            placeholder="请输入手机号"
-          />
+          <view class="form-item">
+            <view class="form-label">
+              <text>手机号</text>
+              <text class="required-mark">*</text>
+            </view>
+            <input 
+              v-model="form.userPhone" 
+              class="form-input"
+              type="number"
+              maxlength="11"
+              placeholder="请输入手机号"
+              placeholder-class="input-placeholder"
+            />
+          </view>
         </view>
       </view>
       
       <!-- 费用明细 -->
-      <view class="section-card cost-section">
-        <view class="section-title">费用明细</view>
-        <view class="cost-item">
-          <view class="cost-label">所需积分</view>
-          <view class="cost-value points">{{ totalPoints }}</view>
+      <view class="section-card">
+        <view class="section-header">
+          <view class="header-left">
+            <text class="section-icon">💰</text>
+            <text class="section-title">费用明细</text>
+          </view>
         </view>
-        <view v-if="totalCash > 0" class="cost-item">
-          <view class="cost-label">所需现金</view>
-          <view class="cost-value cash">¥{{ totalCash }}</view>
+        <view class="cost-list">
+          <view class="cost-item">
+            <text class="cost-label">所需积分</text>
+            <text class="cost-value points-value">{{ totalPoints }}</text>
+          </view>
+          <view v-if="totalCash > 0" class="cost-item">
+            <text class="cost-label">所需现金</text>
+            <text class="cost-value cash-value">¥{{ totalCash }}</text>
+          </view>
+          <view class="cost-item">
+            <text class="cost-label">当前积分</text>
+            <text class="cost-value">{{ userPoints }}</text>
+          </view>
         </view>
-        <view class="cost-item">
-          <view class="cost-label">当前积分</view>
-          <view class="cost-value">{{ userPoints }}</view>
-        </view>
-        <view v-if="userPoints < totalPoints" class="cost-tip">
-          <u-icon name="info-circle" color="#FF6B6B" size="28" />
-          <text class="tip-text">积分不足</text>
+        <view v-if="userPoints < totalPoints" class="insufficient-tip">
+          <u-icon name="info-circle-fill" color="#FF6B6B" size="32" />
+          <text class="tip-text">积分不足，无法兑换</text>
         </view>
       </view>
     </scroll-view>
 
     <!-- 加载状态 -->
     <view v-if="loading" class="loading-state">
-      <u-loading-icon mode="circle" />
+      <u-loading-icon mode="circle" color="#FF6B35" size="60" />
       <text class="loading-text">加载中...</text>
     </view>
     
     <!-- 底部操作栏 -->
-    <view v-if="!loading" class="bottom-bar">
-      <view class="total-info">
-        <text class="total-label">合计:</text>
+    <view v-if="!loading" class="footer-bar">
+      <view class="total-section">
+        <text class="total-label">合计：</text>
         <text class="total-points">{{ totalPoints }}</text>
         <text class="total-unit">积分</text>
         <text v-if="totalCash > 0" class="total-cash">+¥{{ totalCash }}</text>
       </view>
       <button 
         class="submit-btn"
+        :class="{ 'btn-disabled': !canSubmit || submitting }"
         :disabled="!canSubmit || submitting"
         @click="handleSubmit"
       >
-        {{ submitting ? '提交中...' : '提交订单' }}
+        <text class="btn-text">{{ submitting ? '提交中...' : '提交订单' }}</text>
       </button>
     </view>
   </view>
@@ -145,17 +173,14 @@ export default {
   },
   
   computed: {
-    // 计算总积分
     totalPoints() {
       return (this.skuInfo.pointsRequired || 0) * this.quantity;
     },
     
-    // 计算总现金
     totalCash() {
       return ((this.skuInfo.cashRequired || 0) * this.quantity).toFixed(2);
     },
     
-    // 是否可以提交
     canSubmit() {
       return this.selectedStore.storeId &&
              this.form.userName &&
@@ -177,7 +202,6 @@ export default {
   },
 
   onShow() {
-    // 从门店选择页返回时，获取选中的门店
     const pages = getCurrentPages();
     const currentPage = pages[pages.length - 1];
     if (currentPage.$vm && currentPage.$vm.selectedStoreData) {
@@ -192,7 +216,6 @@ export default {
       await this.loadSkuInfo();
     },
 
-    // 加载用户信息
     async loadUserInfo() {
       try {
         const userInfo = getUserInfo();
@@ -206,13 +229,11 @@ export default {
       }
     },
 
-    // 加载SKU信息
     async loadSkuInfo() {
       if (!this.skuId) return;
       
       try {
         this.loading = true;
-        // 通过商品详情接口获取SKU信息
         const result = await getProductDetail(this.skuId);
         
         if (result && result.skuList) {
@@ -230,7 +251,6 @@ export default {
       }
     },
     
-    // 选择门店
     selectStore() {
       if (!this.skuId) {
         uni.showToast({
@@ -244,9 +264,7 @@ export default {
       });
     },
     
-    // 提交订单
     async handleSubmit() {
-      // 验证表单
       if (!this.selectedStore.storeId) {
         uni.showToast({
           title: '请选择自提门店',
@@ -297,7 +315,6 @@ export default {
           icon: 'success'
         });
         
-        // 跳转到订单详情页
         setTimeout(() => {
           uni.redirectTo({
             url: `/pages/subPackages/points/order-detail/order-detail?id=${result.id}`
@@ -315,7 +332,6 @@ export default {
       }
     },
     
-    // 返回
     goBack() {
       uni.navigateBack();
     }
@@ -324,72 +340,88 @@ export default {
 </script>
 
 <style scoped>
-.confirm-container {
+.confirm-page {
   width: 100%;
-  height: 100vh;
-  background: #F3F4F6;
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;
+  background: #F7F8FA;
+}
+
+.nav-title {
+  font-size: 32rpx;
+  color: #1A1A1A;
+  font-weight: 500;
 }
 
 .scroll-container {
-  flex: 1;
-  padding: 20rpx;
-  padding-bottom: 140rpx;
+  padding: 20rpx 32rpx 160rpx;
 }
 
 .section-card {
   background: #FFFFFF;
-  border-radius: 16rpx;
+  border-radius: 24rpx;
   padding: 32rpx;
   margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.04);
 }
 
-.section-title {
-  font-size: 32rpx;
-  color: #19191A;
-  font-weight: 500;
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 24rpx;
 }
 
-.required {
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.section-icon {
+  font-size: 36rpx;
+  margin-right: 12rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  color: #1A1A1A;
+  font-weight: 600;
+}
+
+.required-mark {
   color: #FF6B6B;
+  font-size: 28rpx;
   margin-left: 4rpx;
 }
 
-.store-section {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.store-info {
-  flex: 1;
+.store-content {
+  padding: 20rpx;
+  background: #F7F8FA;
+  border-radius: 16rpx;
 }
 
 .store-name {
-  font-size: 28rpx;
-  color: #19191A;
+  font-size: 30rpx;
+  color: #1A1A1A;
   font-weight: 500;
-  margin-bottom: 8rpx;
+  margin-bottom: 12rpx;
 }
 
 .store-address {
-  font-size: 24rpx;
+  font-size: 26rpx;
   color: #666666;
+  line-height: 40rpx;
   margin-bottom: 8rpx;
-  line-height: 36rpx;
 }
 
 .store-phone {
-  font-size: 24rpx;
+  font-size: 26rpx;
   color: #666666;
 }
 
-.store-placeholder {
-  flex: 1;
+.placeholder-text {
   font-size: 28rpx;
-  color: #A2A2A8;
+  color: #999999;
+  padding: 20rpx 0;
 }
 
 .product-item {
@@ -399,13 +431,14 @@ export default {
 .product-image {
   width: 160rpx;
   height: 160rpx;
-  border-radius: 12rpx;
+  border-radius: 16rpx;
+  background: #F5F5F5;
   flex-shrink: 0;
 }
 
 .product-info {
   flex: 1;
-  margin-left: 20rpx;
+  margin-left: 24rpx;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -413,8 +446,9 @@ export default {
 
 .product-name {
   font-size: 28rpx;
-  color: #19191A;
+  color: #1A1A1A;
   font-weight: 500;
+  line-height: 40rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -424,39 +458,52 @@ export default {
 
 .product-spec {
   font-size: 24rpx;
-  color: #A2A2A8;
+  color: #999999;
   margin-top: 8rpx;
 }
 
 .product-quantity {
   font-size: 24rpx;
-  color: #A2A2A8;
+  color: #666666;
   margin-top: 8rpx;
+}
+
+.form-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
 }
 
 .form-item {
   display: flex;
   align-items: center;
-  padding: 24rpx 0;
-  border-bottom: 1rpx solid #F3F4F6;
-}
-
-.form-item:last-child {
-  border-bottom: none;
+  padding: 24rpx;
+  background: #F7F8FA;
+  border-radius: 16rpx;
 }
 
 .form-label {
   width: 140rpx;
   font-size: 28rpx;
-  color: #19191A;
+  color: #1A1A1A;
   flex-shrink: 0;
 }
 
 .form-input {
   flex: 1;
   font-size: 28rpx;
-  color: #19191A;
+  color: #1A1A1A;
   text-align: right;
+}
+
+.input-placeholder {
+  color: #CCCCCC;
+}
+
+.cost-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
 }
 
 .cost-item {
@@ -472,48 +519,49 @@ export default {
 }
 
 .cost-value {
-  font-size: 28rpx;
-  color: #19191A;
-  font-weight: 500;
+  font-size: 30rpx;
+  color: #1A1A1A;
+  font-weight: 600;
 }
 
-.cost-value.points {
-  color: #EE781F;
+.points-value {
+  color: #FF6B35;
 }
 
-.cost-value.cash {
-  color: #19191A;
+.cash-value {
+  color: #FF6B35;
 }
 
-.cost-tip {
+.insufficient-tip {
   display: flex;
   align-items: center;
-  margin-top: 16rpx;
-  padding-top: 16rpx;
-  border-top: 1rpx solid #F3F4F6;
+  margin-top: 20rpx;
+  padding: 16rpx 20rpx;
+  background: #FFF4F0;
+  border-radius: 12rpx;
 }
 
 .tip-text {
-  font-size: 24rpx;
+  font-size: 26rpx;
   color: #FF6B6B;
-  margin-left: 8rpx;
+  margin-left: 12rpx;
 }
 
 .loading-state {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 200rpx 0;
 }
 
 .loading-text {
-  font-size: 28rpx;
-  color: #A2A2A8;
-  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #999999;
+  margin-top: 24rpx;
 }
 
-.bottom-bar {
+.footer-bar {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -521,56 +569,61 @@ export default {
   background: #FFFFFF;
   padding: 20rpx 32rpx;
   padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
-  box-shadow: 0 -4rpx 20rpx rgba(0, 0, 0, 0.05);
+  box-shadow: 0 -4rpx 20rpx rgba(0, 0, 0, 0.06);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.total-info {
+.total-section {
   display: flex;
   align-items: baseline;
 }
 
 .total-label {
-  font-size: 28rpx;
-  color: #19191A;
-  margin-right: 8rpx;
+  font-size: 26rpx;
+  color: #666666;
 }
 
 .total-points {
   font-size: 40rpx;
-  color: #EE781F;
+  color: #FF6B35;
   font-weight: bold;
+  margin-left: 8rpx;
 }
 
 .total-unit {
-  font-size: 24rpx;
-  color: #EE781F;
+  font-size: 22rpx;
+  color: #FF6B35;
   margin-left: 4rpx;
 }
 
 .total-cash {
   font-size: 28rpx;
-  color: #EE781F;
+  color: #FF6B35;
   margin-left: 8rpx;
 }
 
 .submit-btn {
-  width: 240rpx;
-  height: 72rpx;
-  background: #EE781F;
-  border-radius: 36rpx;
-  color: #FFFFFF;
-  font-size: 28rpx;
-  font-weight: 500;
+  width: 280rpx;
+  height: 80rpx;
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8E53 100%);
+  border-radius: 40rpx;
   border: none;
+  box-shadow: 0 8rpx 24rpx rgba(255, 107, 53, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.submit-btn[disabled] {
+.btn-disabled {
   background: #D1D1D6;
+  box-shadow: none;
+}
+
+.btn-text {
+  color: #FFFFFF;
+  font-size: 28rpx;
+  font-weight: 600;
 }
 </style>

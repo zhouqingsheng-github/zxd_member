@@ -2,73 +2,73 @@
   <u-popup 
     :show="show" 
     mode="bottom" 
-    :round="20"
+    :round="40"
     @close="handleClose"
-    :closeable="true"
   >
     <view class="sku-selector">
-      <!-- 商品信息 -->
-      <view class="sku-header">
-        <image 
-          class="sku-image" 
-          :src="currentSku.imageUrl || product.mainImage" 
-          mode="aspectFill"
-        />
-        <view class="sku-info">
-          <view class="sku-price">
-            <text class="points">{{ currentSku.pointsRequired || 0 }}</text>
-            <text class="points-unit">积分</text>
-            <text v-if="currentSku.cashRequired > 0" class="cash">+¥{{ currentSku.cashRequired }}</text>
+      <!-- 头部 -->
+      <view class="header">
+        <view class="header-content">
+          <image :src="selectedSku.imageUrl || product.mainImage" class="sku-image" mode="aspectFill" />
+          <view class="sku-info">
+            <view class="sku-price">
+              <text class="points">{{ selectedSku.pointsRequired || 0 }}</text>
+              <text class="points-unit">积分</text>
+              <text v-if="selectedSku.cashRequired > 0" class="cash">+¥{{ selectedSku.cashRequired }}</text>
+            </view>
+            <view class="sku-stock">库存：{{ selectedSku.stock || 0 }}</view>
           </view>
-          <view class="sku-stock">库存: {{ currentSku.totalStock || 0 }}</view>
-          <view v-if="selectedSpec" class="sku-spec">已选: {{ selectedSpec }}</view>
+        </view>
+        <view class="close-btn" @click="handleClose">
+          <u-icon name="close" size="40" color="#666666" />
         </view>
       </view>
 
       <!-- 规格选择 -->
-      <view class="sku-specs">
-        <view class="spec-title">规格</view>
-        <view class="spec-options">
+      <view class="spec-section">
+        <view class="section-title">选择规格</view>
+        <view class="spec-list">
           <view 
             v-for="sku in skuList" 
             :key="sku.id"
-            :class="['spec-option', { 
-              'active': selectedSkuId === sku.id,
-              'disabled': sku.totalStock === 0
-            }]"
-            @click="selectSku(sku)"
+            class="spec-item"
+            :class="{ 
+              'spec-item-active': selectedSku.id === sku.id,
+              'spec-item-disabled': sku.stock === 0
+            }"
+            @click="handleSelectSku(sku)"
           >
-            {{ sku.specValue }}
+            <text class="spec-text">{{ sku.specValue }}</text>
+            <view v-if="sku.stock === 0" class="spec-disabled-mask">
+              <text class="disabled-text">无货</text>
+            </view>
           </view>
         </view>
       </view>
 
       <!-- 数量选择 -->
-      <view class="sku-quantity">
-        <view class="quantity-title">数量</view>
+      <view class="quantity-section">
+        <view class="section-title">数量</view>
         <u-number-box 
           v-model="quantity" 
           :min="1" 
-          :max="currentSku.totalStock || 1"
-          @change="handleQuantityChange"
+          :max="selectedSku.stock || 1"
+          button-size="60"
+          input-width="100"
         />
       </view>
 
-      <!-- 总计 -->
-      <view class="sku-total">
-        <view class="total-label">合计:</view>
+      <!-- 底部按钮 -->
+      <view class="footer">
         <view class="total-price">
-          <text class="points">{{ totalPoints }}</text>
-          <text class="points-unit">积分</text>
-          <text v-if="totalCash > 0" class="cash">+¥{{ totalCash }}</text>
+          <text class="total-label">合计：</text>
+          <text class="total-points">{{ totalPoints }}</text>
+          <text class="total-unit">积分</text>
+          <text v-if="totalCash > 0" class="total-cash">+¥{{ totalCash }}</text>
         </view>
-      </view>
-
-      <!-- 确认按钮 -->
-      <view class="sku-footer">
         <button 
           class="confirm-btn" 
-          :disabled="!selectedSkuId || currentSku.totalStock === 0"
+          :disabled="!selectedSku.id || selectedSku.stock === 0"
           @click="handleConfirm"
         >
           立即兑换
@@ -97,110 +97,88 @@ export default {
   },
   data() {
     return {
-      selectedSkuId: null,
+      selectedSku: {},
       quantity: 1
-    }
+    };
   },
   computed: {
-    currentSku() {
-      if (!this.selectedSkuId) {
-        return this.skuList[0] || {};
-      }
-      return this.skuList.find(sku => sku.id === this.selectedSkuId) || {};
-    },
-    selectedSpec() {
-      return this.currentSku.specValue || '';
-    },
     totalPoints() {
-      return (this.currentSku.pointsRequired || 0) * this.quantity;
+      return (this.selectedSku.pointsRequired || 0) * this.quantity;
     },
     totalCash() {
-      return (this.currentSku.cashRequired || 0) * this.quantity;
+      return ((this.selectedSku.cashRequired || 0) * this.quantity).toFixed(2);
     }
   },
   watch: {
     show(val) {
       if (val && this.skuList.length > 0) {
         // 默认选中第一个有库存的SKU
-        const availableSku = this.skuList.find(sku => sku.totalStock > 0);
+        const availableSku = this.skuList.find(sku => sku.stock > 0);
         if (availableSku) {
-          this.selectedSkuId = availableSku.id;
+          this.selectedSku = availableSku;
+        } else {
+          this.selectedSku = this.skuList[0];
         }
         this.quantity = 1;
       }
     }
   },
   methods: {
-    selectSku(sku) {
-      if (sku.totalStock === 0) {
-        uni.showToast({
-          title: '该规格已售罄',
-          icon: 'none'
-        });
-        return;
-      }
-      this.selectedSkuId = sku.id;
-      // 重置数量
-      if (this.quantity > sku.totalStock) {
-        this.quantity = sku.totalStock;
-      }
+    handleSelectSku(sku) {
+      if (sku.stock === 0) return;
+      this.selectedSku = sku;
+      this.quantity = 1;
     },
-    handleQuantityChange(value) {
-      this.quantity = value;
+    handleClose() {
+      this.$emit('close');
     },
     handleConfirm() {
-      if (!this.selectedSkuId) {
+      if (!this.selectedSku.id || this.selectedSku.stock === 0) {
         uni.showToast({
-          title: '请选择规格',
-          icon: 'none'
-        });
-        return;
-      }
-      if (this.currentSku.totalStock === 0) {
-        uni.showToast({
-          title: '该商品已售罄',
+          title: '请选择有库存的规格',
           icon: 'none'
         });
         return;
       }
       this.$emit('confirm', {
-        skuId: this.selectedSkuId,
-        sku: this.currentSku,
-        quantity: this.quantity,
-        totalPoints: this.totalPoints,
-        totalCash: this.totalCash
+        skuId: this.selectedSku.id,
+        quantity: this.quantity
       });
-    },
-    handleClose() {
-      this.$emit('close');
     }
   }
-}
+};
 </script>
 
 <style scoped>
 .sku-selector {
-  padding: 40rpx;
   background: #FFFFFF;
-  max-height: 80vh;
-  overflow-y: auto;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
-.sku-header {
+.header {
   display: flex;
-  margin-bottom: 40rpx;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 32rpx;
+  border-bottom: 1rpx solid #F0F0F0;
+}
+
+.header-content {
+  flex: 1;
+  display: flex;
 }
 
 .sku-image {
   width: 160rpx;
   height: 160rpx;
-  border-radius: 12rpx;
+  border-radius: 16rpx;
+  background: #F5F5F5;
   flex-shrink: 0;
 }
 
 .sku-info {
   flex: 1;
-  margin-left: 20rpx;
+  margin-left: 24rpx;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -212,98 +190,102 @@ export default {
 }
 
 .points {
-  font-size: 40rpx;
-  color: #EE781F;
+  font-size: 48rpx;
+  color: #FF6B35;
   font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
 }
 
 .points-unit {
   font-size: 24rpx;
-  color: #EE781F;
+  color: #FF6B35;
   margin-left: 4rpx;
 }
 
 .cash {
   font-size: 28rpx;
-  color: #EE781F;
-  margin-left: 8rpx;
+  color: #FF6B35;
+  margin-left: 12rpx;
 }
 
 .sku-stock {
   font-size: 24rpx;
-  color: #A2A2A8;
-  margin-top: 8rpx;
+  color: #999999;
 }
 
-.sku-spec {
-  font-size: 24rpx;
-  color: #19191A;
-  margin-top: 8rpx;
+.close-btn {
+  padding: 8rpx;
+  margin-left: 20rpx;
 }
 
-.sku-specs {
-  margin-bottom: 40rpx;
+.spec-section,
+.quantity-section {
+  padding: 32rpx;
 }
 
-.spec-title {
+.section-title {
   font-size: 28rpx;
-  color: #19191A;
+  color: #1A1A1A;
   font-weight: 500;
-  margin-bottom: 20rpx;
+  margin-bottom: 24rpx;
 }
 
-.spec-options {
+.spec-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20rpx;
 }
 
-.spec-option {
+.spec-item {
+  position: relative;
   padding: 16rpx 32rpx;
-  background: #F3F4F6;
-  border-radius: 8rpx;
-  font-size: 28rpx;
-  color: #19191A;
+  background: #F7F8FA;
+  border-radius: 12rpx;
   border: 2rpx solid transparent;
+  transition: all 0.3s ease;
 }
 
-.spec-option.active {
-  background: #FFF5ED;
-  border-color: #EE781F;
-  color: #EE781F;
+.spec-item-active {
+  background: #FFF4F0;
+  border-color: #FF6B35;
 }
 
-.spec-option.disabled {
-  background: #F3F4F6;
-  color: #D1D1D6;
+.spec-item-disabled {
+  opacity: 0.5;
 }
 
-.sku-quantity {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 40rpx;
+.spec-text {
+  font-size: 26rpx;
+  color: #1A1A1A;
 }
 
-.quantity-title {
-  font-size: 28rpx;
-  color: #19191A;
+.spec-item-active .spec-text {
+  color: #FF6B35;
   font-weight: 500;
 }
 
-.sku-total {
+.spec-disabled-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disabled-text {
+  font-size: 20rpx;
+  color: #999999;
+}
+
+.footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20rpx 0;
-  border-top: 1rpx solid #F3F4F6;
-  margin-bottom: 40rpx;
-}
-
-.total-label {
-  font-size: 28rpx;
-  color: #19191A;
-  font-weight: 500;
+  padding: 24rpx 32rpx;
+  border-top: 1rpx solid #F0F0F0;
 }
 
 .total-price {
@@ -311,25 +293,44 @@ export default {
   align-items: baseline;
 }
 
-.sku-footer {
-  padding-bottom: env(safe-area-inset-bottom);
+.total-label {
+  font-size: 26rpx;
+  color: #666666;
+}
+
+.total-points {
+  font-size: 40rpx;
+  color: #FF6B35;
+  font-weight: bold;
+  margin-left: 8rpx;
+}
+
+.total-unit {
+  font-size: 22rpx;
+  color: #FF6B35;
+  margin-left: 4rpx;
+}
+
+.total-cash {
+  font-size: 24rpx;
+  color: #FF6B35;
+  margin-left: 8rpx;
 }
 
 .confirm-btn {
-  width: 100%;
-  height: 88rpx;
-  background: #EE781F;
-  border-radius: 44rpx;
+  width: 280rpx;
+  height: 80rpx;
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8E53 100%);
+  border-radius: 40rpx;
   color: #FFFFFF;
-  font-size: 32rpx;
+  font-size: 28rpx;
   font-weight: 500;
   border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: 0 8rpx 24rpx rgba(255, 107, 53, 0.3);
 }
 
 .confirm-btn[disabled] {
   background: #D1D1D6;
+  box-shadow: none;
 }
 </style>
