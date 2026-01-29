@@ -693,35 +693,35 @@ export default {
 .price-cash {
   display: flex;
   align-items: baseline;
+  margin-top: 4rpx;
 }
 
 .cash-label {
-  font-size: 20rpx;
-  color: #999999;
+  font-size: 22rpx;
+  color: #FF7043;
   margin-right: 4rpx;
 }
 
 .cash-amount {
-  font-size: 24rpx;
-  color: #999999;
+  font-size: 28rpx;
+  color: #FF7043;
+  font-weight: 600;
 }
 
 .exchange-btn {
   width: 280rpx;
   height: 88rpx;
-  background: linear-gradient(135deg, #FF7043 0%, #FF5722 100%);
+  background: #FF7043;
   border-radius: 44rpx;
   border: none;
-  box-shadow: 0 8rpx 24rpx rgba(255, 112, 67, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: opacity 0.2s ease;
 }
 
 .exchange-btn:active {
-  transform: scale(0.98);
-  box-shadow: 0 4rpx 16rpx rgba(255, 112, 67, 0.4);
+  opacity: 0.8;
 }
 
 .btn-text {
