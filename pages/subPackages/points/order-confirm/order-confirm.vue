@@ -349,6 +349,9 @@ export default {
 }
 
 .scroll-container {
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
   padding: 20rpx 32rpx 160rpx;
 }
 
